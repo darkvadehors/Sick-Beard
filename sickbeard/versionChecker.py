@@ -87,14 +87,14 @@ class CheckVersion():
         """
 
         if not sickbeard.VERSION_NOTIFY and not force:
-            logger.log(u"Version checking is disabled, not checking for the newest version")
+            logger.log(u"La v&eacute;rification de version est d&eacute;sactiv&eacute;, pas la v&eacute;rification de la nouvelle version")
             return False
 
-        logger.log(u"Checking if "+self.install_type+" needs an update")
+        logger.log(u"V&eacute;rification si "+self.install_type+" besoin une mise &agrave; jour")
         if not self.updater.need_update():
-            logger.log(u"No update needed")
+            logger.log(u"Aucune mise &agrave; jour n&eacute;cessaire")
             if force:
-                ui.notifications.message('No update needed')
+                ui.notifications.message('Aucune mise &agrave; jour n&eacute;cessaire')
             return False
 
         self.updater.set_newest_text()
@@ -115,8 +115,8 @@ class WindowsUpdateManager(UpdateManager):
         self._cur_commit_hash = None
         self._newest_version = None
 
-        self.gc_url = 'http://code.google.com/p/sickbeard/downloads/list'
-        self.version_url = 'https://raw.github.com/Adelscott/Sick-Beard/windows_binaries/updates.txt'
+        self.releases_url = "https://github.com/" + self.github_repo_user + "/" + self.github_repo + "/" + "releases" + "/"
+        self.version_url = "https://raw.github.com/" + self.github_repo_user + "/" + self.github_repo + "/" + self.branch + "/updates.txt"
 
     def _find_installed_version(self):
         return int(sickbeard.version.SICKBEARD_VERSION[6:])
@@ -135,10 +135,10 @@ class WindowsUpdateManager(UpdateManager):
         svnFile = urllib.urlopen(self.version_url)
 
         for curLine in svnFile.readlines():
-            logger.log(u"checking line "+curLine, logger.DEBUG)
+            logger.log(u"v&eacute;rification en ligne "+curLine, logger.DEBUG)
             match = re.match(regex, curLine)
             if match:
-                logger.log(u"found a match", logger.DEBUG)
+                logger.log(u"Correspondance trouv&eacute;", logger.DEBUG)
                 if whole_link:
                     return curLine.strip()
                 else:
@@ -150,15 +150,15 @@ class WindowsUpdateManager(UpdateManager):
         self._cur_version = self._find_installed_version()
         self._newest_version = self._find_newest_version()
 
-        logger.log(u"newest version: "+repr(self._newest_version), logger.DEBUG)
+        logger.log(u"nouvelle version: "+repr(self._newest_version), logger.DEBUG)
 
         if self._newest_version and self._newest_version > self._cur_version:
             return True
 
     def set_newest_text(self):
-        new_str = 'There is a <a href="'+self.gc_url+'" onclick="window.open(this.href); return false;">newer version available</a> (build '+str(self._newest_version)+')'
-        new_str += "&mdash; <a href=\""+self.get_update_url()+"\">UPDATE NOW</a>"
-        new_str += ' - Or click <a href="'+self.gc_url+'" onclick="window.open(this.href); return false;">HERE</a> to see new upgrades'
+        new_str = 'Il y a une <a href="'+self.gc_url+'" onclick="window.open(this.href); return false;">nouvelle version disponible</a> (build '+str(self._newest_version)+')'
+        new_str += "&mdash; <a href=\""+self.get_update_url()+"\">Mettre &agrave; jour maintenant</a>"
+        new_str += ' - Ou cliquez <a href="'+self.gc_url+'" onclick="window.open(this.href); return false;">ICI</a> pour voir les nouvelles mises &agrave; niveau'
         sickbeard.NEWEST_VERSION_STRING = new_str
 
     def update(self):
@@ -168,22 +168,22 @@ class WindowsUpdateManager(UpdateManager):
         logger.log(u"new_link: " + repr(new_link), logger.DEBUG)
 
         if not new_link:
-            logger.log(u"Unable to find a new version link on google code, not updating")
+            logger.log(u"Impossible de trouver une nouvelle version en lien sur google code, pas de mise &agrave; jour")
             return False
 
         # download the zip
         try:
-            logger.log(u"Downloading update file from "+str(new_link))
+            logger.log(u"T&eacute;l&eacute;chargement de fichier de mise &agrave; jour "+str(new_link))
             (filename, headers) = urllib.urlretrieve(new_link) #@UnusedVariable
 
             # prepare the update dir
             sb_update_dir = os.path.join(sickbeard.PROG_DIR, 'sb-update')
-            logger.log(u"Clearing out update folder "+sb_update_dir+" before unzipping")
+            logger.log(u"D&eacute;gager le dossier de mise &agrave; jour "+sb_update_dir+" avant la d&eacute;compression")
             if os.path.isdir(sb_update_dir):
                 shutil.rmtree(sb_update_dir)
 
             # unzip it to sb-update
-            logger.log(u"Unzipping from "+str(filename)+" to "+sb_update_dir)
+            logger.log(u"d&eacute;compression de "+str(filename)+" dans "+sb_update_dir)
             update_zip = zipfile.ZipFile(filename, 'r')
             update_zip.extractall(sb_update_dir)
             update_zip.close()
@@ -191,21 +191,21 @@ class WindowsUpdateManager(UpdateManager):
             # find update dir name
             update_dir_contents = os.listdir(sb_update_dir)
             if len(update_dir_contents) != 1:
-                logger.log("Invalid update data, update failed. Maybe try deleting your sb-update folder?", logger.ERROR)
+                logger.log("Les donn&eacute;es de mise &agrave; jour invalides, mise &agrave; jour a &eacute;chou&eacute;. Peut-&ecirc;tre essayer de supprimer votre dossier sb-update &agrave; jour?", logger.ERROR)
                 return False
 
             content_dir = os.path.join(sb_update_dir, update_dir_contents[0])
             old_update_path = os.path.join(content_dir, 'updater.exe')
             new_update_path = os.path.join(sickbeard.PROG_DIR, 'updater.exe')
-            logger.log(u"Copying new update.exe file from "+old_update_path+" to "+new_update_path)
+            logger.log(u"Copie du nouveau fichier update.exe de "+old_update_path+" dans "+new_update_path)
             shutil.move(old_update_path, new_update_path)
 
             # delete the zip
-            logger.log(u"Deleting zip file from "+str(filename))
+            logger.log(u"Suppr&eacute;ssion du fichier Zip de "+str(filename))
             os.remove(filename)
 
         except Exception, e:
-            logger.log(u"Error while trying to update: "+ex(e), logger.ERROR)
+            logger.log(u"Erreur lors de la mise &agrave; jour: "+ex(e), logger.ERROR)
             return False
 
         return True
@@ -222,7 +222,7 @@ class GitUpdateManager(UpdateManager):
         self.branch = self._find_git_branch()
 
     def _git_error(self):
-        error_message = 'Unable to find your git executable - either delete your .git folder and run from source OR <a href="http://code.google.com/p/sickbeard/wiki/AdvancedSettings" onclick="window.open(this.href); return false;">set git_path in your config.ini</a> to enable updates.'
+        error_message = 'Impossible de trouver votre git ex&eacute;cutable - soit supprimer votre dossier .git et ex&eacute;cuter de la source OU <a href="http://code.google.com/p/sickbeard/wiki/AdvancedSettings" onclick="window.open(this.href); return false;">r&eacute;gler git_path dans votre config.ini</a> pour permettre des mises &agrave; jour.'
         sickbeard.NEWEST_VERSION_STRING = error_message
         
         return None
@@ -245,19 +245,19 @@ class GitUpdateManager(UpdateManager):
             cmd = cur_git+' '+args
         
             try:
-                logger.log(u"Executing "+cmd+" with your shell in "+sickbeard.PROG_DIR, logger.DEBUG)
+                logger.log(u"Ex&eacute;cut&eacutez "+cmd+" avec votre Shell dans "+sickbeard.PROG_DIR, logger.DEBUG)
                 p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True, cwd=sickbeard.PROG_DIR)
                 output, err = p.communicate()
                 logger.log(u"git output: "+output, logger.DEBUG)
             except OSError:
-                logger.log(u"Command "+cmd+" didn't work, couldn't find git.")
+                logger.log(u"La Commande "+cmd+" ne fonctionne pas, git non trouv&eacute;.")
                 continue
             
-            if p.returncode != 0 or 'not found' in output or "not recognized as an internal or external command" in output:
-                logger.log(u"Unable to find git with command "+cmd, logger.DEBUG)
+            if p.returncode != 0 or 'not found' in output or "pas reconnu comme une commande interne ou externe" in output:
+                logger.log(u"Impossible de trouver git avec la commande "+cmd, logger.DEBUG)
                 output = None
             elif 'fatal:' in output or err:
-                logger.log(u"Git returned bad info, are you sure this is a git installation?", logger.ERROR)
+                logger.log(u"Git &agrave; retourn&eacute; une mauvaise information, &ecirc;tes-vous s&ucirc;r que ce soit une installation de git?", logger.ERROR)
                 output = None
             elif output:
                 break
@@ -279,11 +279,11 @@ class GitUpdateManager(UpdateManager):
         if not output:
             return self._git_error()
 
-        logger.log(u"Git output: "+str(output), logger.DEBUG)
+        logger.log(u"Sortie Git: "+str(output), logger.DEBUG)
         cur_commit_hash = output.strip()
 
         if not re.match('^[a-z0-9]+$', cur_commit_hash):
-            logger.log(u"Output doesn't look like a hash, not using it", logger.ERROR)
+            logger.log(u"La sortie ne ressemble pas &agrave; un hachage, ne l'utilisez pas", logger.ERROR)
             return self._git_error()
         
         self._cur_commit_hash = cur_commit_hash
@@ -316,7 +316,7 @@ class GitUpdateManager(UpdateManager):
         gh = github.GitHub()
 
         # find newest commit
-        for curCommit in gh.commits('Adelscott', 'Sick-Beard', self.branch):
+        for curCommit in gh.commits('darkvadehors', 'Sick-Beard', self.branch):
             if not self._newest_commit_hash:
                 self._newest_commit_hash = curCommit['sha']
                 if not self._cur_commit_hash:
@@ -327,40 +327,40 @@ class GitUpdateManager(UpdateManager):
 
             self._num_commits_behind += 1
 
-        logger.log(u"newest: "+str(self._newest_commit_hash)+" and current: "+str(self._cur_commit_hash)+" and num_commits: "+str(self._num_commits_behind), logger.DEBUG)
+        logger.log(u"plus r&eacute;cent: "+str(self._newest_commit_hash)+" et courant: "+str(self._cur_commit_hash)+" et num_commits: "+str(self._num_commits_behind), logger.DEBUG)
 
     def set_newest_text(self):
 
         # if we're up to date then don't set this
         if self._num_commits_behind == 100:
-            message = "or else you're ahead of master"
+            message = "ou bien vous &ecirc;tes en avance sur la master"
 
         elif self._num_commits_behind > 0:
-            message = "you're %d commit" % self._num_commits_behind
+            message = "Il y a %d commit" % self._num_commits_behind
             if self._num_commits_behind > 1: message += 's'
-            message += ' behind'
+            message += ' en retard'
 
         else:
             return
 
         if self._newest_commit_hash:
-            url = 'http://github.com/Adelscott/Sick-Beard/compare/'+self._cur_commit_hash+'...'+self._newest_commit_hash
+            url = 'http://github.com/darkvadehors/Sick-Beard/compare/'+self._cur_commit_hash+'...'+self._newest_commit_hash
         else:
-            url = 'http://github.com/Adelscott/Sick-Beard/commits/'
+            url = 'http://github.com/darkvadehors/Sick-Beard/commits/'
 
-        new_str = 'There is a <a href="'+url+'" onclick="window.open(this.href); return false;">newer version available</a> ('+message+')'
-        new_str += "&mdash; <a href=\""+self.get_update_url()+"\">UPDATE NOW</a>"
-        new_str += ' - Or click <a href="'+url+'" onclick="window.open(this.href); return false;">HERE</a> to see new upgrades'
+        new_str = 'Il y a une <a href="'+url+'" onclick="window.open(this.href); return false;">nouvelle version disponible</a> ('+message+')'
+        new_str += "&mdash; <a href=\""+self.get_update_url()+"\">Mettre &agrave; jour maintemant</a>"
+        new_str += ' - Ou cliquez <a href="'+url+'" onclick="window.open(this.href); return false;">ICI</a> pour voir nouvelles mises &agrave; niveau'
         sickbeard.NEWEST_VERSION_STRING = new_str
     def need_update(self):
         self._find_installed_version()
         try:
             self._check_github_for_update()
         except Exception, e:
-            logger.log(u"Unable to contact github, can't check for update: "+repr(e), logger.ERROR)
+            logger.log(u"Impossible de contacter github, la mise &agrave; jour ne peut pas v&eacute;rifi&eacute; : "+repr(e), logger.ERROR)
             return False
 
-        logger.log(u"After checking, cur_commit = "+str(self._cur_commit_hash)+", newest_commit = "+str(self._newest_commit_hash)+", num_commits_behind = "+str(self._num_commits_behind), logger.DEBUG)
+        logger.log(u"Apr&eagrave;s contr&ocirc;le, cur_commit = "+str(self._cur_commit_hash)+", newest_commit = "+str(self._newest_commit_hash)+", num_commits_behind = "+str(self._num_commits_behind), logger.DEBUG)
 
         if self._num_commits_behind > 0:
             return True
@@ -372,9 +372,9 @@ class GitUpdateManager(UpdateManager):
         Calls git pull origin <branch> in order to update Sick Beard. Returns a bool depending
         on the call's success.
         """
-        self._run_git('config remote.origin.url git://github.com/Adelscott/Sick-Beard.git')
+        self._run_git('config remote.origin.url git://github.com/darkvadehors/Sick-Beard.git')
         self._run_git('stash')
-        output, err = self._run_git('pull git://github.com/Adelscott/Sick-Beard.git '+self.branch) #@UnusedVariable
+        output, err = self._run_git('pull git://github.com/darkvadehors/Sick-Beard.git '+self.branch) #@UnusedVariable
 
         if not output:
             return self._git_error()
@@ -386,12 +386,12 @@ class GitUpdateManager(UpdateManager):
         for line in output.split('\n'):
 
             if 'Already up-to-date.' in line:
-                logger.log(u"No update available, not updating")
-                logger.log(u"Output: "+str(output))
+                logger.log(u"Aucune mise &agrave; jour disponible, pas de mise &agrave; jour")
+                logger.log(u"Sortie: "+str(output))
                 return False
             elif line.endswith('Aborting.'):
-                logger.log(u"Unable to update from git: "+line, logger.ERROR)
-                logger.log(u"Output: "+str(output))
+                logger.log(u"Impossible de mettre &agrave; jour &agrave; partir de git: "+line, logger.ERROR)
+                logger.log(u"Sortie: "+str(output))
                 return False
 
             match = re.search(pull_regex, line)
@@ -400,8 +400,8 @@ class GitUpdateManager(UpdateManager):
                 break
 
         if None in (files, insertions, deletions):
-            logger.log(u"Didn't find indication of success in output, assuming git pull succeeded", logger.DEBUG)
-            logger.log(u"Output: "+str(output))
+            logger.log(u"Rien n'indique le succes de l&acute;opr&eacute;ration, en supposant git pull r&eacute;ussi", logger.DEBUG)
+            logger.log(u"Sortie: "+str(output))
             return True
 
         return True
@@ -437,10 +437,10 @@ class SourceUpdateManager(GitUpdateManager):
 
     def set_newest_text(self):
         if not self._cur_commit_hash:
-            logger.log(u"Unknown current version, don't know if we should update or not", logger.DEBUG)
+            logger.log(u"Version actuelle inconnu, je ne sais pas si nous devrions mettre &agrave; jour ou non", logger.DEBUG)
 
-            new_str = "Unknown version: If you've never used the Sick Beard upgrade system then I don't know what version you have."
-            new_str += "&mdash; <a href=\""+self.get_update_url()+"\">UPDATE NOW/a>"
+            new_str = "Version inconnu: Si vous n&cute;avez jamais utilis&agrave; le syst&ecute;me de mise &agrave; niveau Sick Beard alors je ne sais pas quelle version vous avez."
+            new_str += "&mdash; <a href=\""+self.get_update_url()+"\">METTRE &Agrave; JOUR MAINTENANT/a>"
 
             sickbeard.NEWEST_VERSION_STRING = new_str
 
@@ -452,16 +452,16 @@ class SourceUpdateManager(GitUpdateManager):
         Downloads the latest source tarball from github and installs it over the existing version.
         """
 
-        tar_download_url = 'https://github.com/Adelscott/Sick-Beard/tarball/'+version.SICKBEARD_VERSION
+        tar_download_url = 'https://github.com/darkvadehors/Sick-Beard/tarball/'+version.SICKBEARD_VERSION
         sb_update_dir = os.path.join(sickbeard.PROG_DIR, 'sb-update')
         version_path = os.path.join(sickbeard.PROG_DIR, 'version.txt')
 
         # retrieve file
         try:
-            logger.log(u"Downloading update from "+tar_download_url)
+            logger.log(u"T&eacute;l&eacute;chargement de la mise &agrave; jour depuis "+tar_download_url)
             data = urllib2.urlopen(tar_download_url)
         except (IOError, URLError):
-            logger.log(u"Unable to retrieve new version from "+tar_download_url+", can't update", logger.ERROR)
+            logger.log(u"Impossible de r&eacute;cup&eacute;rer nouvelle version de "+tar_download_url+", mise &agrave; jour impossible", logger.ERROR)
             return False
 
         download_name = data.geturl().split('/')[-1].split('?')[0]
@@ -474,19 +474,19 @@ class SourceUpdateManager(GitUpdateManager):
         f.close()
 
         # extract to temp folder
-        logger.log(u"Extracting file "+tar_download_path)
+        logger.log(u"Extraction du fichier "+tar_download_path)
         tar = tarfile.open(tar_download_path)
         tar.extractall(sb_update_dir)
         tar.close()
 
         # delete .tar.gz
-        logger.log(u"Deleting file "+tar_download_path)
+        logger.log(u"Suppr&eacute;ssion du fichier "+tar_download_path)
         os.remove(tar_download_path)
 
         # find update dir name
         update_dir_contents = [x for x in os.listdir(sb_update_dir) if os.path.isdir(os.path.join(sb_update_dir, x))]
         if len(update_dir_contents) != 1:
-            logger.log(u"Invalid update data, update failed: "+str(update_dir_contents), logger.ERROR)
+            logger.log(u"Les donn&eacute;es de mise &agrave; jour sont invalides, la mise &agrave; jour a &eacute;chou&eacute;: "+str(update_dir_contents), logger.ERROR)
             return False
         content_dir = os.path.join(sb_update_dir, update_dir_contents[0])
 
@@ -507,7 +507,7 @@ class SourceUpdateManager(GitUpdateManager):
             ver_file.write(self._newest_commit_hash)
             ver_file.close()
         except IOError, e:
-            logger.log(u"Unable to write version file, update not complete: "+ex(e), logger.ERROR)
+            logger.log(u"Impossible d'&eacute;crire le fichier de version, mise &agrave; jour incomplete: "+ex(e), logger.ERROR)
             return False
 
         return True
