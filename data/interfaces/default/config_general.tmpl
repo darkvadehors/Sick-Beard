@@ -5,7 +5,7 @@
 #from sickbeard import metadata
 #from sickbeard.metadata.generic import GenericMetadata
 #set global $title  = "Config - General"
-#set global $header = "Configuration G&eacute;n&eacute;rale"
+#set global $header = "General Configuration"
 
 #set global $sbPath="../.."
 
@@ -25,72 +25,72 @@
             <div id="config-components">
 				
 				<ul>
-					<li><a href="#core-component-group1">Divers</a></li>
-					<li><a href="#core-component-group2">Interface Web</a></li>
+					<li><a href="#core-component-group1">Misc</a></li>
+					<li><a href="#core-component-group2">Web Interface</a></li>
 					<li><a href="#core-component-group4">Api</a></li>
 				</ul>
 				
                 <div id="core-component-group1" class="component-group clearfix">
 					
                     <div class="component-group-desc">
-                        <h3>Divers</h3>
-                        <p>Les options de d&eacute;marrage.</p>
-                        <p><b>Certaines options peuvent n&eacute;cessiter un red&eacute;marrage manuel pour prendre effet.</b></p>
+                        <h3>Misc</h3>
+                        <p>Startup options.</p>
+                        <p><b>Some options may require a manual restart to take effect.</b></p>
                     </div>
 
                     <fieldset class="component-group-list">
                         <div class="field-pair">
                             <input type="checkbox" name="launch_browser" id="launch_browser" #if $sickbeard.LAUNCH_BROWSER then "checked=\"checked\"" else ""#/>
                             <label class="clearfix" for="launch_browser">
-                                <span class="component-title">Lancer le navigateur</span>
-                                <span class="component-desc">Voulez-vous que Sick Beard ouvre sa page d&acute;accueil au d&eacute;marrage?</span>
+                                <span class="component-title">Launch Browser</span>
+                                <span class="component-desc">Should Sick Beard open its home page when started?</span>
                             </label>
                         </div>
 
                         <div class="field-pair">
                             <input type="checkbox" name="update_shows_on_start" id="update_shows_on_start" #if $sickbeard.UPDATE_SHOWS_ON_START then "checked=\"checked\"" else ""#/>
                             <label class="clearfix" for="update_shows_on_start">
-                                <span class="component-title">Affiche les Mise &agrave; jour au D&eacute;marrer</span>
-                                <span class="component-desc">Voulez vous que Sick Beard actualise les informations au d&eacute;marrage?</span>
+                                <span class="component-title">Update Shows on Start</span>
+                                <span class="component-desc">Should Sick Beard update shows info when started?</span>
                             </label>
                         </div>  
                         
                         <div class="field-pair">
                             <input type="checkbox" name="version_notify" id="version_notify" #if $sickbeard.VERSION_NOTIFY then "checked=\"checked\"" else ""#/>
                             <label class="clearfix" for="version_notify">
-                                <span class="component-title">V&eacute;rification des Mise &agrave; jours</span>
-                                <span class="component-desc">Notifier quand une mise &agrave; jour est disponible.</span>
+                                <span class="component-title">Check for Update</span>
+                                <span class="component-desc">Show notification about updates for Sick Beard if available.</span>
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">V&eacute;rification des mises &agrave; jour au d&eacute;marrage et ex&eacute;cuter toutes les 12 heures.</span>
+                                <span class="component-desc">Checking for updates runs on startup and every 12 hours.</span>
                             </label>
                         </div>
 
                         <div class="field-pair">
                             <input type="checkbox" name="sort_article" id="sort_article" #if $sickbeard.SORT_ARTICLE then "checked=\"checked\"" else ""#/>
                             <label class="clearfix" for="sort_article"> 
-                                <span class="component-title">Trier les articles</span> 
-                                <span class="component-desc">Inclure les articles (The, A, An, Le, La, Les ...) lors du tri des listes.</span>
+                                <span class="component-title">Sort articles</span> 
+                                <span class="component-desc">Include articles (The, A, An, Le, La, Les ...) when sorting show lists.</span>
                             </label>
                         </div>
                         
                         <div class="field-pair">
                             <input type="checkbox" name="french_column" id="french_column" #if $sickbeard.FRENCH_COLUMN then "checked=\"checked\"" else ""#/>
                             <label class="clearfix" for="french_column">
-                                <span class="component-title">Colonne Français</span>
-                                <span class="component-desc">Afficher le compte des Episodes français sur la page d&acute;accueil ?</span>
+                                <span class="component-title">French Column</span>
+                                <span class="component-desc">Display French Episodes count on home ?</span>
                             </label>
                         </div>  
 
                         <div class="field-pair">
                             <label class="nocheck clearfix" for="log_dir">
-                                <span class="component-title">R&eacute;pertoire de journalisation</span>
+                                <span class="component-title">Logging Directory</span>
                                 <input type="text" name="log_dir" id="log_dir" value="$sickbeard.LOG_DIR" size="35" />
                             </label>
                         </div>
 
-                        <input type="submit" class="btn config_submitter" value="Enregistrer les Changements" />
+                        <input type="submit" class="btn config_submitter" value="Save Changes" />
                     </fieldset>
                 </div><!-- /component-group1 //-->
 
@@ -98,9 +98,9 @@
                 <div id="core-component-group2" class="component-group clearfix">
 
                     <div class="component-group-desc">
-                        <h3>Interface Web</h3>
-                        <p>Il est recommand&eacute; que vous activez un nom d&acute;utilisateur et mot de passe pour s&eacute;curiser Sick Beard d&acute;&ecirc;tre alt&eacute;r&eacute; avec distance.</p>
-                        <p><b>Ces options n&eacute;cessitent un red&eacute;marrage manuel pour prendre effet.</b></p>
+                        <h3>Web Interface</h3>
+                        <p>It is recommended that you enable a username and password to secure Sick Beard from being tampered with remotely.</p>
+                        <p><b>These options require a manual restart to take effect.</b></p>
                     </div>
 
                     <fieldset class="component-group-list">
@@ -108,85 +108,85 @@
                         <div class="field-pair">
                             <input type="checkbox" name="web_ipv6" id="web_ipv6" #if $sickbeard.WEB_IPV6 then "checked=\"checked\"" else ""#/>
                             <label class="clearfix" for="web_ipv6">
-                                <span class="component-title">&Eacute;coute IPv6</span>
-                                <span class="component-desc">Laisser Sick Beard se lier &agrave; toutes les adresses IPv6 disponibles?</span>
+                                <span class="component-title">Listen on IPv6</span>
+                                <span class="component-desc">Allow Sick Beard to bind to any available IPv6 address?</span>
                             </label>
                         </div>
                         
                         <div class="field-pair">
                             <input type="checkbox" name="web_log" id="web_log" #if $sickbeard.WEB_LOG then "checked=\"checked\"" else ""#/>
                             <label class="clearfix" for="web_log">
-                                <span class="component-title">Journal HTTP</span>
-                                <span class="component-desc">G&eacute;n&eacute;rr un journal si vous avez un server (cherrypy).</span>
+                                <span class="component-title">HTTP Logs</span>
+                                <span class="component-desc">Have Sick Beard's web server (cherrypy) generate logs?</span>
                             </label>
                         </div>
                         
                         <div class="field-pair">
                             <label class="nocheck clearfix">
-                                <span class="component-title">Port HTTP</span>
+                                <span class="component-title">HTTP Port</span>
                                 <input type="text" name="web_port" value="$sickbeard.WEB_PORT" size="10" />
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Port Web que Sick Beard doit &eacute;couter (eg. 8081)</span>
+                                <span class="component-desc">Web port that Sick Beard should listen on (eg. 8081)</span>
                             </label>
                         </div>
 
                         <div class="field-pair">
                             <label class="nocheck clearfix">
-                                <span class="component-title">Nom d&acute;utilisateur HTTP</span>
+                                <span class="component-title">HTTP Username</span>
                                 <input type="text" name="web_username" value="$sickbeard.WEB_USERNAME" size="35" />
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Nom d&acute;utilisateur pour l&acute;authentification (blanc si aucun)</span>
+                                <span class="component-desc">Username for authentication (blank for none)</span>
                             </label>
                         </div>
 
                         <div class="field-pair">
                             <label class="nocheck clearfix">
-                                <span class="component-title">Mot de passe HTTP</span>
+                                <span class="component-title">HTTP Password</span>
                                 <input type="password" name="web_password" value="$sickbeard.WEB_PASSWORD" size="35" />
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Mot de passe pour l&acute;authentification (blanc si aucun)</span>
+                                <span class="component-desc">Password for authentication (blank for none)</span>
                             </label>
                         </div>
 
                         <div class="field-pair">
                             <label class="clearfix">
                                 <input type="checkbox" name="enable_https" class="enabler" id="enable_https" #if $sickbeard.ENABLE_HTTPS then "checked=\"checked\"" else ""#/>
-                                <span class="component-title">Permettre HTTPS</span>
-                                <span class="component-desc">Activer l&acute;acc&egrave;s &agrave; l&acute;interface d&acute;une adresse HTTPS.</span>
+                                <span class="component-title">Enable HTTPS</span>
+                                <span class="component-desc">Enable accessing the interface from a HTTPS address.</span>
                             </label>
                         </div>
                         
                         <div id="content_enable_https">
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">Certificat HTTPS</span>
+                                    <span class="component-title">HTTPS Certificate</span>
                                     <input type="text" name="https_cert" value="$sickbeard.HTTPS_CERT" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Nom de fichier ou chemin de certificat HTTPS.</span>
+                                    <span class="component-desc">File name or path to HTTPS Certificate.</span>
                                 </label>
                             </div>
     
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">Cl&eacute; HTTPS/span>
+                                    <span class="component-title">HTTPS Key</span>
                                     <input type="text" name="https_key" value="$sickbeard.HTTPS_KEY" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Nom du fichier ou le chemin vers Cl&eacute; HTTPS.</span>
+                                    <span class="component-desc">File name or path to HTTPS Key.</span>
                                 </label>
                             </div>
                         </div>
 
-                        <input type="submit" class="btn config_submitter" value="Enregistrer les changements" />
+                        <input type="submit" class="btn config_submitter" value="Save Changes" />
                     </fieldset>
                 </div><!-- /component-group2 //-->
 
@@ -194,38 +194,38 @@
 
                     <div class="component-group-desc">
                         <h3>API</h3>
-                        <p>Autoriser les programmes tiers &agrave; interagir avec Sick-beard.</p>
+                        <p>Allow 3rd party programs to interact with Sick-Beard.</p>
                     </div>
 
                     <fieldset class="component-group-list">
                         <div class="field-pair">
                             <input type="checkbox" name="use_api" class="enabler" id="use_api" #if $sickbeard.USE_API then "checked=\"checked\"" else ""#/>
                             <label class="clearfix" for="use_api">
-                                <span class="component-title">Autoriser API</span>
-                                <span class="component-desc">Permettre l&acute;utilisation de l&acute; API Sick-Beard.</span>
+                                <span class="component-title">Enable API</span>
+                                <span class="component-desc">Allow the use of the Sick-Beard API.</span>
                             </label>
                         </div>
 
                         <div id="content_use_api">
                         <div class="field-pair">
                             <label class="nocheck clearfix" for="api_key">
-                                <span class="component-title">Cl&eacute; API</span>
+                                <span class="component-title">API Key</span>
                                 <input type="text" name="api_key" id="api_key" value="$sickbeard.API_KEY" size="35" readonly="readonly" />
                                 <input class="btn" class="btn" type="button" id="generate_new_apikey" value="Generate">
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Utilis&eacute; pour restreindre l&acute;access des programmes tiers &agrave; Sick-Beard.</span>
+                                <span class="component-desc">Used to give 3rd party programs limited access to Sick-Beard.</span>
                             </label>
                         </div>
                         </div>
 
-                        <input type="submit" class="btn config_submitter" value="Enregistrer les changements" />
+                        <input type="submit" class="btn config_submitter" value="Save Changes" />
                     </fieldset>
                 </div><!-- /component-group4 //-->
                 <br/>
-				<small class="float-right"><b>Tous les emplacements de dossier non absolus sont li&eacute;s &agrave;<span class="path">$sickbeard.DATA_DIR</span></b> </small>
-				<input type="submit" class="btn config_submitter button" value="Enregistrer les changements" />
+				<small class="float-right"><b>All non-absolute folder locations are relative to <span class="path">$sickbeard.DATA_DIR</span></b> </small>
+				<input type="submit" class="btn config_submitter button" value="Save Changes" />
             
             </div><!-- /config-components -->
 		
