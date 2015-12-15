@@ -87,12 +87,12 @@
 <script type="text/javascript">
 <!--
 	function initActions() {
-        \$("#SubMenu a[href^='$sbRoot/home/restart/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Restart </a>');
-        \$("#SubMenu a[href^='$sbRoot/manage/manageSearches/forceVersionCheck']").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> Update </a>');
-       	\$("#SubMenu a[href^='$sbRoot/home/shutdown/']").addClass('btn').html('<span class="ui-icon ui-icon-power pull-left"></span> Shutdown </a>');		
-		\$("#SubMenu a:contains('Edit')").addClass('btn').html('<span class="ui-icon ui-icon-pencil pull-left"></span> Edit </a>');
-		\$("#SubMenu a:contains('Delete')").addClass('btn').html('<span class="ui-icon ui-icon-trash pull-left"></span> Delete </a>');
-		\$("#SubMenu a:contains('Clear History')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Clear History </a>');
+        \$("#SubMenu a[href^='$sbRoot/home/restart/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Red&eacute;marrage </a>');
+        \$("#SubMenu a[href^='$sbRoot/manage/manageSearches/forceVersionCheck']").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> Mise &agrave; jour </a>');
+       	\$("#SubMenu a[href^='$sbRoot/home/shutdown/']").addClass('btn').html('<span class="ui-icon ui-icon-power pull-left"></span> Extinction </a>');		
+		\$("#SubMenu a:contains('Edit')").addClass('btn').html('<span class="ui-icon ui-icon-pencil pull-left"></span> Editer </a>');
+		\$("#SubMenu a:contains('Delete')").addClass('btn').html('<span class="ui-icon ui-icon-trash pull-left"></span> Supprimer </a>');
+		\$("#SubMenu a:contains('Clear History')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Effacer l&acute;Historique </a>');
 		\$("#SubMenu a:contains('Trim History')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Trim History </a>');
 		\$("#SubMenu a:contains('Trunc Episode Links')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Trunc Episode Links </a>');
 		\$("#SubMenu a:contains('Trunc Episode List Processed')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Trunc Episode List Processed </a>');
@@ -184,47 +184,46 @@
 	<div class="wrapper">
     <a name="top"></a>
     <span id="logo"><a href="$sbRoot/home/" title="Sick Beard homepage"><img alt="Sick Beard" src="$sbRoot/images/sickbeard.png" width="150" /></a></span>
-    <span id="versiontext">VO/VF</span>
+    <span id="versiontext">VO/VF avec Interface Française</span>
     
     <ul id="MainMenu" class="sf-menu">
-                <li id="NAVhome"><a href="$sbRoot/home/">Show list</a>
+                <li id="NAVhome"><a href="$sbRoot/home/">Liste des s&eacute;ries</a>
                     <ul>
-                            <li><a href="$sbRoot/home/addShows/"><img src="$sbRoot/images/menu/addshow16.png" alt="" width="16" height="16" />Add Shows</a></li>
-                            <li><a href="$sbRoot/home/postprocess/"><img src="$sbRoot/images/menu/postprocess16.png" alt="" width="16" height="16" />Manual Post-Processing</a></li>
+                            <li><a href="$sbRoot/home/addShows/"><img src="$sbRoot/images/menu/addshow16.png" alt="" width="16" height="16" />Nouvelle S&eacute;ries</a></li>
+                            <li><a href="$sbRoot/home/postprocess/"><img src="$sbRoot/images/menu/postprocess16.png" alt="" width="16" height="16" />Post-Traitement Manuelle</a></li>
                     </ul>
                 </li>
-                <li id="NAVcomingEpisodes"><a href="$sbRoot/comingEpisodes/">Coming Episodes</a></li>
-                <li id="NAVhistory"><a href="$sbRoot/history/">History</a></li>
-                <li id="NAVmanage"><a href="$sbRoot/manage/">Manage</a>
+                <li id="NAVcomingEpisodes"><a href="$sbRoot/comingEpisodes/">Episodes &agrave; venir</a></li>
+                <li id="NAVhistory"><a href="$sbRoot/history/">Historique</a></li>
+                <li id="NAVmanage"><a href="$sbRoot/manage/">G&eacute;rer</a>
                     <ul>
-                            <li><a href="$sbRoot/manage/"><img src="$sbRoot/images/menu/manage16.png" alt="" width="16" height="16" />Mass Update</a></li>
-                            <li><a href="$sbRoot/manage/backlogOverview/"><img src="$sbRoot/images/menu/backlog_view16.png" alt="" width="16" height="16" />Backlog Overview</a></li>
-                            <li><a href="$sbRoot/manage/manageSearches/"><img src="$sbRoot/images/menu/managesearches16.png" alt="" width="16" height="16" />Manage Searches</a></li>
-                            <li><a href="$sbRoot/manage/episodeStatuses/"><img src="$sbRoot/images/menu/backlog16.png" alt="" width="16" height="16" />Episode Status Management</a></li>
+                            <li><a href="$sbRoot/manage/"><img src="$sbRoot/images/menu/manage16.png" alt="" width="16" height="16" />Mise &agrave; jour de Masse</a></li>
+                            <li><a href="$sbRoot/manage/backlogOverview/"><img src="$sbRoot/images/menu/backlog_view16.png" alt="" width="16" height="16" />Vue d'ensemble du Journal</a></li>
+                            <li><a href="$sbRoot/manage/manageSearches/"><img src="$sbRoot/images/menu/managesearches16.png" alt="" width="16" height="16" />G&eacute;rer les Recherches</a></li>
+                            <li><a href="$sbRoot/manage/episodeStatuses/"><img src="$sbRoot/images/menu/backlog16.png" alt="" width="16" height="16" />Gestion de l'&eacute;tat des Episodes</a></li>
                             #if $sickbeard.USE_SUBTITLES:
-                            <li><a href="$sbRoot/manage/subtitleMissed/"><img src="$sbRoot/images/menu/backlog16.png" alt="" width="16" height="16" />Missed Subtitle Management</a></li>
+                            <li><a href="$sbRoot/manage/subtitleMissed/"><img src="$sbRoot/images/menu/backlog16.png" alt="" width="16" height="16" />Gestion des Sous-titres Manqu&eacute;</a></li>
                             #end if
                     </ul>
                 </li>                
                 <li id="NAVerrorlogs"><a href="$sbRoot/errorlogs/" class="log">$logPageTitle</a>
                     <ul>
-                            <li><a href="$sbRoot/errorlogs/"><img src="$sbRoot/images/menu/viewlog_errors16.png" alt="" width="16" height="16" />View Log (Errors)</a></li>
-                            <li><a href="$sbRoot/errorlogs/viewlog/"><img src="$sbRoot/images/menu/viewlog16.png" alt="" width="16" height="16" />View Log</a></li>
+                            <li><a href="$sbRoot/errorlogs/"><img src="$sbRoot/images/menu/viewlog_errors16.png" alt="" width="16" height="16" />Voir le journal (Errors)</a></li>
+                            <li><a href="$sbRoot/errorlogs/viewlog/"><img src="$sbRoot/images/menu/viewlog16.png" alt="" width="16" height="16" />Voir le journal</a></li>
                     </ul>
                 </li>
                 <li id="NAVconfig"><a href="$sbRoot/config/" class="config"><img src="$sbRoot/images/menu/system18.png" alt="" /></a>
                     <ul>
-                            <li><a href="$sbRoot/config/"><i class="icon-question-sign" style=" margin-left: -21px;margin-right: 8px;position: absolute;"></i>Help &amp; Info</a></li>
-                            <li><a href="$sbRoot/config/general/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />General</a></li>
-                            <li><a href="$sbRoot/config/search/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />Search Settings</a></li>
-                            <li><a href="$sbRoot/config/providers/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />Search Providers</a></li>
-                            <li><a href="$sbRoot/config/subtitles/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />Subtitles Settings</a></li>
-                            <li><a href="$sbRoot/config/postProcessing/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />Post Processing</a></li>
+                            <li><a href="$sbRoot/config/"><i class="icon-question-sign" style=" margin-left: -21px;margin-right: 8px;position: absolute;"></i>Aide &amp; Information</a></li>
+                            <li><a href="$sbRoot/config/general/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />G&eacute;n&eacute;ral</a></li>
+                            <li><a href="$sbRoot/config/search/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />R&eacute;glage recherche</a></li>
+                            <li><a href="$sbRoot/config/providers/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />Sites de Recherche</a></li>
+                            <li><a href="$sbRoot/config/subtitles/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />R&eacute;glage Sous-Titres</a></li>
+                            <li><a href="$sbRoot/config/postProcessing/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />Post-Traitement</a></li>
                             <li><a href="$sbRoot/config/notifications/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />Notifications</a></li>
                     </ul>
                 </li>
                 
-                <li id="donate"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L2EWZMTRPW2SE" onclick="window.open(this.href); return false;"><img src="$sbRoot/images/paypal/btn_donate_LG.gif" alt="[donate]" /></a></li>
     </ul>
 <div id="contentWrapper">
     <div id="content">
