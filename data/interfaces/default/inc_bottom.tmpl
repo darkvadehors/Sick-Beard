@@ -13,19 +13,19 @@
 #set $numGoodShows = len([x for x in $sickbeard.showList if x.paused == 0 and x.status != "Ended"])
 #set $numDLEpisodes = $myDB.select("SELECT COUNT(*) FROM tv_episodes WHERE status IN ("+",".join([str(x) for x in $Quality.DOWNLOADED + [$ARCHIVED]])+") AND season != 0 and episode != 0 AND airdate <= "+$today+"")[0][0]
 #set $numEpisodes = $myDB.select("SELECT COUNT(*) FROM tv_episodes WHERE season != 0 and episode != 0 AND (airdate != 1 OR status IN ("+",".join([str(x) for x in ($Quality.DOWNLOADED + $Quality.SNATCHED + $Quality.SNATCHED_PROPER) + [$ARCHIVED]])+")) AND airdate <= "+$today+" AND status != "+str($IGNORED)+"")[0][0]
-<b>$numShows shows</b> ($numGoodShows active) | <b>$numDLEpisodes/$numEpisodes</b> episodes downloaded | 
-<b>Search</b>: <%=str(sickbeard.currentSearchScheduler.timeLeft()).split('.')[0]%> |
+<b>$numShows séries</b> ($numGoodShows active) | <b>$numDLEpisodes/$numEpisodes</b> épisodes téléchargés | 
+<b>Recherche</b>: <%=str(sickbeard.currentSearchScheduler.timeLeft()).split('.')[0]%> |
 <!--<b>Update</b>: <a%a=str(sickbeard.updateScheduler.timeLeft()).split('.')[0]%> | //-->
-<b>Backlog</b>: $sickbeard.backlogSearchScheduler.nextRun().strftime("%a %b %d").decode($sickbeard.SYS_ENCODING) 
+<b>Journal</b>: $sickbeard.backlogSearchScheduler.nextRun().strftime("%a %b %d").decode($sickbeard.SYS_ENCODING) 
 </div>
 <ul style="float:right;">
 		<li>
-				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L2EWZMTRPW2SE" target="_blank"><img src="$sbRoot/images/like.png">Like this interface!</a>
+				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8N3MYWC6VDFT6" target="_blank"><img src="$sbRoot/images/like.png">Vous aimez l&acute;interface!</a>
 </li>
-        <li><a href="https://github.com/Adelscott/Sick-Beard/commits/development" onclick="window.open(this.href); return false;"><img src="$sbRoot/images/menu/github-16.png" alt="" title="git" /></i>Changelog</a></li>                           
-        <li><a href="$sbRoot/manage/manageSearches/forceVersionCheck"><img src="$sbRoot/images/menu/update16.png" alt="" width="16" height="16" />Update</a></li>
-        <li><a href="$sbRoot/home/restart/?pid=$sbPID" class="confirm"><img src="$sbRoot/images/menu/restart16.png" alt="" width="16" height="16" />Restart</a></li>
-        <li><a href="$sbRoot/home/shutdown/?pid=$sbPID" class="confirm"><img src="$sbRoot/images/menu/shutdown16.png" alt="" width="16" height="16" />Shutdown</a></li>
+        <li><a href="https://github.com/darkvadehors/Sick-Beard/commits/master" onclick="window.open(this.href); return false;"><img src="$sbRoot/images/menu/github-16.png" alt="" title="git" /></i>Journal des Changements</a></li>                           
+       <!-- <li><a href="$sbRoot/manage/manageSearches/forceVersionCheck"><img src="$sbRoot/images/menu/update16.png" alt="" width="16" height="16" />Mettre à jour</a></li>//-->
+       <!-- <li><a href="$sbRoot/home/restart/?pid=$sbPID" class="confirm"><img src="$sbRoot/images/menu/restart16.png" alt="" width="16" height="16" />redémarrer</a></li>//-->
+       <!-- <li><a href="$sbRoot/home/shutdown/?pid=$sbPID" class="confirm"><img src="$sbRoot/images/menu/shutdown16.png" alt="" width="16" height="16" />Extinction</a></li>//-->
 </ul>
 </div>
 </body>
