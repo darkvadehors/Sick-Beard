@@ -28,6 +28,7 @@ import urllib
 import urllib2
 import random
 import re
+
 class LIBERTALIAProvider(generic.TorrentProvider):
 
     def __init__(self):
@@ -57,15 +58,15 @@ class LIBERTALIAProvider(generic.TorrentProvider):
         if audio_lang == "en" and french==None:
             results.append( urllib.urlencode( {
                 'name': searchString                            
-            } ) + "*VO*&cat%5B%5D="+cat+"&[PARAMSTR]=" + searchString +" VO" )
+            } ) + "*VO*&cat%5B%5D="+cat+"&[PARAMSTR]=" + searchString  )
         elif audio_lang == "en" and french==None:
             results.append( urllib.urlencode( {
                 'name': searchString                            
-            } ) + "*VO*&cat%5B%5D="+cat+"&[PARAMSTR]=" + searchString +" VO" )
+            } ) + "*VO*&cat%5B%5D="+cat+"&[PARAMSTR]=" + searchString  )
         elif audio_lang == "fr" or french:
             results.append( urllib.urlencode( {
                 'name': searchString
-            } ) + "*FRENCH*&cat%5B%5D="+cat+"&[PARAMSTR]=" + searchString +" FRENCH")
+            } ) + "*FRENCH*&cat%5B%5D="+cat+"&[PARAMSTR]=" + searchString )
         else:
             results.append( urllib.urlencode( {
                 'name': searchString

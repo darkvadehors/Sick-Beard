@@ -18,16 +18,25 @@
 
 
 import sys
+if sys.version_info >= (2, 7, 9):
+	import ssl
 import urllib
 import os.path
 import ConfigParser
+import sickbeard
+
+from sickbeard import logger
 
 class AuthURLOpener(urllib.FancyURLopener):
     def __init__(self, user, pw):
         self.username = user
         self.password = pw
         self.numTries = 0
-        urllib.FancyURLopener.__init__(self)
+        if sys.version_info >= (2, 7, 9):
+			logger.log(u"sys.version_info "+sys.version_info, logger.ERROR)
+			urllib.FancyURLopener.__init__(self, context=ssl._create_unverified_context())
+		else:
+			urllib.FancyURLopener.__init__(self)
     
     def prompt_user_passwd(self, host, realm):
         if self.numTries == 0:
