@@ -4,7 +4,7 @@
 #from sickbeard import db,helpers
 
 #set global $title="Home"
-#set global $header="Show List"
+#set global $header="Liste des Séries"
 
 #set global $sbPath = ".."
 
@@ -29,7 +29,7 @@
 	#set $showObj = helpers.findCertainShow(sickbeard.showList, show[0])
 	#if $showObj:
 		#if sickbeard.showQueueScheduler.action.isInUpdateQueue($showObj):
-			#set $show_message = 'Objects are being refreshed.'
+			#set $show_message = 'Les objets sont en cours d&acute;actualisation.'
 			#break
 		#end if
 	#end if
@@ -38,7 +38,7 @@
 	#set $showObj = helpers.findCertainShow(sickbeard.showList, show[0])
 	#if $showObj:
 		#if sickbeard.showQueueScheduler.action.isBeingUpdated(showObj):
-			#set $show_message += ' Current show being processed : '+ showObj.name
+			#set $show_message += ' Série actuel en cours de traitement: '+ showObj.name
 			#break
 		#end if
 	#end if
@@ -73,9 +73,9 @@
 </div>
 
 <div id="HomeLayout" style="float: right; margin-top: -18px;">
-	<span><b>Layout:</b>
+	<span><b>Disposition:</b>
 		<a class="inner" href="$sbRoot/setHomeLayout/?layout=poster" style="font-size: 12px;">Poster</a> &middot;
-		<a class="inner" href="$sbRoot/setHomeLayout/?layout=banner" style="font-size: 12px;">Banner</a> &middot;
+		<a class="inner" href="$sbRoot/setHomeLayout/?layout=banner" style="font-size: 12px;">Bannière</a> &middot;
 		<a class="inner" href="$sbRoot/setHomeLayout/?layout=simple" style="font-size: 12px;">Simple</a>		
 	</span>
 </div>
@@ -170,16 +170,16 @@ function createDownloadBar(tvID,download,snatched, wanted,total){
     		"<div style=\"width:115px;\">"+
 	    		"<div style=\"font-size:10px;\">"+
 		    		"<div>"+
-		    			"<span>Downloaded</span><span style=\"float:right;\"> "+ download +"</span>"+
+		    			"<span>T&eacute;l&eacute;charg&eacute;</span><span style=\"float:right;\"> "+ download +"</span>"+
 		    		"</div>"+
 		    		"<div>"+
-		    			"<span>Snatched</span><span style=\"float:right;\"> "+ snatched +"</span>"+
+		    			"<span>Rep&eacute;r&eacute;</span><span style=\"float:right;\"> "+ snatched +"</span>"+
 		    		"</div>"+
 		    		"<div>"+
-		    			"<span>Wanted</span><span style=\"float:right;\"> "+ wanted +"</span>"+
+		    			"<span>Voulu</span><span style=\"float:right;\"> "+ wanted +"</span>"+
 		    		"</div>"+
 		    		"<div>"+
-		    			"<span>Missing</span><span style=\"float:right;\"> "+ parseInt(parseInt(total)-(parseInt(download)+parseInt(snatched)+parseInt(wanted))) +"</span>"+
+		    			"<span>Manquant</span><span style=\"float:right;\"> "+ parseInt(parseInt(total)-(parseInt(download)+parseInt(snatched)+parseInt(wanted))) +"</span>"+
 		    		"</div>"+
 		    		"<div>"+
 		    			"<span>Total</span><span style=\"float:right;\"> "+ total +"</span>"+
@@ -219,13 +219,13 @@ function createFRBar(tvID,audio,st,total){
 		    			"<span>Audio FR</span><span style=\"float:right;\"> "+ audio +"</span>"+
 		    		"</div>"+
 		    		"<div>"+
-		    			"<span>Only Sub FR</span><span style=\"float:right;\"> "+ st +"</span>"+
+		    			"<span>Seulement ST FR</span><span style=\"float:right;\"> "+ st +"</span>"+
 		    		"</div>"+
 		    		"<div>"+
-		    			"<span>Missing</span><span style=\"float:right;\"> "+ parseInt(parseInt(total)-(parseInt(audio)+parseInt(st))) +"</span>"+
+		    			"<span>Manquant</span><span style=\"float:right;\"> "+ parseInt(parseInt(total)-(parseInt(audio)+parseInt(st))) +"</span>"+
 		    		"</div>"+
 		    		"<div>"+
-		    			"<span>Total Downloaded</span><span style=\"float:right;\"> "+ total +"</span>"+
+		    			"<span>Total T&eacute;l&eacute;charg&eacute;</span><span style=\"float:right;\"> "+ total +"</span>"+
 		    		"</div>"+
 				"</div>"+
     		"</div>"+
