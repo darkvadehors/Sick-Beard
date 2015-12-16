@@ -98,7 +98,7 @@
 		\$("#SubMenu a:contains('Trunc Episode List Processed')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Trunc Episode List Processed </a>');
         \$("#SubMenu a[href='$sbRoot/errorlogs/clearerrors']").addClass('btn').html('<span class="ui-icon ui-icon-trash pull-left"></span> Effacer Erreurs </a>');
 		\$("#SubMenu a:contains('Re-scan')").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Re-scanner </a>');
-		\$("#SubMenu a:contains('Backlog Overview')").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Backlog Overview </a>');
+		\$("#SubMenu a:contains('Backlog Overview')").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Journal Vue d&acute;;ensemble </a>');
         \$("#SubMenu a[href='$sbRoot/home/updatePLEX/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Update PLEX </a>');
 		\$("#SubMenu a:contains('Force')").addClass('btn').html('<span class="ui-icon ui-icon-transfer-e-w pull-left"></span> Force Mise &agrave; jour compl&egrave;te </a>');
 		\$("#SubMenu a:contains('Rename')").addClass('btn').html('<span class="ui-icon ui-icon-tag pull-left"></span> Renommer </a>');
@@ -106,17 +106,17 @@
 		\$("#SubMenu a[href='$sbRoot/config/subtitles/']").addClass('btn').html('<span class="ui-icon ui-icon-comment pull-left"></span> Chercher Sous-Titre </a>');
 		\$("#SubMenu a[href^='$sbRoot/home/subtitleShow']").addClass('btn').html('<span class="ui-icon ui-icon-comment pull-left"></span> T&eacute;l&eacute;charger Sous-Titre </a>');
 		\$("#SubMenu a[href^='$sbRoot/home/subtitleShowClean']").addClass('btn').html('<span class="ui-icon ui-icon-comment pull-left"></span> Effacer Sous-Titre </a>');
-		\$("#SubMenu a:contains('Settings')").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> Search Settings </a>');
-		\$("#SubMenu a:contains('Provider')").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> Search Providers </a>');
+		\$("#SubMenu a:contains('Settings')").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> R&eacute;glages Recherches </a>');
+		\$("#SubMenu a:contains('Provider')").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> Fournisseurs de Rechecher </a>');
 		\$("#SubMenu a:contains('General')").addClass('btn').html('<span class="ui-icon ui-icon-gear pull-left"></span> G&eacute;n&eacute;ral </a>');
-		\$("#SubMenu a:contains('Episode Status')").addClass('btn').html('<span class="ui-icon ui-icon-transferthick-e-w pull-left"></span> Episode Status Management </a>');
-		\$("#SubMenu a:contains('Missed Subtitle')").addClass('btn').html('<span class="ui-icon ui-icon-transferthick-e-w pull-left"></span> Missed Subtitles </a>');
+		\$("#SubMenu a:contains('Episode Status')").addClass('btn').html('<span class="ui-icon ui-icon-transferthick-e-w pull-left"></span> Gestion d&acute;&eacute;tat des Episodes </a>');
+		\$("#SubMenu a:contains('Missed Subtitle')").addClass('btn').html('<span class="ui-icon ui-icon-transferthick-e-w pull-left"></span> Sous&ndash;titres manqu&eacute;s </a>');
 		\$("#SubMenu a[href='$sbRoot/home/addShows/']").addClass('btn').html('<span class="ui-icon ui-icon-video pull-left"></span> Ajouter une S&eacute;rie </a>');
-		\$("#SubMenu a:contains('Processing')").addClass('btn').html('<span class="ui-icon ui-icon-folder-open pull-left"></span> Post-Processing </a>');
-		\$("#SubMenu a:contains('Manage Searches')").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> Manage Searches </a>');
+		\$("#SubMenu a:contains('Processing')").addClass('btn').html('<span class="ui-icon ui-icon-folder-open pull-left"></span> Post&ndash;traitement </a>');
+		\$("#SubMenu a:contains('Manage Searches')").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> G&eacute;rer recherches </a>');
 		\$("#SubMenu a:contains('Notification')").addClass('btn').html('<span class="ui-icon ui-icon-note pull-left"></span> Notification </a>');
-		\$("#SubMenu a:contains('Update show in XBMC')").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Update show in XBMC </a>');
-        \$("#SubMenu a[href='$sbRoot/home/updateXBMC/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Update XBMC </a>');
+		\$("#SubMenu a:contains('Update show in XBMC')").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Mise &agrave; jour spectacle dans XBMC </a>');
+        \$("#SubMenu a[href='$sbRoot/home/updateXBMC/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Mise &agrave; jour XBMC </a>');
 		
 	}
     \$(document).ready(function(){ 
@@ -159,7 +159,7 @@
             \$('#MainMenu.sf-menu').hideSuperfishUl();
             e.preventDefault();
             var target = \$( this ).attr('href');
-            if ( confirm("Are you sure you want to " + \$(this).text() + "?") )
+            if ( confirm("&Ecirc;tes-vous s&ucirc;r de vouloir " + \$(this).text() + "?") )
                 location.href = target;
             return false;
         });
@@ -183,14 +183,14 @@
 <div id="header">
 	<div class="wrapper">
     <a name="top"></a>
-    <span id="logo"><a href="$sbRoot/home/" title="Sick Beard homepage"><img alt="Sick Beard" src="$sbRoot/images/sickbeard.png" width="150" /></a></span>
+    <span id="logo"><a href="$sbRoot/home/" title="Sick Beard Page d&acute;accueil"><img alt="Sick Beard" src="$sbRoot/images/sickbeard.png" width="150" /></a></span>
     <span id="versiontext">VO/VF avec Interface Française</span>
     
     <ul id="MainMenu" class="sf-menu">
                 <li id="NAVhome"><a href="$sbRoot/home/">Liste des s&eacute;ries</a>
                     <ul>
                             <li><a href="$sbRoot/home/addShows/"><img src="$sbRoot/images/menu/addshow16.png" alt="" width="16" height="16" />Nouvelle S&eacute;ries</a></li>
-                            <li><a href="$sbRoot/home/postprocess/"><img src="$sbRoot/images/menu/postprocess16.png" alt="" width="16" height="16" />Post-Traitement Manuelle</a></li>
+                            <li><a href="$sbRoot/home/postprocess/"><img src="$sbRoot/images/menu/postprocess16.png" alt="" width="16" height="16" />Post-Traitement Manuel</a></li>
                     </ul>
                 </li>
                 <li id="NAVcomingEpisodes"><a href="$sbRoot/comingEpisodes/">Episodes &agrave; venir</a></li>
