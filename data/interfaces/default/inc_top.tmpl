@@ -159,7 +159,7 @@
             \$('#MainMenu.sf-menu').hideSuperfishUl();
             e.preventDefault();
             var target = \$( this ).attr('href');
-            if ( confirm("Etes-vous sur de vouloir " + \$(this).text() + "?") )
+            if ( confirm("Etes-vous sur de vouloir faire la" + \$(this).text() + "?") )
                 location.href = target;
             return false;
         });
