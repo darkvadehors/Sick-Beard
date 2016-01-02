@@ -19,9 +19,9 @@
         <form id="configForm" action="saveNotifications" method="post">
             <div id="config-components">
 				<ul>
-					<li><a href="#tabs-1">Home Theater</a></li>
-					<li><a href="#tabs-2">Devices</a></li>
-					<li><a href="#tabs-3">Online</a></li>
+					<li><a href="#tabs-1">Home cinéma</a></li>
+					<li><a href="#tabs-2">Appareils</a></li>
+					<li><a href="#tabs-3">En ligne</a></li>
 				</ul>
 
                 <div id="tabs-1">
@@ -29,14 +29,14 @@
                 
                     <div class="component-group-desc">
                         <h3><a href="http://xbmc.org/" onclick="window.open(this.href, '_blank'); return false;">                        <img class="notifier-icon" src="$sbRoot/images/notifiers/xbmc.png" alt="" title="XBMC" /> XBMC </a></h3>
-                        <p>A free and open source cross-platform media center and home entertainment system software with a 10-foot user interface designed for the living-room TV.</p>
+                        <p>Une source libre et ouverte, médias center multiplateformes et le système logiciel de divertissement à domicile avec une interface utilisateur conçu pour le téléviseur du salon.</p>
                     </div>
                     <fieldset class="component-group-list">
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_xbmc" id="use_xbmc" #if $sickbeard.USE_XBMC then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_xbmc">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send XBMC commands?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Si Sick Beard envoie des commandes XBMC ?</span>
                             </label>
                         </div>
 
@@ -44,43 +44,43 @@
                             <div class="field-pair">
                                 <input type="checkbox" name="xbmc_notify_onsnatch" id="xbmc_notify_onsnatch" #if $sickbeard.XBMC_NOTIFY_ONSNATCH then "checked=\"checked\"" else ""# />
                                 <label class="clearfix" for="xbmc_notify_onsnatch">
-                                    <span class="component-title">Notify on Snatch</span>
-                                    <span class="component-desc">Send notification when we start a download?</span>
+                                    <span class="component-title">Notifier &acute; la capture</span>
+                                    <span class="component-desc">Envoyer une notification quand nous commen&ccedil,ons t&eacute;l&eacute;chargement ?</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <input type="checkbox" name="xbmc_notify_ondownload" id="xbmc_notify_ondownload" #if $sickbeard.XBMC_NOTIFY_ONDOWNLOAD then "checked=\"checked\"" else ""# />
                                 <label class="clearfix" for="xbmc_notify_ondownload">
-                                    <span class="component-title">Notify on Download</span>
-                                    <span class="component-desc">Send notification when we finish a download?</span>
+                                    <span class="component-title">Notifier au t&eacute;l&eacute;chargement</span>
+                                    <span class="component-desc">Envoyer une notification quand le t&eacute;l&eacute;chargement est fini ?</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <input type="checkbox" name="xbmc_notify_onsubtitledownload" id="xbmc_notify_onsubtitledownload" #if $sickbeard.XBMC_NOTIFY_ONSUBTITLEDOWNLOAD then "checked=\"checked\"" else ""# />
                                 <label class="clearfix" for="xbmc_notify_onsubtitledownload">
-                                    <span class="component-title">Notify on Subtitle Download</span>
-                                    <span class="component-desc">Send notification when we finish a subtitle download?</span>
+                                    <span class="component-title">Notifier au t&eacute;l&eacute;chargement des Sous-Titres</span>
+                                    <span class="component-desc">Envoyer une notification quand le t&eacute;l&eacute;chargement des Sous-Titres est fini ?</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <input type="checkbox" name="xbmc_update_library" id="xbmc_update_library" #if $sickbeard.XBMC_UPDATE_LIBRARY then "checked=\"checked\"" else ""# />
                                 <label class="clearfix" for="xbmc_update_library">
-                                    <span class="component-title">Update Library</span>
-                                    <span class="component-desc">Update XBMC library when we finish a download?</span>
+                                    <span class="component-title">Mise &agrave; jour de la Update Biblioth&eagrave;que</span>
+                                    <span class="component-desc">Mise &agrave; jour de la biblioth&egrave;que XBMC quand nous aurons fini t&eacute;l&eacute;chargement ?</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <input type="checkbox" name="xbmc_update_full" id="xbmc_update_full" #if $sickbeard.XBMC_UPDATE_FULL then "checked=\"checked\"" else ""# />
                                 <label class="clearfix" for="xbmc_update_full">
-                                    <span class="component-title">Full Library Update</span>
-                                    <span class="component-desc">Do a full library update if per-show fails?</span>
+                                    <span class="component-title">Mettre &agrave; jour compl&egrave;te de la biblioth&egrave;que</span>
+                                    <span class="component-desc">Effectuez une mise &agrave; jour de la biblioth&egrave;que compl&egrave;te si un spectacle &eacute;choue ?</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <input type="checkbox" name="xbmc_update_onlyfirst" id="xbmc_update_onlyfirst" #if $sickbeard.XBMC_UPDATE_ONLYFIRST then "checked=\"checked\"" else ""# />
                                 <label class="clearfix" for="xbmc_update_onlyfirst">
-                                    <span class="component-title">Only Update First Host</span>
-                                    <span class="component-desc">Only send library update to the first host that is active?</span>
+                                    <span class="component-title">Mettre &agrave; jour seulement le premier h&ocirc;te</span>
+                                    <span class="component-desc">Envoyer seulement la biblioth&egrave;que &agrave; jour pour le premier h&ocirc;te qui est actif ?</span>
                                 </label>
                             </div>                            
                             <div class="field-pair">
@@ -90,40 +90,40 @@
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Host running XBMC (eg. 192.168.1.100:8080)</span>
+                                    <span class="component-desc">h&ocirc;te en marche XBMC (ex. 192.168.1.100:8080)</span>
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">(multiple host strings must be separated by commas,</span>
+                                    <span class="component-desc">(plusieurs cha&icirc;nes d'h&ocirc;te doivent &ecirc;tre s&eacute;par&eacute;s par des virgules,</span>
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">the library updates will only be sent to the first host listed)</span>
+                                    <span class="component-desc">les mises &agrave; jour de la biblioth&egrave;que ne seront envoy&eacute;s au premier h&ocirc;te r&eacute;pertori&eacute;)</span>
                                 </label>                                
                             </div>
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">XBMC Username</span>
+                                    <span class="component-title">Nom d&apos;Utilisateur XBMC</span>
                                     <input type="text" name="xbmc_username" id="xbmc_username" value="$sickbeard.XBMC_USERNAME" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Username of your XBMC server (blank for none)</span>
+                                    <span class="component-desc">Nom d&apos;utilisateur pour votre serveur XBMC (blanc si pas de nom d&apos;utilisateur)</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">XBMC Password</span>
+                                    <span class="component-title">Mot de passe XBMC</span>
                                     <input type="password" name="xbmc_password" id="xbmc_password" value="$sickbeard.XBMC_PASSWORD" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Password of your XBMC server (blank for none)</span>
+                                    <span class="component-desc">Mot de passe pour votre serveur XBMC (blanc si pas de mot de passe)</span>
                                 </label>
                             </div>
-                            <div class="testNotification" id="testXBMC-result">Click below to test.</div>
+                            <div class="testNotification" id="testXBMC-result">Cliquez ci dessous pour tester.</div>
                             <input  class="btn" type="button" value="Test XBMC" id="testXBMC" />
-                            <input type="submit" class="config_submitter btn" value="Save Changes" />
+                            <input type="submit" class="config_submitter btn" value="Sauvegarder les modifications" />
                         </div><!-- /content_use_xbmc //-->
 
                     </fieldset>
