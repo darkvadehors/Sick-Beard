@@ -1,6 +1,6 @@
 #import os.path
 #import sickbeard
-#set global $header="New Show"
+#set global $header="Nouvelle S&eacute;rie"
 #set global $title=""
 
 #set global $sbPath="../.."
@@ -27,7 +27,7 @@
 <form id="addShowForm" method="post" action="$sbRoot/home/addShows/addNewShow" accept-charset="utf-8">
 
 <fieldset class="sectionwrap">
-    <legend class="legendStep">Find a show on the TVDB</legend>
+    <legend class="legendStep">Trouvez la s&eacute;rie sur TVDB</legend>
 
     <div class="stepDiv">
         #if $use_provided_info:
@@ -40,10 +40,10 @@
             <select name="tvdbLang" id="tvdbLangSelect" style="height: 26px;margin-top: 1px;">
                 <option value="fr" selected="selected">fr</option>
             </select><b>*</b>
-            <input class="btn" type="button" id="searchName" value="Search" style="margin-top: -3px;" /><br /><br />
+            <input class="btn" type="button" id="searchName" value="Rechercher" style="margin-top: -3px;" /><br /><br />
     
-            <b>*</b> This will only affect the language of the retrieved metadata file contents and episode filenames.<br />
-            This <b>DOES NOT</b> allow Sick Beard to download non-english TV episodes!<br />
+            <b>*</b>Cela affectera uniquement la langue du contenu de fichiers de m&eacute;tadonn&eacute;es extraites et les noms de fichiers d&apos;&eacute;pisode..<br />
+            This <b>N&apos;Autorise pas </b> Sick Beard &agrave; t&eacute;l&eacute;charger des &eacute;pisodes non-Anglais !<br />
             <br />
             <div id="searchResults" style="height: 225px; overflow: auto;"><br/></div>
         #end if
@@ -52,7 +52,7 @@
 </fieldset>
 
 <fieldset class="sectionwrap">
-    <legend class="legendStep">Pick the parent folder</legend>
+    <legend class="legendStep">Choisir le dossier parent</legend>
 
     <div class="stepDiv">
         #if $provided_show_dir:
@@ -65,7 +65,7 @@
 </fieldset>
 
 <fieldset class="sectionwrap">
-    <legend class="legendStep">Customize options</legend>
+    <legend class="legendStep">Personnaliser les options</legend>
         <div class="stepDiv">
             #include $os.path.join($sickbeard.PROG_DIR, "data/interfaces/default/inc_addShowOptions.tmpl")
         </div>
@@ -80,9 +80,9 @@
 <br />
 
 <div style="width: 800px; text-align: center;">
-<input class="btn" type="button" id="addShowButton" value="Add Show" disabled="disabled" />
+<input class="btn" type="button" id="addShowButton" value="Ajouter une S&eacute;rie" disabled="disabled" />
 #if $provided_show_dir:
-<input class="btn" type="button" id="skipShowButton" value="Skip Show" />
+<input class="btn" type="button" id="skipShowButton" value="Ignorer la s&eacute;rie" />
 #end if
 </div>
 
