@@ -87,9 +87,9 @@
 <script type="text/javascript">
 <!--
 	function initActions() {
-        \$("#SubMenu a[href^='$sbRoot/home/restart/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Red&eacute;marrage </a>');
-        \$("#SubMenu a[href^='$sbRoot/manage/manageSearches/forceVersionCheck']").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> Mise &agrave; jour </a>');
-       	\$("#SubMenu a[href^='$sbRoot/home/shutdown/']").addClass('btn').html('<span class="ui-icon ui-icon-power pull-left"></span> Extinction </a>');		
+        \$("#SubMenu a[href^='$sbRoot/home/restart/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Red&eacute;marrer </a>');
+        \$("#SubMenu a[href^='$sbRoot/manage/manageSearches/forceVersionCheck']").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> faire la Mise &agrave; jour </a>');
+       	\$("#SubMenu a[href^='$sbRoot/home/shutdown/']").addClass('btn').html('<span class="ui-icon ui-icon-power pull-left"></span> Eteindre </a>');		
 		\$("#SubMenu a:contains('Edit')").addClass('btn').html('<span class="ui-icon ui-icon-pencil pull-left"></span> Editer </a>');
 		\$("#SubMenu a:contains('Delete')").addClass('btn').html('<span class="ui-icon ui-icon-trash pull-left"></span> Supprimer </a>');
 		\$("#SubMenu a:contains('Clear History')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Effacer l&acute;Historique </a>');
@@ -159,7 +159,7 @@
             \$('#MainMenu.sf-menu').hideSuperfishUl();
             e.preventDefault();
             var target = \$( this ).attr('href');
-            if ( confirm("Etes-vous sur de vouloir faire la" + \$(this).text() + "?") )
+            if ( confirm("Etes-vous sur de vouloir" + \$(this).text() + "?") )
                 location.href = target;
             return false;
         });
