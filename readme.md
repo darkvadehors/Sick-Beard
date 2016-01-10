@@ -51,7 +51,7 @@ Système de notification multiple et importation de trakt liste
 ![preview thumb](http://i.imgur.com/u6GGX5P.png)
 ![preview thumb](http://i.imgur.com/uz5Ru1a.png)
 
-Barre de progression multicolor avec info-bulle
+Barre de progression multicouleur avec info-bulle
 
 ![preview thumb](http://i.imgur.com/IfrAr7b.jpg)
 
