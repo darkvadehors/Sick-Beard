@@ -1,8 +1,8 @@
 #import sickbeard
 #import datetime
 #from sickbeard.common import *
-#set global $title="Manage Searches"
-#set global $header="Manage Searches"
+#set global $title="Gestion des Recherches"
+#set global $header="Gestion des Recherches"
 #set global $sbPath=".."
 
 #set global $topmenu="manage"#
@@ -16,13 +16,13 @@
    	<h1 class="title">$title</h1>
    #end if
 
-<h3>Backlog Search:</h3>
-<a class="btn" href="$sbRoot/manage/manageSearches/pauseBacklog?paused=#if $backlogPaused then "0" else "1"#"><i class="#if $backlogPaused then "icon-play" else "icon-pause"#"></i> #if $backlogPaused then "Unpause" else "Pause"#</a> 
+<h3>Journal des recherches:</h3>
+<a class="btn" href="$sbRoot/manage/manageSearches/pauseBacklog?paused=#if $backlogPaused then "0" else "1"#"><i class="#if $backlogPaused then "icon-play" else "icon-pause"#"></i> #if $backlogPaused then "Activer" else "Pause"#</a> 
 #if not $backlogRunning:
-Not in progress<br />
+Arr&eacute;t&eacute;<br />
 #else:
 #if $backlogPaused then "Paused: " else ""#
-Currently running<br />
+actuellement en cours d&apos;exécution<br />
 #end if
 
 <br />
