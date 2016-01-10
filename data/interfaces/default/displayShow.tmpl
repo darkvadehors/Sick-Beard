@@ -68,14 +68,14 @@
 
 <div class="navShows">
 </br>
-<div class="align-right"><b>Change Show:</b>
-<div class="navShow"><img id="prevShow" src="$sbRoot/images/prev.gif" alt="&lt;&lt;" title="Prev Show" /></div>
+<div class="align-right"><b>Changer de S&eacute;rie :</b>
+<div class="navShow"><img id="prevShow" src="$sbRoot/images/prev.gif" alt="&lt;&lt;" title="S&eacute;rie Pr&eacute;c&eacute;dente" /></div>
 <select id="pickShow">
 #for $curShow in $sortedShowList:
 <option value="$curShow.tvdbid" #if $curShow == $show then "selected=\"selected\"" else ""#>$curShow.name</option>
 #end for
 </select>
-<div class="navShow"><img id="nextShow" src="$sbRoot/images/next.gif" alt="&gt;&gt;" title="Next Show" /></div>
+<div class="navShow"><img id="nextShow" src="$sbRoot/images/next.gif" alt="&gt;&gt;" title="S&eacute;rie Suivante" /></div>
 </div></div>
 
 
@@ -125,13 +125,13 @@
 <span>
 #if (len($seasonResults) > 14):
     <select id="seasonJump">
-        <option value="jump">Jump to Season</option>
+        <option value="jump">Aller &agrave; la Saison</option>
     #for $seasonNum in $seasonResults:
-        <option value="#season-$seasonNum["season"]">#if int($seasonNum["season"]) == 0 then "Specials" else "Season " + str($seasonNum["season"])#</option>
+        <option value="#season-$seasonNum["season"]">#if int($seasonNum["season"]) == 0 then "Specials" else "Saison " + str($seasonNum["season"])#</option>
     #end for
     </select>
 #else:
-    <b>Season:</b>
+    <b>Saison:</b>
     #for $seasonNum in $seasonResults:
         #if int($seasonNum["season"]) == 0:
             <a href="#season-$seasonNum["season"]">Specials</a>
@@ -147,7 +147,7 @@
 
 <span class="float-right">
 #if $season_special:
-	<b>Display Specials:</b>
+	<b>Afficher les Episodes Sp&eacute;ciaux:</b>
 	#if sickbeard.DISPLAY_SHOW_SPECIALS:
 		<a class="inner" href="$sbRoot/toggleDisplayShowSpecials/?show=$show.tvdbid">Hide</a>
 	#else:
@@ -169,20 +169,20 @@
 <td  width="50%">
 <table>
 #if $show.network and $show.airs:
-    <tr><td class="showLegend">Airs: </td><td>$show.airs on $show.network</td></tr>
+    <tr><td class="showLegend">Diffuser: </td><td>$show.airs on $show.network</td></tr>
 #else if $show.network:
-    <tr><td class="showLegend">Airs: </td><td>$show.network</td></tr>
+    <tr><td class="showLegend">Diffuser: </td><td>$show.network</td></tr>
 #else if $show.airs:
-    <tr><td class="showLegend">Airs: </td><td>$show.airs</td></tr>
+    <tr><td class="showLegend">Diffuser: </td><td>$show.airs</td></tr>
 #end if
     <tr><td class="showLegend">Status: </td><td>$show.status</td></tr>
 #if $showLoc[1]:
-    <tr><td class="showLegend">Location: </td><td>$showLoc[0]</td></tr>
+    <tr><td class="showLegend">Emplacement: </td><td>$showLoc[0]</td></tr>
 #else:
-    <tr><td class="showLegend"><span style="color: red;">Location: </span></td><td><span style="color: red;">$showLoc[0]</span> (dir is missing)</td></tr>
+    <tr><td class="showLegend"><span style="color: red;">Emplacement: </span></td><td><span style="color: red;">$showLoc[0]</span> (dir is missing)</td></tr>
 #end if
 #set $anyQualities, $bestQualities = $Quality.splitQuality(int($show.quality))
-    <tr><td class="showLegend">Quality: </td><td>
+    <tr><td class="showLegend">Qualit&eacute;: </td><td>
 #if $show.quality in $qualityPresets:
 <span class="quality $qualityPresetStrings[$show.quality]">$qualityPresetStrings[$show.quality]</span>
 #else:
@@ -194,38 +194,38 @@
 #end if
 #end if
 
-	<tr><td class="showLegend">Info Language:</td><td><img src="$sbRoot/images/flags/${show.lang}.png" width="16" height="11" alt="$show.lang" title="$show.lang" /></td></tr>
+	<tr><td class="showLegend">Info. Langue:</td><td><img src="$sbRoot/images/flags/${show.lang}.png" width="16" height="11" alt="$show.lang" title="$show.lang" /></td></tr>
     #if int($show.frenchsearch) == 1
-    <tr><td class="showLegend">Audio Language:</td><td><img src="$sbRoot/images/flags/${show.audio_lang}.png" width="16" height="11" alt="$show.audio_lang" title="$show.lang" />  <img src="$sbRoot/images/flags/fr.png" width="16" height="11" alt="fr" title="fr" /></td></tr>
+    <tr><td class="showLegend">Audio Langue:</td><td><img src="$sbRoot/images/flags/${show.audio_lang}.png" width="16" height="11" alt="$show.audio_lang" title="$show.lang" />  <img src="$sbRoot/images/flags/fr.png" width="16" height="11" alt="fr" title="fr" /></td></tr>
     #else
-    <tr><td class="showLegend">Audio Language:</td><td><img src="$sbRoot/images/flags/${show.audio_lang}.png" width="16" height="11" alt="$show.audio_lang" title="$show.lang" /></td></tr>
+    <tr><td class="showLegend">Audio Langue:</td><td><img src="$sbRoot/images/flags/${show.audio_lang}.png" width="16" height="11" alt="$show.audio_lang" title="$show.lang" /></td></tr>
     #end if
-    <tr><td class="showLegend">Custom Names :</td><td>#if $show.exceptions then $exceptions_string else $show.name#</td></tr>
+    <tr><td class="showLegend">Noms Personnalis&eacute;s :</td><td>#if $show.exceptions then $exceptions_string else $show.name#</td></tr>
 	#if $show.imdbid:
 	#if $show.imdb_info['rating'] !='':
-	<tr><td class="showLegend">Rating :</td><td>$show.imdb_info['rating']</td></tr>
+	<tr><td class="showLegend">&Eacute;valuation :</td><td>$show.imdb_info['rating']</td></tr>
 	#else:	
-	<tr><td class="showLegend">No Rating</td><td></td></tr>
+	<tr><td class="showLegend">Pas d&apos;&Eacute;valuation</td><td></td></tr>
 	#end if:
 	#else:
-	<tr><td class="showLegend">No Rating</td><td></td></tr>
+	<tr><td class="showLegend">Pas d&apos;&Eacute;valuation</td><td></td></tr>
 	#end if
 	</td></tr>
     </table>
     <td width="25%">
     <table>
-    <tr><td class="showLegend">Flat Folders: </td><td><img src="$sbRoot/images/#if $show.flatten_folders == 1 or $sickbeard.NAMING_FORCE_FOLDERS then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
-    <tr><td class="showLegend">Paused: </td><td><img src="$sbRoot/images/#if int($show.paused) == 1 then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
+    <tr><td class="showLegend">Pas de Sous dossier: </td><td><img src="$sbRoot/images/#if $show.flatten_folders == 1 or $sickbeard.NAMING_FORCE_FOLDERS then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
+    <tr><td class="showLegend">Pause: </td><td><img src="$sbRoot/images/#if int($show.paused) == 1 then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
     
     <tr><td class="showLegend">Air-by-Date: </td><td><img src="$sbRoot/images/#if int($show.air_by_date) == 1 then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
 	#if $sickbeard.USE_SUBTITLES
-    <tr><td class="showLegend">Subtitles: </td><td><img src="$sbRoot/images/#if int($show.subtitles) == 1 then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
+    <tr><td class="showLegend">Sous Titres: </td><td><img src="$sbRoot/images/#if int($show.subtitles) == 1 then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
 #end if
-    <tr><td class="showLegend"><img src="$sbRoot/images/flags/fr.png" width="16" height="11" alt="fr" title="fr" /> episodes:</td><td>$lfr</td></tr>
-    <tr><td class="showLegend"><img src="$sbRoot/images/flags/en.png" width="16" height="11" alt="en" title="en" /> episodes:</td><td>$leng</td></tr>
-    <tr><td class="showLegend"><img src="$sbRoot/images/flags/unknown.png" width="16" height="11" alt="uno" title="uno" /> episodes:</td><td>$lno</td></tr>
-	<tr><td class="showLegend"><img src="$sbRoot/images/no16.png" width="10" height="10" alt="no" title="no" /> episodes:</td><td>$lmanq</td></tr>
-	<tr><td class="showLegend"><img src="$sbRoot/images/closed_captioning.png" width="12" height="12" alt="no" title="no" /> downloaded:</td><td>$lsubs</td></tr>
+    <tr><td class="showLegend"><img src="$sbRoot/images/flags/fr.png" width="16" height="11" alt="fr" title="fr" /> &eacute;pisodes:</td><td>$lfr</td></tr>
+    <tr><td class="showLegend"><img src="$sbRoot/images/flags/en.png" width="16" height="11" alt="en" title="en" /> &eacute;pisodes:</td><td>$leng</td></tr>
+    <tr><td class="showLegend"><img src="$sbRoot/images/flags/unknown.png" width="16" height="11" alt="uno" title="uno" /> &eacute;pisodes:</td><td>$lno</td></tr>
+	<tr><td class="showLegend"><img src="$sbRoot/images/no16.png" width="10" height="10" alt="no" title="no" /> &eacute;pisodes:</td><td>$lmanq</td></tr>
+	<tr><td class="showLegend"><img src="$sbRoot/images/closed_captioning.png" width="12" height="12" alt="no" title="no" /> T&eacute;l&eacute;charg&eacute;:</td><td>$lsubs</td></tr>
 	
 </table>
 
@@ -241,7 +241,7 @@
 <div style="clear:both;" class="clearfix"></div>
 
 <div class="float-left">
-	Change episodes to 
+	Changer les &eacute;pisodes en 
 	<select id="statusSelect">
 		#for $curStatus in [$WANTED, $SKIPPED, $ARCHIVED, $IGNORED, $SNATCHED] + sorted($Quality.DOWNLOADED):
 		#if $curStatus == $DOWNLOADED:
@@ -256,20 +256,20 @@
 
 	<div class="float-right clearfix" id="checkboxControls" style="margin-top: 3px;">
 		<div style="padding-bottom: 3px;">
-			<label for="wanted"><span class="wanted">Wanted <b>$epCounts[$Overview.WANTED]</b> <input type="checkbox" id="wanted" checked="checked" /></span></label>
-			<label for="snatched"><span class="snatched">Snatched <b>$epCounts[$Overview.SNATCHED]</b> <input type="checkbox" id="snatched" checked="checked" /></span></label>
-			<label for="qual"><span class="qual">Low Qual <b>$epCounts[$Overview.QUAL]</b> <input type="checkbox" id="qual" checked="checked" /></span></label>
-			<label for="good"><span class="good">Downloaded <b>$epCounts[$Overview.GOOD]</b> <input type="checkbox" id="good" checked="checked" /></span></label>
-			<label for="skipped"><span class="skipped">Skipped <b>$epCounts[$Overview.SKIPPED]</b> <input type="checkbox" id="skipped" checked="checked" /></span></label>
+			<label for="wanted"><span class="wanted">Voulu <b>$epCounts[$Overview.WANTED]</b> <input type="checkbox" id="wanted" checked="checked" /></span></label>
+			<label for="snatched"><span class="snatched">Trouv&eacute; <b>$epCounts[$Overview.SNATCHED]</b> <input type="checkbox" id="snatched" checked="checked" /></span></label>
+			<label for="qual"><span class="qual">Basse Qual. <b>$epCounts[$Overview.QUAL]</b> <input type="checkbox" id="qual" checked="checked" /></span></label>
+			<label for="good"><span class="good">T&eacute;l&eacute;lcharg&eacute; <b>$epCounts[$Overview.GOOD]</b> <input type="checkbox" id="good" checked="checked" /></span></label>
+			<label for="skipped"><span class="skipped">Ignor&eacute; <b>$epCounts[$Overview.SKIPPED]</b> <input type="checkbox" id="skipped" checked="checked" /></span></label>
 		</div>
 	    <div class="pull-right">
-	        <button class="btn btn-mini seriesCheck" style="line-height: 8px;"><a>Select Filtered Episodes</a></button> 
-	        <button class="btn btn-mini clearAll" style="line-height: 8px;"><a>Clear All</a></button>
+	        <button class="btn btn-mini seriesCheck" style="line-height: 8px;"><a>S&eacute;lectionnez &Eacute;pisodes filtr&eacute;s</a></button> 
+	        <button class="btn btn-mini clearAll" style="line-height: 8px;"><a>Tout &Eacute;ffacer</a></button>
 		</div>
     </div>
 <br />
 <div class="float-left">
-	Change audio of episodes to
+	Changer audio des épisodes en
 	<select id="audioSelect">
 		#for $k,$v in $common.showLanguages.iteritems():
 		#if $k!="":
