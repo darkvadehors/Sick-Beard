@@ -30,7 +30,7 @@
 #set $curno = [x[1] for x in $no if int(x[0]) == $show.tvdbid]
 #if len($curno) != 0:
    #set $lno = $curno[0]
-#else
+#elsea
    #set $lno = 0
 #end if
 #set $manq = $myDB.select("SELECT showid, COUNT(*) FROM tv_episodes WHERE location = '' AND season != 0 and episode != 0 AND (airdate <= "+$today+" and airdate != 1) and showid="+$tvid+" GROUP BY showid")
@@ -149,9 +149,9 @@
 #if $season_special:
 	<b>Afficher les Episodes Sp&eacute;ciaux:</b>
 	#if sickbeard.DISPLAY_SHOW_SPECIALS:
-		<a class="inner" href="$sbRoot/toggleDisplayShowSpecials/?show=$show.tvdbid">Hide</a>
+		<a class="inner" href="$sbRoot/toggleDisplayShowSpecials/?show=$show.tvdbid">Cacher</a>
 	#else:
-		<a class="inner" href="$sbRoot/toggleDisplayShowSpecials/?show=$show.tvdbid">Show</a>
+		<a class="inner" href="$sbRoot/toggleDisplayShowSpecials/?show=$show.tvdbid">Montrer</a>
 	#end if	
 #end if
 </span>
@@ -196,9 +196,9 @@
 
 	<tr><td class="showLegend">Info. Langue:</td><td><img src="$sbRoot/images/flags/${show.lang}.png" width="16" height="11" alt="$show.lang" title="$show.lang" /></td></tr>
     #if int($show.frenchsearch) == 1
-    <tr><td class="showLegend">Audio Langue:</td><td><img src="$sbRoot/images/flags/${show.audio_lang}.png" width="16" height="11" alt="$show.audio_lang" title="$show.lang" />  <img src="$sbRoot/images/flags/fr.png" width="16" height="11" alt="fr" title="fr" /></td></tr>
+    <tr><td class="showLegend">Langue Audio:</td><td><img src="$sbRoot/images/flags/${show.audio_lang}.png" width="16" height="11" alt="$show.audio_lang" title="$show.lang" />  <img src="$sbRoot/images/flags/fr.png" width="16" height="11" alt="fr" title="fr" /></td></tr>
     #else
-    <tr><td class="showLegend">Audio Langue:</td><td><img src="$sbRoot/images/flags/${show.audio_lang}.png" width="16" height="11" alt="$show.audio_lang" title="$show.lang" /></td></tr>
+    <tr><td class="showLegend">Langue Audio:</td><td><img src="$sbRoot/images/flags/${show.audio_lang}.png" width="16" height="11" alt="$show.audio_lang" title="$show.lang" /></td></tr>
     #end if
     <tr><td class="showLegend">Noms Personnalis&eacute;s :</td><td>#if $show.exceptions then $exceptions_string else $show.name#</td></tr>
 	#if $show.imdbid:
@@ -303,7 +303,7 @@
   #if $showSceneNumberColum
   <th>XEM</th>
   #end if
-  </th><th>Episode</th><th>Name</th><th class="nowrap">Airdate</th><th>Filename</th><th>Audio</th>#if $sickbeard.USE_SUBTITLES and $show.subtitles then "<th>Subs</th>" else ""#<th>Status</th><th>Search</th><th>Hist</th></tr>
+  </th><th>&Eacute;pisode</th><th>Nom</th><th class="nowrap">Diffusion</th><th>Fichier</th><th>Audio</th>#if $sickbeard.USE_SUBTITLES and $show.subtitles then "<th>Subs</th>" else ""#<th>statut</th><th>Recherche</th><th>Hist</th></tr>
         #set $curSeason = int($epResult["season"])
   #end if    
 
@@ -370,10 +370,10 @@ $epLoc
 </small>
      <td align="center">
     #if int($epResult["season"]) != 0:
-      <a class="epSearch" href="searchEpisode?show=$show.tvdbid&amp;season=$epResult["season"]&amp;episode=$epResult["episode"]"><img src="$sbRoot/images/search16.png" height="16" alt="search" title="Manual Search" /></a>
+      <a class="epSearch" href="searchEpisode?show=$show.tvdbid&amp;season=$epResult["season"]&amp;episode=$epResult["episode"]"><img src="$sbRoot/images/search16.png" height="16" alt="search" title="Recherche Manuelle" /></a>
     #end if
 #if $sickbeard.USE_SUBTITLES and $show.subtitles and len(set(str($epResult["subtitles"]).split(',')).intersection(set($subtitles.wantedLanguages()))) < len($subtitles.wantedLanguages()) and $epResult["location"]
-      <a class="epSubtitlesSearch" href="searchEpisodeSubtitles?show=$show.tvdbid&amp;season=$epResult["season"]&amp;episode=$epResult["episode"]"><img src="$sbRoot/images/closed_captioning.png" height="16" alt="search subtitles" title="Search Subtitles" /></a>
+      <a class="epSubtitlesSearch" href="searchEpisodeSubtitles?show=$show.tvdbid&amp;season=$epResult["season"]&amp;episode=$epResult["episode"]"><img src="$sbRoot/images/closed_captioning.png" height="16" alt="search subtitles" title="Rechercher les Sous Titres" /></a>
     #end if
     </td>
     <td align="center">
