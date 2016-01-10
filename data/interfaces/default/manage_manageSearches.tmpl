@@ -22,11 +22,11 @@
 Arr&eacute;t&eacute;<br />
 #else:
 #if $backlogPaused then "Paused: " else ""#
-actuellement en cours d&apos;exécution<br />
+Currently running<br />
 #end if
 
 <br />
-<h3>Daily Episode Search:</h3>
+<h3>Recherche Quotidienne des Episodes :</h3>
 <a class="btn" href="$sbRoot/manage/manageSearches/forceSearch"><i class="icon-exclamation-sign"></i> Force</a> 
 #if not $searchStatus:
 Not in progress<br />
@@ -35,8 +35,8 @@ In Progress<br />
 #end if
 <br />
 
-<h3>Version Check:</h3>
-<a class="btn" href="$sbRoot/manage/manageSearches/forceVersionCheck"><i class="icon-check"></i> Force Check</a>
+<h3>V&eacute;rification de nouvelle Version:</h3>
+<a class="btn" href="$sbRoot/manage/manageSearches/forceVersionCheck"><i class="icon-check"></i> Forcer la v&eacute;rification</a>
 <br />
 
 #include $os.path.join($sickbeard.PROG_DIR, "data/interfaces/default/inc_bottom.tmpl")
