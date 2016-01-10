@@ -37,7 +37,7 @@ formtowizard.prototype={
 			if (outcome===false)
 				doload=false
 		}	
-		var i=(rawi=="prev")? this.currentsection-1 : (rawi=="next")? this.currentsection+1 : parseInt(rawi) //get index of next section to show
+		var i=(rawi=="pr&eacue;c")? this.currentsection-1 : (rawi=="suiv")? this.currentsection+1 : parseInt(rawi) //get index of next section to show
 		i=(i<0)? this.sections.count-1 : (i>this.sections.count-1)? 0 : i //make sure i doesn't exceed min/max limit
 		if (i<this.sections.count && doload){ //if next section to show isn't the same as the current section shown
 			this.$thesteps.eq(this.currentsection).addClass('disabledstep').end().eq(i).removeClass('disabledstep') //dull current "step" text then highlight next "step" text
