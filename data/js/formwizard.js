@@ -60,7 +60,7 @@ formtowizard.prototype={
 			else{
 				this.sections.$sections.eq(this.currentsection).hide().end().eq(i).show()
 			}
-			this.paginatediv.$status.text("Page "+(i+1)+" of "+this.sections.count) //update current page status text
+			this.paginatediv.$status.text("&Eacute;tape "+(i+1)+" of "+this.sections.count) //update current page status text
 			this.paginatediv.$navlinks.css('visibility', 'visible')
 			if (i==0) //hide "prev" link
 				this.paginatediv.$navlinks.eq(0).css('visibility', 'hidden')
@@ -147,7 +147,7 @@ formtowizard.prototype={
 				}
 				$section.data('elements', []) //empty array to contain elements within this section that should be validated for data (applicable only if validate option is defined)
 				//create each "step" DIV and add it to main Steps Container:
-				var $thestep=$('<div class="step disabledstep" />').data('section', i).html('Etape '+(i+1)+'<div class="smalltext">'+$section.find('legend:eq(0)').text()+'<p></p></div>').appendTo($stepsguide)
+				var $thestep=$('<div class="step disabledstep" />').data('section', i).html('&Eacute;tape '+(i+1)+'<div class="smalltext">'+$section.find('legend:eq(0)').text()+'<p></p></div>').appendTo($stepsguide)
 				$thestep.click(function(){ //assign behavior to each step div
 					thiswizard.loadsection($(this).data('section'))
 				})
