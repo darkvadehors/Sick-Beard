@@ -9,7 +9,7 @@
 //jQuery.noConflict()
 
 
-function formtowizard(options){s
+function formtowizard(options){
 	this.setting=jQuery.extend({persistsection:false, revealfx:['slide', 500], oninit:function(){}, onpagechangestart:function(){}}, options)
 	this.currentsection=-1
 	this.init(this.setting)
@@ -147,7 +147,7 @@ formtowizard.prototype={
 				}
 				$section.data('elements', []) //empty array to contain elements within this section that should be validated for data (applicable only if validate option is defined)
 				//create each "step" DIV and add it to main Steps Container:
-				var $thestep=$('<div class="step disabledstep" />').data('section', i).html('Etape '+(i+1)+'<div class="smalltext">'+$section.find('legend:eq(0)').text()+'<p></p></div>').appendTo($stepsguide)
+				var $thestep=$('<div class="step disabledstep" />').data('section', i).html('Step '+(i+1)+'<div class="smalltext">'+$section.find('legend:eq(0)').text()+'<p></p></div>').appendTo($stepsguide)
 				$thestep.click(function(){ //assign behavior to each step div
 					thiswizard.loadsection($(this).data('section'))
 				})
@@ -160,7 +160,7 @@ formtowizard.prototype={
 			//$stepsguide.insertBefore($sectionswrapper) //add Steps Container before sectionswrapper container
 			var $thesteps=$stepsguide.find('div.step')
 			//create pagination DIV and add it to end of form:
-			var $paginatediv=$('<div class="formpaginate" style="overflow:hidden;"><span class="prev" style="float:left">pr&eacue;c</span> <span class="status">Etape 1 of </span> <span class="next" style="float:right">Suiv</span></div>')
+			var $paginatediv=$('<div class="formpaginate" style="overflow:hidden;"><span class="prev" style="float:left">Prev</span> <span class="status">Step 1 of </span> <span class="next" style="float:right">Next</span></div>')
 			$theform.append($paginatediv)
 			thiswizard.$theform=$theform
 			if (setting.revealfx[0]=="slide"){
