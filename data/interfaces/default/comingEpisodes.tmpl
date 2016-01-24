@@ -1,8 +1,13 @@
 #import sickbeard
 #import datetime
 #from sickbeard.common import *
+<<<<<<< HEAD
 #set global $title=""
-#set global $header="Coming Episodes"
+#set global $header="Episodes &agrave; venir"
+=======
+#set global $header="&Eacute;pisodes &agrave; venir"
+#set global $title=$header
+>>>>>>> origin/master
 
 #set global $sbPath=".."
 
@@ -22,13 +27,23 @@
 </style>
 
 <div class="h2footer align-right">
+<<<<<<< HEAD
     <b>Key:</b> 
-    <span class="listing_overdue">Missed</span>
-    <span class="listing_current">Current</span>
+    <span class="listing_overdue">Manquant</span>
+    <span class="listing_current">Courrant</span>
+=======
+    <b>l&eacute;sende:</b> 
+    <span class="listing_overdue">Manqué</span>
+    <span class="listing_current">Actuel</span>
+>>>>>>> origin/master
     <span class="listing_default">Future</span>
-    <span class="listing_toofar">Distant</span>
+    <span class="listing_toofar">&Eacute;loign&eacute;</span>
 	<a class="btn btn-mini btn-inverse forceBacklog" href="webcal://$sbHost:$sbHttpPort/calendar">
-	<i class="icon-calendar icon-white"></i>Subscribe</a>    
+<<<<<<< HEAD
+	<i class="icon-calendar icon-white"></i>S&apos;abonner</a>    
+=======
+	<i class="icon-calendar icon-white"></i>Cr&eacute;er un rappel</a>    
+>>>>>>> origin/master
     <!-- <span class="listing_unknown">Inconnu</span> //-->
 </div>
 
@@ -114,7 +129,11 @@
 <input type="hidden" id="sbRoot" value="$sbRoot" />
 
     <table id="showListTable" class="sickbeardTable tablesorter" cellspacing="1" border="0" cellpadding="0">
-    <thead><tr><th>Airdate</th><th>Show</th><th class="nowrap">Next Ep</th><th>Next Ep Name</th><th>Network</th><th>Quality</th><th>IMDb</th><th>tvDB</th><th>Search</th></tr></thead>
+<<<<<<< HEAD
+    <thead><tr><th>Diffusion</th><th>S&eacute;ries</th><th class="nowrap">Ep Suivant</th><th>Nom Ep suivant</th><th>Chaine</th><th>Qualit&eacute;</th><th>IMDb</th><th>tvDB</th><th>Search</th></tr></thead>
+=======
+    <thead><tr><th>Diffusion</th><th>S&eacute;rie</th><th class="nowrap">&Eacute;p. Suivant</th><th>Nom &Eacute;p. Suiv.</th><th>Chaine</th><th>Qualit&eacute;</th><th>IMDb</th><th>tvDB</th><th>Recherche</th></tr></thead>
+>>>>>>> origin/master
     <tbody>
 
     #for $cur_result in $sql_results:
@@ -145,7 +164,7 @@
             <span class="pause">[paused]</span>
             #end if
         </td>
-        <td class="nowrap" align="center" style="color: #555555; font-size: 16px;"><b><%="%02ix%02i" % (int(cur_result["season"]), int(cur_result["episode"])) %></b></td>
+        <td class="nowrap" align="center" style="color: #555555; font-size: 16px;"><b><%="%02ix%02i" % (int(cur_result["saison"]), int(cur_result["&eacute;pisode"])) %></b></td>
         <td>
         #if $cur_result["description"] != "" and $cur_result["description"] != None:
             <img alt="" src="$sbRoot/images/info32.png" height="16" width="16" class="plotInfo" id="plot_info_<%=str(cur_result["showid"])+"_"+str(cur_result["season"])+"_"+str(cur_result["episode"])%>" style="padding-top: 6px;"/>
@@ -233,7 +252,7 @@
             #set $cur_ep_enddate = $cur_result["localtime"] + datetime.timedelta(minutes=$cur_result["runtime"])
             #if $cur_segment != $cur_ep_airdate:
                 #if $cur_ep_enddate < $today and $cur_ep_airdate != $today.date() and not $missed_header:
-					<br /><h1 class="day">Missed</h1>
+					<br /><h1 class="day">Manqu&eacute;</h1>
                     #set $missed_header = True
                 #elif $cur_ep_airdate >= $next_week.date() and not $too_late_header:
                     <br /><h1 class="day">Later</h1>
@@ -305,12 +324,12 @@
           	      <span><a href="$sbRoot/home/searchEpisode?show=${cur_result["showid"]}&amp;season=$cur_result["season"]&amp;episode=$cur_result["episode"]" title="Manual Search" id="forceUpdate-${cur_result["showid"]}" class="epSearch forceUpdate"><img alt="[search]" height="16" width="16" src="$sbRoot/images/search32.png" id="forceUpdateImage-${cur_result["showid"]}" /></a></span>
           	  </span>
           	</div>
-            <span class="title">Next Episode:</span> <span><%=str(cur_result["season"])+"x"+"%02i" % int(cur_result["episode"]) %> - $cur_result["name"] ($datetime.date.fromordinal(int($cur_result["airdate"])))</span>
+            <span class="title">&Eacute;pisode Suivant: </span> <span><%=str(cur_result["season"])+"x"+"%02i" % int(cur_result["episode"]) %> - $cur_result["name"] ($datetime.date.fromordinal(int($cur_result["airdate"])))</span>
             <div class="clearfix">
-            	<span class="title">Airs:</span> <span>$cur_result["localtime_string"].decode($sickbeard.SYS_ENCODING) on $cur_result["network"]</span>
+            	<span class="title">Diffusion: </span> <span>$cur_result["localtime_string"].decode($sickbeard.SYS_ENCODING) on $cur_result["network"]</span>
 	        </div>
             <div class="clearfix">
-	            <span class="title">Quality:</span>
+	            <span class="title">Qualit&eacute;:</span>
 	            #if int($cur_result["quality"]) in $qualityPresets:
 	             <span class="quality $qualityPresetStrings[int($cur_result["quality"])]">$qualityPresetStrings[int($cur_result["quality"])]</span>
 	            #else:
@@ -323,10 +342,10 @@
           <td style="vertical-align: top;">
           <div>        	        
             #if $cur_result["description"] == '':
-            	<span class="title">Plot:</span>
-                <img class="ep_summaryTrigger" src="$sbRoot/images/plus.png" height="16" width="16" alt="" title="Toggle Summary" /><div class="ep_summary">[There is no summary added for this episode]</div>
+            	<span class="title">Intrigue : </span>
+                <img class="ep_summaryTrigger" src="$sbRoot/images/plus.png" height="16" width="16" alt="" title="Toggle Summary" /><div class="ep_summary">[Il n'y a pas de r&eacute;sum&eacute; pour cet &eacute;pisode]</div>
             #else:
-            	<span class="title">Plot:</span>
+            	<span class="title">Intrigue : </span>
                 <img class="ep_summaryTrigger" src="$sbRoot/images/plus.png" height="16" width="16" alt="" title="Toggle Summary" /><div class="ep_summary">$cur_result["description"]</div>
             #end if
           </div>

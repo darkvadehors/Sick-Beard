@@ -87,9 +87,9 @@
 <script type="text/javascript">
 <!--
 	function initActions() {
-        \$("#SubMenu a[href^='$sbRoot/home/restart/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Red&eacute;marrage </a>');
-        \$("#SubMenu a[href^='$sbRoot/manage/manageSearches/forceVersionCheck']").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> Mise &agrave; jour </a>');
-       	\$("#SubMenu a[href^='$sbRoot/home/shutdown/']").addClass('btn').html('<span class="ui-icon ui-icon-power pull-left"></span> Extinction </a>');		
+        \$("#SubMenu a[href^='$sbRoot/home/restart/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Red&eacute;marrer </a>');
+        \$("#SubMenu a[href^='$sbRoot/manage/manageSearches/forceVersionCheck']").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> faire la Mise &agrave; jour </a>');
+       	\$("#SubMenu a[href^='$sbRoot/home/shutdown/']").addClass('btn').html('<span class="ui-icon ui-icon-power pull-left"></span> Eteindre </a>');		
 		\$("#SubMenu a:contains('Edit')").addClass('btn').html('<span class="ui-icon ui-icon-pencil pull-left"></span> Editer </a>');
 		\$("#SubMenu a:contains('Delete')").addClass('btn').html('<span class="ui-icon ui-icon-trash pull-left"></span> Supprimer </a>');
 		\$("#SubMenu a:contains('Clear History')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Effacer l&acute;Historique </a>');
@@ -99,7 +99,7 @@
         \$("#SubMenu a[href='$sbRoot/errorlogs/clearerrors']").addClass('btn').html('<span class="ui-icon ui-icon-trash pull-left"></span> Effacer Erreurs </a>');
 		\$("#SubMenu a:contains('Re-scan')").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Re-scanner </a>');
 		\$("#SubMenu a:contains('Backlog Overview')").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Journal Vue d&acute;ensemble </a>');
-        \$("#SubMenu a[href='$sbRoot/home/updatePLEX/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Update PLEX </a>');
+        \$("#SubMenu a[href='$sbRoot/home/updatePLEX/']").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Mise &agrave; jour de PLEX </a>');
 		\$("#SubMenu a:contains('Force')").addClass('btn').html('<span class="ui-icon ui-icon-transfer-e-w pull-left"></span> Force Mise &agrave; jour compl&egrave;te </a>');
 		\$("#SubMenu a:contains('Rename')").addClass('btn').html('<span class="ui-icon ui-icon-tag pull-left"></span> Renommer </a>');
 		\$("#SubMenu a:contains('French')").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Rechercher St-Francais</a>');
@@ -159,7 +159,7 @@
             \$('#MainMenu.sf-menu').hideSuperfishUl();
             e.preventDefault();
             var target = \$( this ).attr('href');
-            if ( confirm("Etes-vous sur de vouloir faire la" + \$(this).text() + "?") )
+            if ( confirm("Etes-vous sur de vouloir" + \$(this).text() + "?") )
                 location.href = target;
             return false;
         });
@@ -221,6 +221,9 @@
                             <li><a href="$sbRoot/config/subtitles/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />R&eacute;glage Sous-Titres</a></li>
                             <li><a href="$sbRoot/config/postProcessing/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />Post-Traitement</a></li>
                             <li><a href="$sbRoot/config/notifications/"><img src="$sbRoot/images/menu/config16.png" alt="" width="16" height="16" />Notifications</a></li>
+                            <li><a href="$sbRoot/manage/manageSearches/forceVersionCheck"><img src="$sbRoot/images/menu/update16.png" alt="" width="16" height="16" />Mettre à jour</a></li>
+       			    <li><a href="$sbRoot/home/restart/?pid=$sbPID" class="confirm"><img src="$sbRoot/images/menu/restart16.png" alt="" width="16" height="16" />redémarrer</a></li>
+       			    <li><a href="$sbRoot/home/shutdown/?pid=$sbPID" class="confirm"><img src="$sbRoot/images/menu/shutdown16.png" alt="" width="16" height="16" />Extinction</a></li>
                     </ul>
                 </li>
                 
