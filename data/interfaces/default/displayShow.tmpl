@@ -200,7 +200,7 @@
     #else
     <tr><td class="showLegend">Langue Audio:</td><td><img src="$sbRoot/images/flags/${show.audio_lang}.png" width="16" height="11" alt="$show.audio_lang" title="$show.lang" /></td></tr>
     #end if
-    <tr><td class="showLegend">Noms Personnalis&eacute;s :</td><td>#if $show.exceptions then $exceptions_string else $show.name#</td></tr>
+    <tr><td class="showLegend">Nom Perso. :</td><td>#if $show.exceptions then $exceptions_string else $show.name#</td></tr>
 	#if $show.imdbid:
 	#if $show.imdb_info['rating'] !='':
 	<tr><td class="showLegend">&Eacute;valuation :</td><td>$show.imdb_info['rating']</td></tr>
@@ -214,10 +214,10 @@
     </table>
     <td width="25%">
     <table>
-    <tr><td class="showLegend">Pas de Sous dossier: </td><td><img src="$sbRoot/images/#if $show.flatten_folders == 1 or $sickbeard.NAMING_FORCE_FOLDERS then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
+    <tr><td class="showLegend">Pas de dossier: </td><td><img src="$sbRoot/images/#if $show.flatten_folders == 1 or $sickbeard.NAMING_FORCE_FOLDERS then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
     <tr><td class="showLegend">Pause: </td><td><img src="$sbRoot/images/#if int($show.paused) == 1 then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
     
-    <tr><td class="showLegend">Air-by-Date: </td><td><img src="$sbRoot/images/#if int($show.air_by_date) == 1 then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
+    <tr><td class="showLegend">Tri par Date: </td><td><img src="$sbRoot/images/#if int($show.air_by_date) == 1 then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
 	#if $sickbeard.USE_SUBTITLES
     <tr><td class="showLegend">Sous Titres: </td><td><img src="$sbRoot/images/#if int($show.subtitles) == 1 then "yes16.png\" alt=\"Y" else "no16.png\" alt=\"N"#" width="16" height="16" /></td></tr>
 #end if
