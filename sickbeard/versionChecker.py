@@ -439,8 +439,8 @@ class SourceUpdateManager(GitUpdateManager):
         if not self._cur_commit_hash:
             logger.log(u"Version actuelle inconnu, je ne sais pas si nous devrions mettre &agrave; jour ou non", logger.DEBUG)
 
-            new_str = "Version inconnu: Si vous n&cute;avez jamais utilis&agrave; le syst&ecute;me de mise &agrave; niveau Sick Beard alors je ne sais pas quelle version vous avez."
-            new_str += "&mdash; <a href=\""+self.get_update_url()+"\">METTRE &Agrave; JOUR MAINTENANT/a>"
+            new_str = "Version inconnu: Si vous n&apos;avez jamais utilis&eacute; le syst&egrave;me de mise &agrave; niveau Sick Beard alors je ne sais pas quelle version vous avez."
+            new_str += "&mdash; <a href=\""+self.get_update_url()+"\">METTRE &Agrave; JOUR MAINTENANT"
 
             sickbeard.NEWEST_VERSION_STRING = new_str
 
