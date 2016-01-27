@@ -296,7 +296,7 @@
   <tr><td colspan="#if $showSceneNumberColum then "10" else "9"#"  style="height: 0px; padding:0; margin:0;"><a name="season-$epResult["season"]"></a></td></tr>
   <tr class="seasonheader" id="season-$epResult["season"]" >
     <td colspan="#if $showSceneNumberColum then "10" else "9"#">
-        <h2>#if int($epResult["season"]) == 0 then "Specials" else "Season "+str($epResult["season"])#</h2>
+        <h2>#if int($epResult["season"]) == 0 then "Specials" else "Saison "+str($epResult["season"])#</h2>
     </td>
   </tr>
   <tr id="season-$epResult["season"]-cols"><th width="1%"><input type="checkbox" class="seasonCheck" id="$epResult["season"]" />
