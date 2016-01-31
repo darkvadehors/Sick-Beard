@@ -191,7 +191,7 @@ class WindowsUpdateManager(UpdateManager):
             # find update dir name
             update_dir_contents = os.listdir(sb_update_dir)
             if len(update_dir_contents) != 1:
-                logger.log("Les donn&eacute;es de mise &agrave; jour invalides, mise &agrave; jour a &eacute;chou&eacute;. Peut-&ecirc;tre essayer de supprimer votre dossier sb-update &agrave; jour?", logger.ERROR)
+                logger.log("Les donn&eacute;es de mise &agrave; jour invalides, mise &agrave; jour &agrave; &eacute;chou&eacute;. Peut-&ecirc;tre essayer de supprimer votre dossier sb-update &agrave; jour?", logger.ERROR)
                 return False
 
             content_dir = os.path.join(sb_update_dir, update_dir_contents[0])
