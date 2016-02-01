@@ -2,6 +2,7 @@
 #from sickbeard import clients
 #set global $title="Config - Recherche d&apos;Episode"
 #set global $header="Options de Recherche"
+#set global $savechanges="Sauvegarder les modifications"
 
 #set global $sbPath="../.."
 
@@ -42,68 +43,68 @@
                             <input type="checkbox" name="download_propers" id="download_propers" #if $sickbeard.DOWNLOAD_PROPERS == True then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="download_propers">
                                 <span class="component-title">Download Propers</span>
-                                <span class="component-desc">Replace original download with "Proper/Repack" if nuked? Needs restart</span>
+                                <span class="component-desc">Remplacer le t&eacute;l&eacute;chargement original avec une version convenable si il est habim&eacute;? Besoins d&apos;red&eacute;marrent</span>
                             </label>
                         </div>
 						
 						<div class="field-pair">
                             <input type="checkbox" name="download_french" id="download_french" #if $sickbeard.DOWNLOAD_FRENCH == True then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="download_french">
-                                <span class="component-title">Auto download French</span>
-                                <span class="component-desc">Replace non french downloads with French ones if they exist even if audio is English (for the show where option is activated, will check every weeks). Needs restart</span>
+                                <span class="component-title">T&eacute;l&eacutechargement Fran&ccedil;ais Auto</span>
+                                <span class="component-desc">Remplacer les t&eacute;l&eacute;chargements non français avec les fran&ccedil;ais, si ils existent, m&ecirc;me si l'audio est l'anglais (pour le spectacle o&ugrave; option est activ&eacute;e, va v&eacute;rifier toutes les semaines). besoins de red&eacute;marrer</span>
                             </label>
                         </div>
 						
                         <div class="field-pair">
                             <label class="nocheck clearfix">
-                                <span class="component-title">Search Frequency</span>
+                                <span class="component-title">Fr&eacutequence de Recherche</span>
                                 <input type="text" name="search_frequency" value="$sickbeard.SEARCH_FREQUENCY" size="5" />
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Time in minutes between searches (eg. 60)</span>
+                                <span class="component-desc">Temps en minutes entre les recherches (par ex. 60)</span>
                             </label>
                         </div>
                         
                         <div class="field-pair">
                             <label class="nocheck clearfix">
-                                <span class="component-title">French auto search delay</span>
+                                <span class="component-title">Delais auto de recherche Fran&ccdil;ais</span>
                                 <input type="text" name="french_delay" value="$sickbeard.FRENCH_DELAY" size="5" />
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Auto search for french episodes for episodes older than  (in days)</span>
+                                <span class="component-desc">Rechercher automatiquement les &eacute;pisodes fran&ccdil;ais pour les &eacute;pisodes plus vieux de (en jours)</span>
                             </label>
                         </div>
 
                         <div class="field-pair">
                             <label class="nocheck clearfix">
-                                <span class="component-title">Usenet Retention</span>
+                                <span class="component-title">R&eacutetention Usenet</span>
                                 <input type="text" name="usenet_retention" value="$sickbeard.USENET_RETENTION" size="5" />
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Age limit in days for usenet articles to be used. (eg. 500)</span>
+                                <span class="component-desc">Limite d'âge en jours pour utiliser des articles usenet. (par ex. 500)</span>
                             </label>
                         </div>
 
                         <div class="field-pair">
                             <label class="nocheck clearfix">
-                                <span class="component-title">Ignore Words</span>
+                                <span class="component-title">Mots &aagrave; Ignorer</span>
                                 <input type="text" name="ignore_words" value="$sickbeard.IGNORE_WORDS" size="45" />
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Comma separated words to check in episode search.</span>
+                                <span class="component-desc">Séparés avec une virgule les mots &agrave; vérifier lors de la recherche de l&apos;&eacute;pisode.</span>
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Results containing any word in the list won't be snatched.</span>
+                                <span class="component-desc">Les r&eacute;sultats contenant un mot de la liste ne peuvent pas &ecirc;tre r&eacute;cup&eacute;r&eacute;.</span>
                             </label>
                         </div>
 
                         <div class="clearfix"></div>
-                        <input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
+                        <input type="submit" class="btn config_submitter" value="$savechanges" /><br/>
 
                     </fieldset>
                 </div><!-- /component-group1 //-->
@@ -262,7 +263,7 @@
 
                         <div class="testNotification" id="testSABnzbd-result">Click below to test.</div>
                         <input class="btn" type="button" value="Test SABnzbd" id="testSABnzbd" class="btn test-button"/>
-                        <input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
+                        <input type="submit" class="btn config_submitter" value="$savechanges" /><br/>
 
                         </div><!-- /content_use_nzbs //-->
 
@@ -323,7 +324,7 @@
                         	</div>
 
 	                        <div class="clearfix"></div>
-	                        <input type="submit" class="btn config_submitter" value="Save Changes" id="t_blackhole_submit" /><br/>
+	                        <input type="submit" class="btn config_submitter" value="$savechanges" id="t_blackhole_submit" /><br/>
 	                    </div><!-- /content_use_torrents //-->
 
                         <div id="ftp_blackhole_settings">
@@ -430,7 +431,7 @@
                                     <span class="component-desc">(eg. /downloads/watch)</span>
                                 </label>
                             </div>
-                            <input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
+                            <input type="submit" class="btn config_submitter" value="$savechanges" /><br/>
                         </div>
 
                         <div id="torrent_settings">
@@ -533,7 +534,7 @@
                                <div class="testNotification" id="testTorrent-result">Click below to test.</div>
                                <input class="btn" type="button" value="Test Connection" id="testTorrent" class="btn test-button"/>
                             
-                        	<input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
+                        	<input type="submit" class="btn config_submitter" value="$savechanges" /><br/>
                              </div>
                         </div>
 
@@ -562,7 +563,7 @@
                                  #end for
                                   </select>
                                   <div class="clearfix"></div>
-                        <input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
+                        <input type="submit" class="btn config_submitter" value="$savechanges" /><br/>
                     </div>
                     </fieldset><!-- /component-group4 //-->
 
@@ -574,7 +575,7 @@
 
 		<br/>
 		<small class="float-right"><b>All non-absolute folder locations are relative to <span class="path">$sickbeard.DATA_DIR</span></b> </small>
-		<input type="submit" class="btn config_submitter button" value="Save Changes" /><br/>
+		<input type="submit" class="btn config_submitter button" value="$savechanges" /><br/>
 
 
             </div><!-- /config-components //-->
