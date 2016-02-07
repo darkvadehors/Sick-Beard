@@ -7,7 +7,7 @@ $(document).ready(function () {
 
         if ($('#tvdbLangSelect option').length <= 1) {
             $.getJSON(sbRoot + '/home/addShows/getTVDBLanguages', {}, function (data) {
-                var selected, resultStr = '';
+                var selected, resultStr = '';s
 
                 if (data.results.length === 0) {
                     resultStr = '<option value="fr" selected="selected">fr</option>';
@@ -34,15 +34,15 @@ $(document).ready(function () {
             return;
         }
 
-        $('#searchResults').html('<img id="searchingAnim" src="' + sbRoot + '/images/loading32.gif" height="32" width="32" /> searching...');
+        $('#searchResults').html('<img id="searchingAnim" src="' + sbRoot + '/images/loading32.gif" height="32" width="32" /> Recherche...');
 
         $.getJSON(sbRoot + '/home/addShows/searchTVDBForShowName', {'name': $('#nameToSearch').val(), 'lang': $('#tvdbLangSelect').val()}, function (data) {
             var firstResult = true;
-            var resultStr = '<fieldset>\n<legend>Search Results:</legend>\n';
+            var resultStr = '<fieldset>\n<legend>R&eacute;sultats de la recherche:</legend>\n';
             var checked = '';
 
             if (data.results.length === 0) {
-                resultStr += '<b>No results found, try a different search.</b>';
+                resultStr += '<b>Aucun r&eacute;sultat, essayez une autre recherche.</b>';
             } else {
                 $.each(data.results, function (index, obj) {
                     if (firstResult) {
