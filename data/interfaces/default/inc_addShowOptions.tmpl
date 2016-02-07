@@ -7,8 +7,8 @@
         <div class="field-pair alt">
             <input type="checkbox" name="subtitles" id="subtitles" #if $sickbeard.SUBTITLES_DEFAULT then "checked=\"checked\"" else ""# />
             <label for="subtitles" class="clearfix">
-                <span class="component-title">Subtitles</span>
-                <span class="component-desc">Download subtitles for this show?</span>
+                <span class="component-title">Sous Titres</span>
+                <span class="component-desc">T&eacute;l&eacute;charger les sous titres pour cette s&eacute;ries</span>
             </label>
         </div>
         #end if
@@ -22,15 +22,15 @@
                     #end for
                     </select>
                 </span>
-                <span class="component-desc">Set the initial status of missing episodes</span>
+                <span class="component-desc">D&eacute;finir l&apos;&eacute;tat initial des &eacute;pisodes manquants</span>
             </label>
         </div>
 
         <div class="field-pair alt">
             <input class="cb" type="checkbox" name="flatten_folders" id="flatten_folders" #if $sickbeard.FLATTEN_FOLDERS_DEFAULT then "checked=\"checked\"" else ""# />
             <label for="flatten_folders" class="clearfix">
-                <span class="component-title">Flatten Folders</span>
-                <span class="component-desc">Disregard sub-folders?</span>
+                <span class="component-title">Pas de Dossiers</span>
+                <span class="component-desc">Ignorez les sous-dossiers ?</span>
             </label>
         </div>
 
@@ -50,12 +50,12 @@
 					#end for
 				</select>
                 </span>
-                <span class="component-desc">Set the desired audio language of the show (this can be changed later)</span>
+                <span class="component-desc">R&eacute;glez la langue audio d&eacute;sir&eacute;e pour cette S&eacute;rie (ceci peut &ecirc;tre modifi&eacute; par la suite)</span>
             </label>
         </div>
         <div class="field-pair alt">
             <label for="saveDefaultsButton" class="nocheck clearfix">
-                <span class="component-title"><input class="btn" type="button" id="saveDefaultsButton" value="Save Defaults" disabled="disabled" /></span>
-                <span class="component-desc">Persist current values as the defaults</span>
+                <span class="component-title"><input class="btn" type="button" id="saveDefaultsButton" value="Sauvegarder" disabled="disabled" /></span>
+                <span class="component-desc">Enregistrer ces r&eacute;glages comme valeurs par D&acute;faut</span>
             </label>
         </div>
