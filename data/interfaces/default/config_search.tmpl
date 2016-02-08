@@ -297,8 +297,8 @@
                                 <span class="component-title jumbo">M&eacute;thode TORRENT</span>
                                 <span class="component-desc">
                                 <select name="torrent_method" id="torrent_method">
-                                #set $torrent_method_text = {'blackhole': "Fichier (Black Hole)", 'utorrent': "uTorrent", 'transmission': "Transmission", 'deluge': "Deluge", 'download_station': "Synology DS", 'ftpblackhole' : "Fichier sur FTP (Black hole)"}
-                                #for $curAction in ('blackhole', 'utorrent', 'transmission', 'deluge', 'download_station','ftpblackhole'):
+                                #set $torrent_method_text = {'blackhole': "Fichier (Black Hole)", 'ftpblackhole' : "Fichier sur FTP (Black hole)", 'utorrent': "uTorrent", 'transmission': "Transmission", 'deluge': "Deluge", 'download_station': "Synology DS Donwload"}
+                                #for $curAction in ('blackhole', 'ftpblackhole', 'utorrent', 'transmission', 'deluge', 'download_station'):
                                   #if $sickbeard.TORRENT_METHOD == $curAction:
                                     #set $torrent_method = "selected=\"selected\""
                                   #else
@@ -333,9 +333,9 @@
                         <div id="ftp_blackhole_settings">
                             <input type="checkbox" class="enabler" #if $sickbeard.USE_TORRENT_FTP then " checked=\"checked\"" else ""# id="torrent_use_ftp" name="torrent_use_ftp">
                             <label class="clearfix" for="torrent_use_ftp">
-                                <span class="component-title">Envoyer sur FTP</span>
-                                <span class="component-desc">Pour les utilisateurs de seedbox, vous pouvez t&eacute;l&eacute;charger vos fichiers directement sur votre seedbox.</span>
-                                <span class="component-desc">Vérifiez que ce dossier n&apos;est pas d&eacute;j&agrave; utilis&eacute; pour l&apos;enregistrement local par fichier (black hole).</span>
+                                <span class="component-title">Envoie sur FTP</span>
+                                <span class="component-desc">Pour les utilisateurs de seedbox, vous pouvez envoyer vos fichiers directement sur votre seedbox.</span>
+                                <span class="component-desc">V&eacute;rifiez que ce dossier n&apos;est pas d&eacute;j&agrave; utilis&eacute; pour l&apos;enregistrement local par fichier.</span>
                             </label>
                             <div class="field-pair" id="Ftp_Host">
                                 <label class="nocheck clearfix">
@@ -440,22 +440,22 @@
                         <div id="torrent_settings">
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title" id="host_desc">Torrent HOST</span>
+                                    <span class="component-title" id="host_desc">H&ocirc;te Torrent</span>
                                     <input type="text" name="torrent_host" id="torrent_host" value="$sickbeard.TORRENT_HOST" size="45" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">URL to your Torrent Client</span>
+                                    <span class="component-desc">URL du Client Torrent</span>
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">(eg. http://localhost:8000/</span>
+                                    <span class="component-desc">(par ex. http://localhost:8000/</span>
                                 </label>
                             </div>
 
                             <div class="field-pair" id="Torrent_custom_url">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title" id="torrent_custom_url_desc">Use Custom URL</span>
+                                    <span class="component-title" id="torrent_custom_url_desc">Utilisez une URL personnalis&eacute;e</span>
                                     <input type="checkbox" name="torrent_custom_url" class="enabler" id="torrent_custom_url" #if $sickbeard.TORRENT_CUSTOM_URL == True then "checked=\"checked\"" else ""# />
                                 </label>
                                 <label class="nocheck clearfix">
@@ -543,16 +543,16 @@
 
                     </fieldset>
 
-                </div><!-- /component-group3 //-->
+</div><!-- /component-group3 //-->
 				 <div id="core-component-group4" class="component-group clearfix">
 
                     <div class="component-group-desc">
-                        <h3>Preferred Method</h3>
-                        <p>Settings that dictate how Sick Beard will choose best result among NZBs and Torrents</p>
+                        <h3>M&eacute;thode Pr&eacute;f&eacute;r&eacute;e</h3>
+                        <p>Param&egrave;tres qui dictent la fa&ccedilon dont Sickbeard choisira le meilleur r&eacute;sultat parmi les NZBS et Torrents</p>
                     </div>
                     <div class="field-pair">
                             <label class="clearfix" for="prefered_method">
-                                <span class="component-title jumbo">Preferred Method</span>
+                                <span class="component-title jumbo">M&eacute;thode Pr&eacute;f&eacute;r&eacute;e</span>
                                 <span class="component-desc">
                                 <select name="prefered_method" id="preferred_method">
                                 #set $prefered_method_text = {'torrent': "Torrent", 'nzb': "Newsgroup"}
@@ -568,11 +568,12 @@
                                   <div class="clearfix"></div>
                         <input type="submit" class="btn config_submitter" value="$savechanges" /><br/>
                     </div>
-                    </fieldset><!-- /component-group4 //-->
-
-                <!--<div class="title-group clearfix" id="no-torrents">
-                    <div class="ui-corner-all config_message">Note: Sick Beard works better with Usenet than with Torrents, <a href="http://www.sickbeard.com/usenet.html" target="_blank">here's why</a>.</div>
-                </div> //-->
+                    </fieldset>
+<!-- /component-group4 //-->
+<!-- //-->
+                <div class="title-group clearfix" id="no-torrents">
+                    <div class="ui-corner-all config_message">Remarque : Sickbeard fonctionne mieux avec Usenet qu&apos;avec Torrents,voir <a href="http://www.sickbeard.com/usenet.html" target="_blank">ici pourquoi</a>.</div>
+                </div> 
 
 </div><br />
 
@@ -581,7 +582,8 @@
 		<input type="submit" class="btn config_submitter button" value="$savechanges" /><br/>
 
 
-            </div><!-- /config-components //-->
+            </div>
+<!-- /config-components //-->
 
 </form>
 
