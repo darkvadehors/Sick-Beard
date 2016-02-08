@@ -123,7 +123,7 @@
                             <input type="checkbox" name="use_nzbs" class="enabler" id="use_nzbs" #if $sickbeard.USE_NZBS then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_nzbs">
                                 <span class="component-title">Recherche NZB</span>
-                                <span class="component-desc">Sickbeard Devrait-il rechercher des fichiers NZB?</span>
+                                <span class="component-desc">Sickbeard devrait-il rechercher des fichiers NZB?</span>
                             </label>
                         </div>
 
@@ -224,12 +224,12 @@
                         <div id="nzbget_settings">
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">NZBget Nom d&apos;h&ocirc;te:num&eacute;ro de port</span>
+                                    <span class="component-title">NZBget h&ocirc;te:port</span>
                                     <input type="text" name="nzbget_host" id="nzbget_host" value="$sickbeard.NZBGET_HOST" size="45" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Nom d&apos;h&ocirc;te et le num&eacute;ro de port de la NZBget RPC (pas NZBGet web!)</span>
+                                    <span class="component-desc">Nom d&apos;h&ocirc;te et le num&eacute;ro de port du NZBget RPC (pas NZBGet web!)</span>
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
@@ -297,7 +297,7 @@
                                 <span class="component-title jumbo">M&eacute;thode TORRENT</span>
                                 <span class="component-desc">
                                 <select name="torrent_method" id="torrent_method">
-                                #set $torrent_method_text = {'blackhole': "Fichier (Black Hole)", 'utorrent': "uTorrent", 'transmission': "Transmission", 'deluge': "Deluge", 'download_station': "Synology DS", 'ftpblackhole' : "FTP Black hole"}
+                                #set $torrent_method_text = {'blackhole': "Fichier (Black Hole)", 'utorrent': "uTorrent", 'transmission': "Transmission", 'deluge': "Deluge", 'download_station': "Synology DS", 'ftpblackhole' : "Fichier sur FTP (Black hole)"}
                                 #for $curAction in ('blackhole', 'utorrent', 'transmission', 'deluge', 'download_station','ftpblackhole'):
                                   #if $sickbeard.TORRENT_METHOD == $curAction:
                                     #set $torrent_method = "selected=\"selected\""
@@ -318,11 +318,11 @@
                             	</label>
 	                            <label class="nocheck clearfix">
     	                            <span class="component-title">&nbsp;</span>
-        	                        <span class="component-desc">Dossier o&ograve; Sick-Beard enregistre vos fichiers <i>.torrent</i>.</span>
+        	                        <span class="component-desc">Dossier o&ugrave; Sick-Beard va enregistrer vos fichiers <i>.torrent</i>.</span>
             	                </label>
 	                            <label class="nocheck clearfix">
     	                            <span class="component-title">&nbsp;</span>
-									<span class="component-desc"><b>Remarque:</b> Cette m&eacute;thode ne fonctionne pas avec le fournisseur ThePirateBay</span>
+									<span class="component-desc"><b>Remarque:</b> Cette m&eacute;thode ne fonctionne pas avec le fournisseur: ThePirateBay</span>
             	                </label>
                         	</div>
 
@@ -333,22 +333,22 @@
                         <div id="ftp_blackhole_settings">
                             <input type="checkbox" class="enabler" #if $sickbeard.USE_TORRENT_FTP then " checked=\"checked\"" else ""# id="torrent_use_ftp" name="torrent_use_ftp">
                             <label class="clearfix" for="torrent_use_ftp">
-                                <span class="component-title">Upload to FTP</span>
-                                <span class="component-desc">For seedbox user, you can upload your files directly to your seedbox.</span>
-                                <span class="component-desc">Check that this dir is not already a local black hole.</span>
+                                <span class="component-title">Envoyer sur FTP</span>
+                                <span class="component-desc">Pour les utilisateurs de seedbox, vous pouvez t&eacute;l&eacute;charger vos fichiers directement sur votre seedbox.</span>
+                                <span class="component-desc">Vérifiez que ce dossier n&apos;est pas d&eacute;j&agrave; utilis&eacute; pour l&apos;enregistrement local par fichier (black hole).</span>
                             </label>
                             <div class="field-pair" id="Ftp_Host">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title" id="host_desc">Ftp HOST</span>
+                                    <span class="component-title" id="host_desc">H&ocirc;te Ftp</span>
                                     <input type="text" name="ftp_host" id="ftp_host"  value="$sickbeard.FTP_HOST" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Hostname of the Ftp Server</span>
+                                    <span class="component-desc">Nom d&apos;h&ocirc;te du serveur FTP</span>
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">(eg. 88.88.88.88)</span>
+                                    <span class="component-desc">(par ex. 88.88.88.88)</span>
                                 </label>
                             </div>
                             <div class="field-pair" id="Ftp_Login">
@@ -358,41 +358,41 @@
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Login of the Ftp Account</span>
+                                    <span class="component-desc">Nom d&apos;utilisateur pour le compte Ftp</span>
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">(eg. sickbeard)</span>
+                                    <span class="component-desc">(par ex. sickbeard)</span>
                                 </label>
                             </div>
 
                             <div class="field-pair"  id="Ftp_Password">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title" id="ftp_password_desc">Ftp PASSWORD</span>
+                                    <span class="component-title" id="ftp_password_desc">Mot de passe Ftp</span>
                                     <input type="text" id="ftp_password" name="ftp_password" value="$sickbeard.FTP_PASSWORD" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Password of the Ftp Account</span>
+                                    <span class="component-desc">Mot de passe pour le compte Ftp</span>
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">(eg. sickbeard)</span>
+                                    <span class="component-desc">(par ex. sickbeard)</span>
                                 </label>
                             </div>
 
                             <div class="field-pair" id="Ftp_Port">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title" id="ftp_port_desc">Ftp PORT</span>
+                                    <span class="component-title" id="ftp_port_desc">PORT Ftp</span>
                                     <input type="number" step="1" id="ftp_port" name="ftp_port" value="$sickbeard.FTP_PORT" size="5" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Port of the Ftp Server</span>
+                                    <span class="component-desc">Port du Serveur Ftp</span>
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">(eg. 21)</span>
+                                    <span class="component-desc">(par ex. 21)</span>
                                 </label>
                             </div>
 
@@ -403,11 +403,11 @@
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Timeout of the Ftp Server</span>
+                                    <span class="component-desc">Temps d'abandont (Timeout) du serveur Ftp</span>
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">(eg. 120)</span>
+                                    <span class="component-desc">(par ex. 120)</span>
                                 </label>
                             </div>
 
@@ -415,23 +415,23 @@
                                 <input type="checkbox" class="enabler" #if $sickbeard.FTP_PASSIVE then " checked=\"checked\"" else ""# id="ftp_passive" name="ftp_passive">
                                 <label for="ftp_passive" class="clearfix">
                                 <label class="clearfix" for="Ftp_Mode">
-                                <span class="component-title">Passive Mode</span>
-                                <span class="component-desc">Connect to FTP in Passive Mode ?.</span>
+                                <span class="component-title">Mode Passive</span>
+                                <span class="component-desc">Se Connecter au FTP en mode passif?.</span>
                                 </label>
                             </div>
 
                            <div class="field-pair" id="Ftp_RemoteDir">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title" id="ftp_remotedir_desc">Ftp REMOTE DIRECTORY</span>
+                                    <span class="component-title" id="ftp_remotedir_desc">Dossier distant Ftp</span>
                                     <input type="text" name="ftp_remotedir" id="ftp_remotedir" value="$sickbeard.FTP_DIR" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">The Remote Path where sickbeard upload your files</span>
+                                    <span class="component-desc">Le dossier distant o&ograve; sickbeard envoie les fichiers</span>
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">(eg. /downloads/watch)</span>
+                                    <span class="component-desc">(par ex. /downloads/watch)</span>
                                 </label>
                             </div>
                             <input type="submit" class="btn config_submitter" value="$savechanges" /><br/>
