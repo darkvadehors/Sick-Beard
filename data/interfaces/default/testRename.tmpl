@@ -1,7 +1,7 @@
 #import sickbeard
 #from sickbeard import common
 #from sickbeard import exceptions
-#set global $title="Test Rename"
+#set global $title="Renommage Manuel"
 #set global $header = '<a style="color: #343434;" href="' + $sbRoot + '/home/displayShow?show=%d">%s</a>' % ($show.tvdbid, $show.name)
 #set global $sbPath=".."
 
@@ -19,7 +19,7 @@
 
 <script type="text/javascript" src="$sbRoot/js/testRename.js"></script>
 
-<h3>Preview of the proposed name changes</h3>
+<h3>Aperçu des changements de noms propos&eacute;s</h3>
 <blockquote style="margin-bottom: 0; color: #3A87AD;">
 #if int($show.air_by_date) == 1 and $sickbeard.NAMING_CUSTOM_ABD:
     $sickbeard.NAMING_ABD_PATTERN
@@ -42,14 +42,14 @@
         <tr class="seasonheader" id="season-$cur_ep_obj.season">
             <td colspan="4">
                 <br/>
-                <h2>#if int($cur_ep_obj.season) == 0 then "Specials" else "Season "+str($cur_ep_obj.season)#</h2>
+                <h2>#if int($cur_ep_obj.season) == 0 then "Sp&eacute;cials" else "Saison "+str($cur_ep_obj.season)#</h2>
             </td>
         </tr>
         <tr id="season-$cur_ep_obj.season-cols">
             <th width="1%"><input type="checkbox" class="seasonCheck" id="$cur_ep_obj.season" /></th>
-            <th class="nowrap">Episode</th>
-            <th class="nowrap">Old Location</th>
-            <th class="nowrap">New Location</th>
+            <th class="nowrap">&Eacute;pisode</th>
+            <th class="nowrap">Emplacement avant traitement</th>
+            <th class="nowrap">Emplacement apr&egrave; traitement</th>
         </tr>
     </thead>
 #set $curSeason = int($cur_ep_obj.season)
@@ -79,5 +79,5 @@
 
 #end for
 </table><br />
-<input type="submit" value="Rename Selected" class="btn btn-danger">
+<input type="submit" value="Renommer la S&eacute;lection" class="btn btn-danger">
 #include $os.path.join($sickbeard.PROG_DIR, "data/interfaces/default/inc_bottom.tmpl")
