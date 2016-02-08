@@ -54,7 +54,7 @@ $(document).ready(function(){
             $('#Torrent_Ratio').hide();
             $('#Torrent_Label').show()
             $('#host_desc').text('Hôte de uTorrent');
-            $('#username_desc').text('Nom d&apos;utilisateur uTorrent');
+            $('#username_desc').text("Nom d'utilisateur uTorrent");
             $('#password_desc').text('Mot de Passe uTorrent');
             $('#ftp_blackhole_settings').hide();
             $('#label_desc').text('Label pour uTorrent');
@@ -67,7 +67,7 @@ $(document).ready(function(){
             $('#Torrent_Ratio').show();
             $('#Torrent_Label').hide();
             $('#host_desc').html('Hôte de Transmission');
-            $('#username_desc').text('Nom d&apos;utilisateur Transmission');
+            $('#username_desc').text("Nom d'utilisateur Transmission");
             $('#password_desc').text('Mot de Passe Transmission');
             $('#directory_desc').text('Dossier de Sauvegarde de Transmission');
             $('#ftp_blackhole_settings').hide();
@@ -80,7 +80,7 @@ $(document).ready(function(){
             $('#Torrent_Path').show();
             $('#Torrent_Ratio').show();
             $('#host_desc').text('Hôte de Deluge');
-            $('#username_desc').text('Nom d&apos;utilisateur Deluge');
+            $('#username_desc').text("Nom d'utilisateur Deluge");
             $('#password_desc').text('Mot de Passe de Deluge');
             $('#label_desc').text('Label pour Deluge');
             $('#directory_desc').text('Dossier de Sauvegarde de Deluge');
@@ -96,7 +96,7 @@ $(document).ready(function(){
             $('#Torrent_Ratio').hide();
             $('#Torrent_High_Bandwidth').hide();
             $('#host_desc').text('Hôte de Synology');
-            $('#username_desc').text('Nom d&apos;utilisateur Synology');
+            $('#username_desc').text("Nom d'utilisateur Synology");
             $('#password_desc').text('Mot de Passe Synology');
             $('#label_desc').text('Label pour Synology');
             $('#directory_desc').text('Dossier de Sauvegarde de Synology');
