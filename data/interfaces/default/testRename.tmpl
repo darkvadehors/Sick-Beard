@@ -48,8 +48,8 @@
         <tr id="season-$cur_ep_obj.season-cols">
             <th width="1%"><input type="checkbox" class="seasonCheck" id="$cur_ep_obj.season" /></th>
             <th class="nowrap">&Eacute;pisode</th>
-            <th class="nowrap">Emplacement avant traitement</th>
-            <th class="nowrap">Emplacement apr&egrave; traitement</th>
+            <th class="nowrap">Structure avant traitement</th>
+            <th class="nowrap">Structure apr&egrave;s traitement</th>
         </tr>
     </thead>
 #set $curSeason = int($cur_ep_obj.season)
@@ -79,5 +79,5 @@
 
 #end for
 </table><br />
-<input type="submit" value="Renommer la S&eacute;lection" class="btn btn-danger">
+<input type="submit" value="Traiter la S&eacute;lection" class="btn btn-danger">
 #include $os.path.join($sickbeard.PROG_DIR, "data/interfaces/default/inc_bottom.tmpl")
