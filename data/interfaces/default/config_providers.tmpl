@@ -1,7 +1,7 @@
 #import sickbeard
 #from sickbeard.providers.generic import GenericProvider
-#set global $title="Config - Providers"
-#set global $header="Search Providers"
+#set global $title="Config - Les fournisseurs"
+#set global $header="Fournisseures de Recherches"
 
 #set global $sbPath="../.."
 
@@ -34,22 +34,22 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
 
             <div id="config-components">
                 <ul>
-                	<li><a href="#core-component-group1">Provider Priorities</a></li>
-                	<li><a href="#core-component-group2">Configure Built-In Providers</a></li>
+                	<li><a href="#core-component-group1">Priorit&eacute;s des fournisseurs</a></li>
+                	<li><a href="#core-component-group2">Configurer les propi&eacute;t&eacute;s des fournisseurs</a></li>
                   #if $sickbeard.USE_NZBS
-                	<li><a href="#core-component-group3">Configure Custom Newznab Providers</a></li>
+                	<li><a href="#core-component-group3">Configurer des fournisseurs Newznab personnalisés</a></li>
                   #end if
                 </ul>
                 
                 <div id="core-component-group1" class="component-group clearfix">
 
                     <div class="component-group-desc">
-                        <h3>Provider Priorities</h3>
-                        <p>Check off and drag the providers into the order you want them to be used.</p>
-                        <p>At least one provider is required but two are recommended.</p>
+                        <h3>Priorit&eacute;s des fournisseurs</h3>
+                        <p>Cochez et faites glisser les fournisseurs dans l&apos;ordre que vous voulez qu&apos; ils soient utilis&eacute;s.</p>
+                        <p>Au moins un fournisseur est requis, mais deux sont recommand&eacute;s.</p>
 
                         #if not $sickbeard.USE_NZBS or not $sickbeard.USE_TORRENTS:
-                        <blockquote style="margin: 20px 0;">NZB/Torrent providers can be toggled in <b><a href="$sbRoot/config/search">Search Settings</a></b></blockquote>
+                        <blockquote style="margin: 20px 0;">Les Fournisseures de NZB/Torrent peut &ecirc;tre modifi&eacute;e dans <b><a href="$sbRoot/config/search">R&eacute;glages des Recherches</a></b></blockquote>
                         #else:
                         <br/>
                         #end if
@@ -57,7 +57,7 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
                         <div>
                             <h4 class="note">*</h4><p class="note">Provider does not support backlog searches at this time.</p>
                             <h4 class="note">**</h4><p class="note">Provider supports <b>limited</b> backlog searches, all episodes/qualities may not be available.</p>
-							<h4 class="note">!</h4><p class="note">Provider is <b>NOT WORKING</b>.</p>
+							<h4 class="note">!</h4><p class="note">Le Fournisseur <b>NE FONCTIONNE PAS</b>.</p>
                         </div>
                     </div>
 
