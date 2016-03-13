@@ -174,6 +174,11 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
 
                     <div class="providerDiv" id="binnewzDiv"><p>Rien &agrave; configurer</p>
                     </div><!-- /binnewzDiv //-->
+                    
+                    </div><!-- /piratebay //-->
+
+                    <div class="providerDiv" id="piratebay"><p>Rien &agrave; configurer</p>
+                    </div><!-- /piratebay //-->
 
                     <div class="providerDiv" id="tvtorrentsDiv">
                         <div class="field-pair">
@@ -193,7 +198,7 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
                     <div class="providerDiv" id="torrentleechDiv">
                         <div class="field-pair">
                             <label class="clearfix">
-                                <span class="component-title">Clé RSS de TorrentLeech <br /> (&agrave; activer dans le profil):</span>
+                                <span class="component-title">Clé RSS de TorrentLeech: <br />(Activer l'option dans le profil)</span>
                                 <input class="component-desc" type="text" name="torrentleech_key" value="$sickbeard.TORRENTLEECH_KEY" size="40" />
                             </label>
                         </div>
@@ -202,7 +207,7 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
                     <div class="providerDiv" id="ethorDiv">
                         <div class="field-pair">
                             <label class="clearfix">
-                                <span class="component-title">Clé RSS de Ethor <br />(&agrave; obtenir de la page RSS):</span>
+                                <span class="component-title">Clé RSS de Ethor: <br />(&agrave; obtenir de la page RSS du site)</span>
                                 <input class="component-desc" type="text" name="ethor_key" value="$sickbeard.ETHOR_KEY" size="40" />
                             </label>
                         </div>
@@ -349,8 +354,8 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
                 <div id="core-component-group3" class="component-group clearfix">
 
                     <div class="component-group-desc">
-                        <h3>Configure Custom<br />Fournisseurs Newznab</h3>
-                        <p>Ajouter et mettre en place les fournisseurs Newznab personnalisé.</p>
+                        <h3>Configurer des Fournisseurs <br />Newznab personalis&eacute;s</h3>
+                        <p>Ajouter et mettre en place les fournisseurs Newznab personnalis&eacute;.</p>
                         <p>Certains fournisseurs Newznab intégrés sont déjà disponibles ci-dessus.</p>
                     </div>
 
@@ -387,14 +392,14 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">(leave blank if not required)</span>
+                                <span class="component-desc">(laisser vide si non n&eacute;cessaire)</span>
                             </label>
                         </div>
             <div id="newznab_add_div">
                 <input class="btn" type="button" class="newznab_save" id="newznab_add" value="Ajouter" />
             </div>
             <div id="newznab_update_div" style="display: none;">
-                <input class="btn btn-danger newznab_delete" type="button" class="newznab_delete" id="newznab_delete" value="Delete" />
+                <input class="btn btn-danger newznab_delete" type="button" class="newznab_delete" id="newznab_delete" value="Supprimer" />
             </div> 
 </div>
 
