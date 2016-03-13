@@ -1,7 +1,7 @@
 #import sickbeard
 #from sickbeard.providers.generic import GenericProvider
 #set global $title="Config - Les fournisseurs"
-#set global $header="Fournisseures de Recherches"
+#set global $header="Fournisseurs de Recherches"
 #set global $savechanges="Sauvegarder les modifications"
 
 #set global $sbPath="../.."
@@ -35,8 +35,8 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
 
             <div id="config-components">
                 <ul>
-                	<li><a href="#core-component-group1">Priorit&eacute;s des fournisseurs</a></li>
-                	<li><a href="#core-component-group2">Configurer les propi&eacute;t&eacute;s des fournisseurs</a></li>
+                	<li><a href="#core-component-group1">Choix des fournisseurs</a></li>
+                	<li><a href="#core-component-group2">Configurer les fournisseurs</a></li>
                   #if $sickbeard.USE_NZBS
                 	<li><a href="#core-component-group3">Configurer des fournisseurs Newznab personnalisés</a></li>
                   #end if
@@ -45,8 +45,8 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
                 <div id="core-component-group1" class="component-group clearfix">
 
                     <div class="component-group-desc">
-                        <h3>Priorit&eacute;s des fournisseurs</h3>
-                        <p>Cochez et faites glisser les fournisseurs dans l&apos;ordre que vous voulez qu&apos; ils soient utilis&eacute;s.</p>
+                        <h3>Choix des fournisseurs</h3>
+                        <p>Cochez et faites glisser les fournisseurs dans l&apos;ordre o&ugrave; vous souhaitez qu&apos; ils soient utilis&eacute;s.</p>
                         <p>Au moins un fournisseur est requis, mais deux sont recommand&eacute;s.</p>
 
                         #if not $sickbeard.USE_NZBS or not $sickbeard.USE_TORRENTS:
@@ -56,8 +56,8 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
                         #end if
 
                         <div>
-                            <h4 class="note">*</h4><p class="note">Le fournisseur ne prend pas en charge les arriérés de recherches à ce moment.</p>
-                            <h4 class="note">**</h4><p class="note">Le fournisseur prend en charge les arriérés de recherches <b>limitées,</b> ,tous les épisodes / qualités peuvent ne pas être disponibles.</p>
+                            <h4 class="note">*</h4><p class="note">Actuellement le fournisseur ne prend pas en charge les arriérés de recherches.</p>
+                            <h4 class="note">**</h4><p class="note">Actuellement le fournisseur prend en charge les arriérés de recherches <b>limitées</b>, tous les épisodes / qualités peuvent ne pas être disponibles.</p>
 							<h4 class="note">!</h4><p class="note">Le Fournisseur <b>NE FONCTIONNE PAS</b>.</p>
                         </div>
                     </div>
@@ -172,10 +172,7 @@ var show_nzb_providers = #if $sickbeard.USE_NZBS then "true" else "false"#;
                         </div>
                     </div><!-- /omgwtfnzbsDiv //-->
 
-                    <div class="providerDiv" id="binnewzDiv">
-<p>
-Nothing to set up for this provider
-</p>
+                    <div class="providerDiv" id="binnewzDiv"><p>Rien &agrave; configurer</p>
                     </div><!-- /binnewzDiv //-->
 
                     <div class="providerDiv" id="tvtorrentsDiv">
@@ -196,7 +193,7 @@ Nothing to set up for this provider
                     <div class="providerDiv" id="torrentleechDiv">
                         <div class="field-pair">
                             <label class="clearfix">
-                                <span class="component-title">Clé RSS de TorrentLeech(&agrave; activer dans le profil):</span>
+                                <span class="component-title">Clé RSS de TorrentLeech <br /> (&agrave; activer dans le profil):</span>
                                 <input class="component-desc" type="text" name="torrentleech_key" value="$sickbeard.TORRENTLEECH_KEY" size="40" />
                             </label>
                         </div>
@@ -205,7 +202,7 @@ Nothing to set up for this provider
                     <div class="providerDiv" id="ethorDiv">
                         <div class="field-pair">
                             <label class="clearfix">
-                                <span class="component-title">Clé RSS de Ethor(&agrave; obtenir de la page RSS):</span>
+                                <span class="component-title">Clé RSS de Ethor <br />(&agrave; obtenir de la page RSS):</span>
                                 <input class="component-desc" type="text" name="ethor_key" value="$sickbeard.ETHOR_KEY" size="40" />
                             </label>
                         </div>
@@ -220,7 +217,7 @@ Nothing to set up for this provider
                         </div>
                         <div class="field-pair">
                             <label class="clearfix">
-                                <span class="component-title">Mot de Passe de T411:</span>
+                                <span class="component-title">Mot de passe de T411:</span>
                                 <input class="component-desc" type="text" name="t411_password" value="$sickbeard.T411_PASSWORD" size="40" />
                             </label>
                         </div>
@@ -305,13 +302,13 @@ Nothing to set up for this provider
                         <div class="field-pair">
                             <label class="clearfix">
                                 <span class="component-title">Identifiant de So-torrent:</span>
-                                <input class="component-desc" type="text" name="sotorrent_username" value="$sickbeard.SOTORRENT_USERNAME" size="25" />
+                                <input class="component-desc" type="text" name="sotorrent_username" value="$sickbeard.SOTORRENT_USERNAME" size="40" />
                             </label>
                         </div>
                         <div class="field-pair">
                             <label class="clearfix">
                                 <span class="component-title">Mot de passe de So-torrent:</span>
-                                <input class="component-desc" type="password" name="sotorrent_password" value="$sickbeard.SOTORRENT_PASSWORD" size="25" />
+                                <input class="component-desc" type="password" name="sotorrent_password" value="$sickbeard.SOTORRENT_PASSWORD" size="40" />
                             </label>
                         </div>
                     </div><!-- /sotorrentDiv //-->
