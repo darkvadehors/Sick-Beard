@@ -28,7 +28,7 @@
 
             <div id="config-components">
                 <ul>
-                	<li><a href="#core-component-group3">post-traitement</a></li>
+                	<li><a href="#core-component-group3">Post-traitement</a></li>
                 	<li><a href="#core-component-group4">Renommage d'épisodes</a></li>
                 	<li><a href="#core-component-group2">Métadonnées</a></li>
                 </ul>
@@ -36,27 +36,27 @@
                 <div id="core-component-group3" class="component-group clearfix">
 
                     <div class="component-group-desc">
-                        <h3>post-traitement</h3>
-                        <p>Les paramètres qui dictent la façon dont Sick Beard devrait traiter les téléchargements terminés.</p>
+                        <h3>Post-traitement</h3>
+                        <p>Les paramètres qui dictent la façon dont Sick-Beard devrait traiter les nouveaux téléchargements terminés.</p>
                     </div>
 
                     <fieldset class="component-group-list">
                         <div class="field-pair">
                             <label class="nocheck clearfix" for="tv_download_dir">
-                                <span class="component-title">Dossier des épisodes téléchargés</span>
+                                <span class="component-title">Dossier &Eacute;pisodes</span>
                                 <input type="text" name="tv_download_dir" id="tv_download_dir" value="$sickbeard.TV_DOWNLOAD_DIR" size="35" />
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Le dossier ou votre client télécharge les épisodes.</span>
+                                <span class="component-desc">Le dossier où votre client va télécharger les nouveaux &Eacute;pisodes.</span>
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc"><b>Remarque:</b> Utilisez seulement si vous n'utiliser pas le post-traitement SABnzbd.</span>
+                                <span class="component-desc"><b>Remarque:</b> Utilisez seulement si vous n'utilisez pas le post-traitement SABnzbd.</span>
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Où SABnzbd+ et Sick-beard sont sur un ordinateur différent.</span>
+                                <span class="component-desc">Où si SABnzbd+ et Sick-beard sont sur un ordinateur différent.</span>
                             </label>
                         </div>
 
@@ -72,8 +72,8 @@
                         <div class="field-pair">
                             <input type="checkbox" name="move_associated_files" id="move_associated_files" #if $sickbeard.MOVE_ASSOCIATED_FILES == True then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="move_associated_files">
-                                <span class="component-title">Déplacer les fichiers Associés</span>
-                                <span class="component-desc">Déplacer les fichiers srr/srt/sfv/etc avec les épisodes après le traitement?</span>
+                                <span class="component-title">Déplacer les Associés</span>
+                                <span class="component-desc">Déplacer les fichiers associés: srr/srt/sfv/etc avec les épisodes après le traitement?</span>
                             </label>
                             <label class="nocheck clearfix" for="move_associated_files">
                                 <span class="component-title">&nbsp;</span>
@@ -84,8 +84,8 @@
                         <div class="field-pair">
                             <input type="checkbox" name="rename_episodes" id="rename_episodes" #if $sickbeard.RENAME_EPISODES == True then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="rename_episodes">
-                                <span class="component-title">renommez les Episodes</span>
-                                <span class="component-desc">Renommer épisode en utilisant les paramètres de nommage ci-dessous?</span>
+                                <span class="component-title">Renommez les &Eacute;pisodes</span>
+                                <span class="component-desc">Renommer les épisode en utilisant les règles de nommage paramétrés?</span>
                             </label>
                         </div>
 
@@ -93,11 +93,11 @@
                             <input type="checkbox" name="process_automatically" id="process_automatically" #if $sickbeard.PROCESS_AUTOMATICALLY == True then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="process_automatically">
                                 <span class="component-title">Scanner et traiter</span>
-                                <span class="component-desc">Scanner et  triater tout les fichiers dans votre  <i>Dossier des épisodes téléchargés</i>?</span>
+                                <span class="component-desc">Scanner et  traiter tout les fichiers dans votre  <i>Dossier &Eacute;pisodes</i>?</span>
                             </label>
                             <label class="nocheck clearfix" for="process_automatically">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc"><b>Remarque:</b> Ne pas utiliser si vous utilisez sabToSickbeard avec SABnzbd+!</span>
+                                <span class="component-desc"><b>Remarque:</b> Ne pas utiliser si vous vous servez de sabToSickbeard avec SABnzbd+!</span>
                             </label>
                         </div>
 
@@ -107,39 +107,39 @@
                     </fieldset>
                     
                     <div class="component-group-desc">
-                        <h3>Torrent Post-Processing</h3>
-                        <p>Settings that dictate how Sick Beard should process completed torrent downloads.</p>
+                        <h3>Post-Traitement Torrent</h3>
+                        <p>Les paramètres qui dictent la façon dont Sick-Beard devrait traiter  les téléchargements de torrents complétés.</p>
                     </div>
 
                     <fieldset class="component-group-list">
                         <div class="field-pair">
                             <label class="nocheck clearfix" for="torrent_download_dir">
-                                <span class="component-title">Torrent Download Dir</span>
+                                <span class="component-title">Dossier Torrent</span>
                                 <input type="text" name="torrent_download_dir" id="torrent_download_dir" value="$sickbeard.TORRENT_DOWNLOAD_DIR" size="35" />
                             </label>
                             <label class="nocheck clearfix">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">The folder where your torrent client puts finished downloads.</span>
+                                <span class="component-desc">Le dossier où votre client Torrent dépose les téléchargments finis.</span>
                             </label>
                         </div>
                          <div class="field-pair">
                             <input type="checkbox" name="process_automatically_torrent" id="process_automatically_torrent" #if $sickbeard.PROCESS_AUTOMATICALLY_TORRENT == True then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="process_automatically">
-                                <span class="component-title">Scan and Process</span>
-                                <span class="component-desc">Scan and post-process any files in your <i>Torrent Download Dir</i>?</span>
+                                <span class="component-title">Scanner et traiter</span>
+                                <span class="component-desc">Scanner et traiter tout les fichiers dans votre <i>Dossier Torrent</i>?</span>
                             </label>
                             <label class="nocheck clearfix" for="process_automatically">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc"><b>NOTE:</b> Do not use if your Torrent Download Dir is the same as TV Download Dir</span>
-                                <span class="component-desc"><b>You must restart Sickbeard once everything is configured to start the thread</b></span>
+                                <span class="component-desc"><b>Remarque:</b> Ne pas utiliser si votre <b>Dossier Torrent</b> est le même que votre <b>Dossier &Eacute;pisodes</b></span>
+                                <span class="component-desc"><b>Vous devez redémarrer Sickbeard une fois que tout est configuré pour démarrer le traitement</b></span>
                             </label>
                         </div>
 
                         <label class="nocheck clearfix" for="process_method">
-                            <span class="component-title">Process Episode Method:</span>
+                            <span class="component-title">Méthode de traitement:</span>
                             <span class="component-desc">
                                 <select name="process_method" id="process_method" class="input-medium" >
-                                     #set $process_method_text = {'copy': "Copy", 'move': "Move", 'symlink' : "Symbolic Link"}
+                                     #set $process_method_text = {'copy': "Copie", 'move': "Déplacement", 'symlink' : "Lien symbolique"}
 +                                    #for $curAction in ('copy', 'move', 'symlink'): 
                                       #if $sickbeard.PROCESS_METHOD == $curAction:
                                         #set $process_method = "selected=\"selected\""
@@ -153,7 +153,7 @@
                         </label>
                         <label class="nocheck clearfix">
                             <span class="component-title">&nbsp;</span>
-                            <span class="component-desc">What method should be used to put the renamed file in the TV directory?</span> 
+                            <span class="component-desc">Quelle méthode devrait être utilisée pour mettre le fichier renommé dans le répertoire pour la télévision?</span> 
                         </label>
 
                         <div class="clearfix"></div>
