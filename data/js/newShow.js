@@ -88,7 +88,7 @@ $(document).ready(function () {
     $('#addShowButton').click(function () {
         // if they haven't picked a show don't let them submit
         if (!$("input:radio[name='whichSeries']:checked").val() && !$("input:hidden[name='whichSeries']").val().length) {
-            alert('You must choose a show to continue');
+            alert('Vous devez choisir un spectacle pour continuer');
             return false;
         }
 
@@ -147,7 +147,7 @@ $(document).ready(function () {
             show_name = '';
         }
 
-        var sample_text = 'Adding show <b>' + show_name + '</b> into <b>';
+        var sample_text = 'Ajouter la Série <b>' + show_name + '</b> dans <b>';
 
         // if we have a root dir selected, figure out the path
         if ($("#rootDirs option:selected").length) {
@@ -169,7 +169,7 @@ $(document).ready(function () {
         } else if ($('#fullShowPath').length && $('#fullShowPath').val().length) {
             sample_text += $('#fullShowPath').val();
         } else {
-            sample_text += 'unknown dir.';
+            sample_text += 'Répertoire inconnu.';
         }
 
         sample_text += '</b>';
