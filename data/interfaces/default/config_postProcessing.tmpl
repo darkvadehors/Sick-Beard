@@ -168,8 +168,8 @@
                 <div id="core-component-group2" class="component-group clearfix">
 
                     <div class="component-group-desc">
-                        <h3>Metadata</h3>
-                        <p>The data associated to the data. These are files associated to a TV show in the form of images and text that, when supported, will enhance the viewing experience.</p>
+                        <h3>Métadonnées</h3>
+                        <p>Les données associées à ces données. Ce sont des fichiers associés à une émission de télévision sous la forme d'images et de texte qui, lorsque pris en charge, permettra d'améliorer l'expérience de visionnement.</p>
                     </div>
 
                     <fieldset class="component-group-list">
@@ -185,12 +185,12 @@
                                     </select>
                                 </span>
                             </label>
-                            <span>Toggle the metadata options that you wish to be created. <b>Multiple targets may be used.</b></span>
+                            <span>Basculer les options de métadonnées que vous souhaitez créer. <b>plusieurs options peuvent être utilisées.</b></span>
                         </div>
 
                         <div id="metadataLegend">
-                            <div style="width: 190px; float: left;">Create:</div>
-                            <div style="width: 260px; float: left;">Results:</div>
+                            <div style="width: 190px; float: left;">Créer:</div>
+                            <div style="width: 260px; float: left;">Résultats:</div>
                         </div>
                         <div class="clearfix"></div>
 
@@ -223,12 +223,12 @@
                         <div class="field-pair clearfix">
                             <input type="checkbox" name="use_banner" id="use_banner" #if $sickbeard.USE_BANNER then "checked=checked" else ""#/>
                             <label class="clearfix" for="use_banner">
-                                <span class="component-title">Use Banners</span>
-                                <span class="component-desc">Use banners instead of posters for your Show Folder Images</span>
+                                <span class="component-title">Utilisez des Bannières</span>
+                                <span class="component-desc">Utilisez des bannières au lieu d'affiches pour vos dossiers</span>
                             </label>
                         </div>
 
-                        <input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
+                        <input type="submit" class="btn config_submitter" value=$savechanges /><br/>
 
                     </fieldset>
                 </div><!-- /component-group2 //-->
@@ -236,15 +236,15 @@
                 <div id="core-component-group4" class="component-group clearfix">
 
                     <div class="component-group-desc">
-                        <h3>Episode Naming</h3>
-                        <p>How Sick Beard will name and sort your episodes.</p>
+                        <h3>Renommage d'épisodes</h3>
+                        <p>Comment Sickbeard va nommer et trier vos épisodes.</p>
                     </div>
 
                     <fieldset class="component-group-list">
 
                         <div class="field-pair">
                             <label class="nocheck clearfix" for="name_presets">
-                                <span class="component-title">Name Pattern:</span>
+                                <span class="component-title">Exemple de renommage</span>
                                 <span class="component-desc">
                                     <select id="name_presets">
                                         #set is_custom = True
@@ -269,7 +269,7 @@
                                     </span>
                                     <span class="component-desc">
                                         <input type="text" size="45" name="naming_pattern" id="naming_pattern" class="custom-pattern" value="$sickbeard.NAMING_PATTERN" style="font-size: 13px; height: 18px; margin-top: -8px;" />
-                                        <img src="$sbRoot/images/legend16.png" width="16" height="16" alt="[Toggle Key]" id="show_naming_key" title="Toggle Naming Legend" style="padding: 0 0 0 3px; margin-top: -2px;" />
+                                        <img src="$sbRoot/images/legend16.png" width="16" height="16" alt="[Toggle Key]" id="show_naming_key" title="Afficher la légende de Renommage" style="padding: 0 0 0 3px; margin-top: -2px;" />
                                     </span>
                                 </label>
                             </div>
@@ -278,34 +278,34 @@
                                   <table class="Key">
                                     <thead>
                                         <tr>
-                                          <th class="align-right">Meaning</th>
-                                          <th>Pattern</th>
-                                          <th width="60%">Result</th>
+                                          <th class="align-right">Sens</th>
+                                          <th>Modèle</th>
+                                          <th width="60%">Résultat</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                          <th colspan="3">Use lower case if you want lower case names (eg. %sn, %e.n, %q_n etc)</th>
+                                          <th colspan="3">Utilisez des minuscules si vous voulez des noms en minuscules (eg. %sn, %e.n, %q_n etc)</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <tr>
-                                          <td class="align-right"><b>Show Name:</b></td>
+                                          <td class="align-right"><b>Nom de la Série:</b></td>
                                           <td>%SN</td>
-                                          <td>Show Name</td>
+                                          <td>Nom de la Série</td>
                                         </tr>
                                         <tr class="even">
                                           <td>&nbsp;</td>
                                           <td>%S.N</td>
-                                          <td>Show.Name</td>
+                                          <td>Nom.de.la.Série</td>
                                         </tr>
                                         <tr>
                                           <td>&nbsp;</td>
                                           <td>%S_N</td>
-                                          <td>Show_Name</td>
+                                          <td>Nom_de_la_Série</td>
                                         </tr>
                                         <tr class="even">
-                                          <td class="align-right"><b>Season Number:</b></td>
+                                          <td class="align-right"><b>Numéro de la Saison:</b></td>
                                           <td>%S</td>
                                           <td>2</td>
                                         </tr>
@@ -325,22 +325,22 @@
                                           <td>03</td>
                                         </tr>
                                         <tr class="even">
-                                          <td class="align-right"><b>Episode Name:</b></td>
+                                          <td class="align-right"><b>Nom de l'Episode:</b></td>
                                           <td>%EN</td>
-                                          <td>Episode Name</td>
+                                          <td>Nom de l'Episode</td>
                                         </tr>
                                         <tr>
                                           <td>&nbsp;</td>
                                           <td>%E.N</td>
-                                          <td>Episode.Name</td>
+                                          <td>Nom.de.l'Episode</td>
                                         </tr>
                                         <tr class="even">
                                           <td>&nbsp;</td>
                                           <td>%E_N</td>
-                                          <td>Episode_Name</td>
+                                          <td>Nom_de_l'Episode</td>
                                         </tr>
                                         <tr>
-                                          <td class="align-right"><b>Quality:</b></td>
+                                          <td class="align-right"><b>Qualité:</b></td>
                                           <td>%QN</td>
                                           <td>720p BluRay</td>
                                         </tr>
@@ -355,17 +355,17 @@
                                           <td>720p_BluRay</td>
                                         </tr>
                                         <tr class="even">
-                                          <td class="align-right"><i class="icon-info-sign" title="Multi-EP style is ignored"></i> <b>Release Name:</b></td>
+                                          <td class="align-right"><i class="icon-info-sign" title="Style Multi-Episode est ignoré"></i> <b>Nom de la Sortie:</b></td>
                                           <td>%RN</td>
-                                          <td>Show.Name.S02E03.HDTV.XviD-RLSGROUP</td>
+                                          <td>Nom.de.la.série.S02E03.HDTV.XviD-RLSGROUP</td>
                                         </tr>
                                         <tr>
-                                          <td class="align-right"><i class="icon-info-sign" title="'SiCKBEARD' is used in place of RLSGROUP if it could not be properly detected"></i> <b>Release Group:</b></td>
+                                          <td class="align-right"><i class="icon-info-sign" title="'SiCKBEARD 'est utilisé à la place de RLSGROUP si elle ne pouvait pas être correctement détecté"></i> <b>Nom de la Team:</b></td>
                                           <td>%RG</td>
                                           <td>RLSGROUP</td>
                                         </tr>
                                         <tr>
-                                          <td class="align-right"><i class="icon-info-sign" title="If episode is proper/repack add 'proper' to name."></i> <b>Release Type:</b></td>
+                                          <td class="align-right"><i class="icon-info-sign" title="Si l'épisode est bien encodé ajouter «propre» au nom."></i> <b>Type Sortie:</b></td>
                                           <td>%RT</td>
                                           <td>PROPER</td>
                                         </tr>
@@ -377,7 +377,7 @@
                         
                         <div class="field-pair">
                             <label class="nocheck clearfix" for="naming_multi_ep">
-                                <span class="component-title">Multi-Episode Style:</span>
+                                <span class="component-title">Style du Multi-Episode:</span>
                                 <span class="component-desc">
                                     <select id="naming_multi_ep" name="naming_multi_ep">
                                     #for $cur_multi_ep in sorted($multiEpStrings.items(), key=lambda x: x[1]):
@@ -389,7 +389,7 @@
                         </div>
 
                         <div id="naming_example_div">
-                            <h2>Sample:</h2>
+                            <h2>Exemple Simple:</h2>
                             <div class="example">
                                 <span class="jumbo" id="naming_example">&nbsp;</span>
                             </div>
@@ -397,7 +397,7 @@
                         </div>
 
                         <div id="naming_example_multi_div">
-                            <h2>Multi-EP sample:</h2>
+                            <h2>Exemple Multi-EPISODES:</h2>
                             <div class="example">
                                 <span class="jumbo" id="naming_example_multi">&nbsp;</span>
                             </div>
@@ -409,8 +409,8 @@
                         <div class="field-pair clearfix">
                             <input type="checkbox" class="enabler" id="naming_custom_abd" name="naming_custom_abd" #if $sickbeard.NAMING_CUSTOM_ABD then "checked=\"checked\"" else ""#/>
                             <label class="clearfix" for="naming_custom_abd">
-                                <span class="component-title">Custom Air-By-Date</span>
-                                <span class="component-desc">Name Air-By-Date shows differently than regular shows?</span>
+                                <span class="component-title">Classement par date de Sortie</span>
+                                <span class="component-desc">Le nommage par date de sortie est différent du classement régulier?</span>
                             </label>
                         </div>
 
@@ -451,34 +451,34 @@
                                       <table class="Key">
                                         <thead>
                                             <tr>
-                                              <th class="align-right">Meaning</th>
-                                              <th>Pattern</th>
-                                              <th width="60%">Result</th>
+                                              <th class="align-right">Sens</th>
+                                              <th>Modèle</th>
+                                              <th width="60%">Résultat</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
-                                              <th colspan="3">Use lower case if you want lower case names (eg. %sn, %e.n, %q_n etc)</th>
+                                              <th colspan="3">Utilisez des minuscules si vous voulez des noms en minuscules (eg. %sn, %e.n, %q_n etc)</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
                                             <tr>
-                                              <td class="align-right"><b>Show Name:</b></td>
+                                              <td class="align-right"><b>Nom de la Série:</b></td>
                                               <td>%SN</td>
-                                              <td>Show Name</td>
+                                              <td>Nom de la Série:</td>
                                             </tr>
                                             <tr class="even">
                                               <td>&nbsp;</td>
                                               <td>%S.N</td>
-                                              <td>Show.Name</td>
+                                              <td>Nom.de.la.Série:</td>
                                             </tr>
                                             <tr>
                                               <td>&nbsp;</td>
                                               <td>%S_N</td>
-                                              <td>Show_Name</td>
+                                              <td>Nom_de_la_Série:</td>
                                             </tr>
                                             <tr class="even">
-                                              <td class="align-right"><b>Air-By-Date:</b></td>
+                                              <td class="align-right"><b>Classement par Date de Diffusion:</b></td>
                                               <td>%AD</td>
                                               <td>2010 03 09</td>
                                             </tr>
@@ -498,22 +498,22 @@
                                               <td>2010-03-09</td>
                                             </tr>
                                             <tr class="even">
-                                              <td class="align-right"><b>Episode Name:</b></td>
+                                              <td class="align-right"><b>Nom de l'Episode:</b></td>
                                               <td>%EN</td>
-                                              <td>Episode Name</td>
+                                              <td>Nom de l'Episode</td>
                                             </tr>
                                             <tr>
                                               <td>&nbsp;</td>
                                               <td>%E.N</td>
-                                              <td>Episode.Name</td>
+                                              <td>Nom.de.l'Episode</td>
                                             </tr>
                                             <tr class="even">
                                               <td>&nbsp;</td>
                                               <td>%E_N</td>
-                                              <td>Episode_Name</td>
+                                              <td>Nom_de_l'Episode</td>
                                             </tr>
                                             <tr>
-                                              <td class="align-right"><b>Quality:</b></td>
+                                              <td class="align-right"><b>Qualité:</b></td>
                                               <td>%QN</td>
                                               <td>720p BluRay</td>
                                             </tr>
@@ -528,12 +528,12 @@
                                               <td>720p_BluRay</td>
                                             </tr>
                                             <tr class="even">
-                                              <td class="align-right"><b>Year:</b></td>
+                                              <td class="align-right"><b>Année:</b></td>
                                               <td>%Y</td>
                                               <td>2010</td>
                                             </tr>
                                             <tr>
-                                              <td class="align-right"><b>Month:</b></td>
+                                              <td class="align-right"><b>Mois:</b></td>
                                               <td>%M</td>
                                               <td>3</td>
                                             </tr>
@@ -543,7 +543,7 @@
                                               <td>03</td>
                                             </tr>
                                             <tr>
-                                              <td class="align-right"><b>Day:</b></td>
+                                              <td class="align-right"><b>Jour:</b></td>
                                               <td>%D</td>
                                               <td>9</td>
                                             </tr>
@@ -553,17 +553,17 @@
                                               <td>09</td>
                                             </tr>
                                             <tr>
-                                              <td class="align-right"><i class="icon-info-sign" title="Multi-EP style is ignored"></i> <b>Release Name:</b></td>
+                                              <td class="align-right"><i class="icon-info-sign" title="Style Multi-Episode est ignoré"></i> <b>Release Name:</b></td>
                                               <td>%RN</td>
-                                              <td>Show.Name.2010.03.09.HDTV.XviD-RLSGROUP</td>
+                                              <td>Nom.de.la.Série.2010.03.09.HDTV.XviD-RLSGROUP</td>
                                             </tr>
                                             <tr class="even">
-                                              <td class="align-right"><i class="icon-info-sign" title="'SiCKBEARD' is used in place of RLSGROUP if it could not be properly detected"></i> <b>Release Group:</b></td>
+                                              <td class="align-right"><i class="icon-info-sign" title="'SiCKBEARD 'est utilisé à la place de RLSGROUP si elle ne pouvait pas être correctement détecté"></i> <b>Nom de la Team:</b></td>
                                               <td>%RG</td>
                                               <td>RLSGROUP</td>
                                             </tr>
                                             <tr>
-                                              <td class="align-right"><i class="icon-info-sign" title="If episode is proper/repack add 'proper' to name."></i> <b>Release Type:</b></td>
+                                              <td class="align-right"><i class="icon-info-sign" title="Si l'épisode est bien encodé ajouter «propre» au nom."></i> <b>Type Sortie:</b></td>
                                               <td>%RT</td>
                                               <td>PROPER</td>
                                             </tr>
@@ -574,7 +574,7 @@
                             </div><!-- /naming_abd_custom -->
                             
                             <div id="naming_abd_example_div">
-                                <h2>Sample:</h2>
+                                <h2>Exemple:</h2>
                                 <div class="example">
                                     <span class="jumbo" id="naming_abd_example">&nbsp;</span>
                                 </div>
@@ -584,14 +584,14 @@
                         </div><!-- /naming_abd_different -->
 
                         <div class="clearfix"></div>
-                        <input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
+                        <input type="submit" class="btn config_submitter" value=$savechanges /><br/>
 
                     </fieldset>
                 </div><!-- /component-naming //-->
 
             <br/>
-			<small class="float-right"><b>All non-absolute folder locations are relative to <span class="path">$sickbeard.DATA_DIR</span></b> </small>            
-			<input type="submit" class="btn config_submitter button" value="Save Changes" /><br/>
+			<small class="float-right"><b>Tous les emplacements de dossier non absolus sont liés à<span class="path">$sickbeard.DATA_DIR</span></b> </small>            
+		
 
 </form>
 </div></div>
