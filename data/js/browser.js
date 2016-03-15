@@ -77,7 +77,7 @@
                 callback(currentBrowserPath, options);
                 fileBrowserDialog.dialog("close");
             },
-            "Cancel": function () {
+            "Annuler": function () {
                 fileBrowserDialog.dialog("close");
             }
         });
