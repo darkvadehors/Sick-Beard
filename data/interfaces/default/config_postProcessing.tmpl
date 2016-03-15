@@ -37,13 +37,13 @@
 
                     <div class="component-group-desc">
                         <h3>Post-traitement</h3>
-                        <p>Les paramètres qui dictent la façon dont Sick-Beard devrait traiter les nouveaux téléchargements terminés.</p>
+                        <p>Les paramètres qui dictent la façon dont Sick-Beard doit traiter les nouveaux téléchargements terminés.</p>
                     </div>
 
                     <fieldset class="component-group-list">
                         <div class="field-pair">
                             <label class="nocheck clearfix" for="tv_download_dir">
-                                <span class="component-title">Dossier &Eacute;pisodes</span>
+                                <span class="component-title">Dossier des &Eacute;pisodes TV</span>
                                 <input type="text" name="tv_download_dir" id="tv_download_dir" value="$sickbeard.TV_DOWNLOAD_DIR" size="35" />
                             </label>
                             <label class="nocheck clearfix">
@@ -108,7 +108,7 @@
                     
                     <div class="component-group-desc">
                         <h3>Post-Traitement Torrent</h3>
-                        <p>Les paramètres qui dictent la façon dont Sick-Beard devrait traiter  les téléchargements de torrents complétés.</p>
+                        <p>Les paramètres qui dictent la façon dont Sick-Beard doit traiter  les téléchargements de torrents complétés.</p>
                     </div>
 
                     <fieldset class="component-group-list">
@@ -131,7 +131,7 @@
                             <label class="nocheck clearfix" for="process_automatically">
                                 <span class="component-title">&nbsp;</span>
                                 <span class="component-desc"><b>Remarque:</b> Ne pas utiliser si votre <b>Dossier Torrent</b> est le même que votre <b>Dossier &Eacute;pisodes</b></span>
-                                <span class="component-desc"><b>Vous devez redémarrer Sickbeard une fois que tout est configuré pour démarrer le traitement</b></span>
+                                <span class="component-desc"><b>Vous devez redémarrer Sickbeard une fois que tout est configuré pour lancer le traitement</b></span>
                             </label>
                         </div>
 
@@ -153,7 +153,7 @@
                         </label>
                         <label class="nocheck clearfix">
                             <span class="component-title">&nbsp;</span>
-                            <span class="component-desc">Quelle méthode devrait être utilisée pour mettre le fichier renommé dans le répertoire pour la télévision?</span> 
+                            <span class="component-desc">Choisissez quelle méthode devrait-être utilisée pour mettre le fichier renommé dans le répertoire pour la télévision?</span> 
                         </label>
 
                         <div class="clearfix"></div>
@@ -410,14 +410,14 @@
                             <input type="checkbox" class="enabler" id="naming_custom_abd" name="naming_custom_abd" #if $sickbeard.NAMING_CUSTOM_ABD then "checked=\"checked\"" else ""#/>
                             <label class="clearfix" for="naming_custom_abd">
                                 <span class="component-title">Classement par date de Sortie</span>
-                                <span class="component-desc">Le nommage par date de sortie est différent du classement régulier?</span>
+                                <span class="component-desc">Le nommage par date de sortie est différent du classement régulier.</span>
                             </label>
                         </div>
 
                         <div id="content_naming_custom_abd">
                             <div class="field-pair">
                                 <label class="nocheck clearfix" for="name_abd_presets">
-                                    <span class="component-title">Name Pattern:</span>
+                                    <span class="component-title">Exemple de renommage:</span>
                                     <span class="component-desc">
                                         <select id="name_abd_presets">
                                             #set is_abd_custom = True
