@@ -97,16 +97,16 @@ class PageTemplate (Template):
         if "X-Forwarded-Proto" in cherrypy.request.headers:
             self.sbHttpsEnabled = True if cherrypy.request.headers['X-Forwarded-Proto'] == 'https' else False
 
-        logPageTitle = 'Logs &amp; Errors'
+        logPageTitle = 'Logs &amp; Erreurs'
         if len(classes.ErrorViewer.errors):
             logPageTitle += ' ('+str(len(classes.ErrorViewer.errors))+')'
         self.logPageTitle = logPageTitle
         self.sbPID = str(sickbeard.PID)
         self.menu = [
-            { 'title': 'Home',            'key': 'home'           },
-            { 'title': 'Coming Episodes', 'key': 'comingEpisodes' },
-            { 'title': 'History',         'key': 'history'        },
-            { 'title': 'Manage',          'key': 'manage'         },
+            { 'title': 'Accueil',            'key': 'home'           },
+            { 'title': '&Eacute;pisodes &agrave; Venir', 'key': 'comingEpisodes' },
+            { 'title': 'Historique',         'key': 'history'        },
+            { 'title': 'G&eacute;rer',          'key': 'manage'         },
             { 'title': 'Config',          'key': 'config'         },
             { 'title': logPageTitle,      'key': 'errorlogs'      },
         ]
@@ -141,7 +141,7 @@ def _genericMessage(subject, message):
 def _getEpisode(show, season, episode):
 
     if show == None or season == None or episode == None:
-        return "Invalid parameters"
+        return "Param&egrave;tres invalides"
 
     showObj = sickbeard.helpers.findCertainShow(sickbeard.showList, int(show))
 
@@ -151,7 +151,7 @@ def _getEpisode(show, season, episode):
     epObj = showObj.getEpisode(int(season), int(episode))
 
     if epObj == None:
-        return "Episode couldn't be retrieved"
+        return "Episode n&apos;a pas pu &ecirc;tre r&eacute;cup&eacute;r&eacute;"
 
     return epObj
 
