@@ -3921,17 +3921,17 @@ class WebInterface:
         t = PageTemplate(file="comingEpisodes.tmpl")
 #        paused_item = { 'title': '', 'path': 'toggleComingEpsDisplayPaused' }
 #        paused_item['title'] = 'Hide Paused' if sickbeard.COMING_EPS_DISPLAY_PAUSED else 'Show Paused'
-        paused_item = { 'title': 'View Paused:', 'path': {'': ''} }
-        paused_item['path'] = {'Hide': 'toggleComingEpsDisplayPaused'} if sickbeard.COMING_EPS_DISPLAY_PAUSED else {'Show': 'toggleComingEpsDisplayPaused'}
+        paused_item = { 'title': 'Afficher les S&eacute;ries en pauses:', 'path': {'': ''} }
+        paused_item['path'] = {'Cacher': 'toggleComingEpsDisplayPaused'} if sickbeard.COMING_EPS_DISPLAY_PAUSED else {'Afficher': 'toggleComingEpsDisplayPaused'}
         t.submenu = [
-            { 'title': 'Sort by:', 'path': {'Date': 'setComingEpsSort/?sort=date',
-                                            'Show': 'setComingEpsSort/?sort=show',
-                                            'Network': 'setComingEpsSort/?sort=network',
+            { 'title': 'Trier par:', 'path': {'Date': 'setComingEpsSort/?sort=date',
+                                            'S&eacute;rie': 'setComingEpsSort/?sort=show',
+                                            'Chaines': 'setComingEpsSort/?sort=network',
                                            }},
 
-            { 'title': 'Layout:', 'path': {'Banner': 'setComingEpsLayout/?layout=banner',
+            { 'title': 'Disposition:', 'path': {'Banni&egrave;re': 'setComingEpsLayout/?layout=banner',
                                            'Poster': 'setComingEpsLayout/?layout=poster',
-                                           'List': 'setComingEpsLayout/?layout=list',
+                                           'Liste': 'setComingEpsLayout/?layout=list',
                                            }},
             paused_item,
         ]
