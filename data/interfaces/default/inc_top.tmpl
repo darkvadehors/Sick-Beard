@@ -94,8 +94,8 @@
 		\$("#SubMenu a:contains('Delete')").addClass('btn').html('<span class="ui-icon ui-icon-trash pull-left"></span> Supprimer </a>');
 		\$("#SubMenu a:contains('Clear History')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Effacer l&acute;Historique </a>');
 		\$("#SubMenu a:contains('Trim History')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> R&eacute;duire Historique </a>');
-		\$("#SubMenu a:contains('Trunc Episode Links')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Trunc Episode Links </a>');
-		\$("#SubMenu a:contains('Trunc Episode List Processed')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Trunc Episode List Processed </a>');
+		\$("#SubMenu a:contains('Trunc Episode Links')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Trunc &Eacute;pisode Links </a>');
+		\$("#SubMenu a:contains('Trunc Episode List Processed')").addClass('btn confirm').html('<span class="ui-icon ui-icon-trash pull-left"></span> Trunc &Eacute;pisode List Processed </a>');
         \$("#SubMenu a[href='$sbRoot/errorlogs/clearerrors']").addClass('btn').html('<span class="ui-icon ui-icon-trash pull-left"></span> Effacer Erreurs </a>');
 		\$("#SubMenu a:contains('Re-scan')").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Re-scanner </a>');
 		\$("#SubMenu a:contains('Backlog Overview')").addClass('btn').html('<span class="ui-icon ui-icon-refresh pull-left"></span> Journal Vue d&acute;ensemble </a>');
@@ -109,7 +109,7 @@
 		\$("#SubMenu a:contains('Settings')").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> R&eacute;glages Recherches </a>');
 		\$("#SubMenu a:contains('Provider')").addClass('btn').html('<span class="ui-icon ui-icon-search pull-left"></span> Fournisseurs de Rechecher </a>');
 		\$("#SubMenu a:contains('General')").addClass('btn').html('<span class="ui-icon ui-icon-gear pull-left"></span> G&eacute;n&eacute;ral </a>');
-		\$("#SubMenu a:contains('Episode Status')").addClass('btn').html('<span class="ui-icon ui-icon-transferthick-e-w pull-left"></span> Gestion d&acute;&eacute;tat des Episodes </a>');
+		\$("#SubMenu a:contains('Episode Status')").addClass('btn').html('<span class="ui-icon ui-icon-transferthick-e-w pull-left"></span> Gestion d&acute;&eacute;tat des &Eacute;pisodes </a>');
 		\$("#SubMenu a:contains('Missed Subtitle')").addClass('btn').html('<span class="ui-icon ui-icon-transferthick-e-w pull-left"></span> Sous&ndash;titres manqu&eacute;s </a>');
 		\$("#SubMenu a[href='$sbRoot/home/addShows/']").addClass('btn').html('<span class="ui-icon ui-icon-video pull-left"></span> Ajouter une S&eacute;rie </a>');
 		\$("#SubMenu a:contains('Processing')").addClass('btn').html('<span class="ui-icon ui-icon-folder-open pull-left"></span> Post&ndash;traitement </a>');
@@ -193,14 +193,14 @@
                             <li><a href="$sbRoot/home/postprocess/"><img src="$sbRoot/images/menu/postprocess16.png" alt="" width="16" height="16" />Post-Traitement Manuel</a></li>
                     </ul>
                 </li>
-                <li id="NAVcomingEpisodes"><a href="$sbRoot/comingEpisodes/">Episodes &agrave; venir</a></li>
+                <li id="NAVcomingEpisodes"><a href="$sbRoot/comingEpisodes/">&Eacute;pisodes &agrave; venir</a></li>
                 <li id="NAVhistory"><a href="$sbRoot/history/">Historique</a></li>
                 <li id="NAVmanage"><a href="$sbRoot/manage/">G&eacute;rer</a>
                     <ul>
                             <li><a href="$sbRoot/manage/"><img src="$sbRoot/images/menu/manage16.png" alt="" width="16" height="16" />Mise &agrave; jour de Masse</a></li>
                             <li><a href="$sbRoot/manage/backlogOverview/"><img src="$sbRoot/images/menu/backlog_view16.png" alt="" width="16" height="16" />Vue d' ensemble du Journal</a></li>
                             <li><a href="$sbRoot/manage/manageSearches/"><img src="$sbRoot/images/menu/managesearches16.png" alt="" width="16" height="16" />G&eacute;rer les Recherches</a></li>
-                            <li><a href="$sbRoot/manage/episodeStatuses/"><img src="$sbRoot/images/menu/backlog16.png" alt="" width="16" height="16" />Gestion de l' &eacute;tat des Episodes</a></li>
+                            <li><a href="$sbRoot/manage/episodeStatuses/"><img src="$sbRoot/images/menu/backlog16.png" alt="" width="16" height="16" />Gestion de l' &eacute;tat des &Eacute;pisodes</a></li>
                             #if $sickbeard.USE_SUBTITLES:
                             <li><a href="$sbRoot/manage/subtitleMissed/"><img src="$sbRoot/images/menu/backlog16.png" alt="" width="16" height="16" />Gestion des Sous-titres Manqu&eacute;</a></li>
                             #end if
