@@ -1,4 +1,4 @@
-#import sickbeard
+﻿#import sickbeard
 #set global $title="Config - Notifications"
 #set global $header="Notifications"
 #set global $savechanges="Sauvegarder les modifications"
@@ -251,7 +251,7 @@
                             </div>
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">Get Settings</span>
+                                    <span class="component-title">Obtenir les paramètres</span>
                                     <input  class="btn" type="button" value="Obtenir les paramètres" id="settingsNMJ" />
                                 </label>
                                 <label class="nocheck clearfix">
@@ -327,7 +327,7 @@
                                 </label>
 								</label>
 								<label class="nocheck clearfix">
-                                    <span class="component-title">Database Instance</span>
+                                    <span class="component-title">Instance de la base données</span>
                                     <span class="component-desc">
 									<select id="NMJv2db_instance">
 										<option value="0">#1 </option>
@@ -376,25 +376,25 @@
                 <div class="component-group clearfix">
                     <div class="component-group-desc">
                         <h3><a href="http://synology.com/" onclick="window.open(this.href, '_blank'); return false;"><img src="$sbRoot/images/notifiers/synoindex.png" alt="" title="Synology Indexer"/> Synology Indexer </a></h3>
-                        <p>Synology Indexer is the daemon running on the Synology NAS to build its media database.</p>
+                        <p>Synology Indexer est le démon en cours d'exécution sur le NAS Synology pour construire sa base de données des médias.</p>
                     </div>
 
                     <fieldset class="component-group-list">
                         <div class="field-pair">
-                            <input type="checkbox" class="enabler" name="use_synoindex" id="use_synoindex" #if $sickbeard.USE_SYNOINDEX then "checked=\"checked\"" else ""# /> 
+                            <input type="checkbox" class="Activer" name="use_synoindex" id="use_synoindex" #if $sickbeard.USE_SYNOINDEX then "checked=\"checked\"" else ""# /> 
                             <label class="clearfix" for="use_synoindex">
                                 <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send notifications to the synoindex daemon?<br /><br />
+                                <span class="component-desc">Pour que Sick beard envoi des notifications au deamon synoindex?<br /><br />
                                 </span>
                             </label>
                             <label class="nocheck clearfix" for="use_synoindex">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc"><b>Note:</b> Requires SB to be running on your Synology NAS.</span>
+                                <span class="component-desc"><b>Remarque:</b> Exiger que Sick Beard soit exécuté sur votre NAS Synology.</span>
                             </label>
                         </div>
 
                         <div id="content_use_synoindex">
-                            <input type="submit" class="config_submitter btn" value="Save Changes" />
+                            <input type="submit" class="config_submitter btn" value=$SaveChanges />
                         </div><!-- /content_use_synoindex //-->
 
                     </fieldset>
@@ -404,45 +404,45 @@
                 <div class="component-group clearfix">
                     <div class="component-group-desc">
                         <h3><a href="http://synology.com/" onclick="window.open(this.href, '_blank'); return false;"><img src="$sbRoot/images/notifiers/synologynotifier.png" alt="" title="Synology Indexer"/> Synology Notifier </a></h3>
-                        <p>Synology Notifier is the notification system of Synology DSM</p>
+                        <p>'Synology Notifier' est le system de notification du DSM de Synology</p>
                     </div>
 
                     <fieldset class="component-group-list">
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_synologynotifier" id="use_synologynotifier" #if $sickbeard.USE_SYNOLOGYNOTIFIER then "checked=\"checked\"" else ""# /> 
                             <label class="clearfix" for="use_synologynotifier">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send notifications to the Synology Notifier?<br /><br />
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick Beard envoi des notifications à Synology Notifier?<br /><br />
                                 </span>
                             </label>
                             <label class="nocheck clearfix" for="use_synologynotifier">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc"><b>Note:</b> Requires SB to be running on your Synology DSM.</span>
+                                <span class="component-desc"><b>Remarque:</b> Exiger que Sick Beard soit exécuté sur votre NAS Synology avec DSM.</span>
                             </label>
                        	</div>
                         <div id="content_use_synologynotifier">
                             <div class="field-pair">
                                 <input type="checkbox" name="synologynotifier_notify_onsnatch" id="synologynotifier_notify_onsnatch" #if $sickbeard.SYNOLOGYNOTIFIER_NOTIFY_ONSNATCH then "checked=\"checked\"" else ""# />
                                 <label class="clearfix" for="synologynotifier_notify_onsnatch">
-                                    <span class="component-title">Notify on Snatch</span>
-                                    <span class="component-desc">Send notification when we start a download?</span>
+                                    <span class="component-title">Notifier au téléchargement</span>
+                                    <span class="component-desc">Envoyer une notification quand le téléchargement commence?</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <input type="checkbox" name="synologynotifier_notify_ondownload" id="synologynotifier_notify_ondownload" #if $sickbeard.SYNOLOGYNOTIFIER_NOTIFY_ONDOWNLOAD then "checked=\"checked\"" else ""# />
                                 <label class="clearfix" for="synologynotifier_notify_ondownload">
-                                    <span class="component-title">Notify on Download</span>
-                                    <span class="component-desc">Send notification when we finish a download?</span>
+                                    <span class="component-title">Notifier quand téléchargé</span>
+                                    <span class="component-desc">Envoyer une notification quand le téléchargement est terminé?</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <input type="checkbox" name="synologynotifier_notify_onsubtitledownload" id="synologynotifier_notify_onsubtitledownload" #if $sickbeard.SYNOLOGYNOTIFIER_NOTIFY_ONSUBTITLEDOWNLOAD then "checked=\"checked\"" else ""# />
                                 <label class="clearfix" for="synologynotifier_notify_onsubtitledownload">
-                                    <span class="component-title">Notify on Subtitle Download</span>
-                                    <span class="component-desc">Send notification when we finish a subtitle download?</span>
+                                    <span class="component-title">Notifier sous titres</span>
+                                    <span class="component-desc">Envoyer une notification quand le téléchargement des sous-titres est terminé?</span>
                                 </label>
                             </div>
-                            <input type="submit" class="config_submitter btn" value="Save Changes" />
+                            <input type="submit" class="config_submitter btn" value=$SaveChanges />
                        	</div>
                     </fieldset>
                 </div><!-- /synology notifier component-group //-->
@@ -451,53 +451,53 @@
                 <div class="component-group clearfix">
                     <div class="component-group-desc">
                         <h3><a href="http://pytivo.sourceforge.net/wiki/index.php/PyTivo" onclick="window.open(this.href, '_blank'); return false;"><img src="$sbRoot/images/notifiers/pytivo.png" alt="" title="pyTivo"/> pyTivo </a></h3>
-                        <p>pyTivo is both an HMO and GoBack server.  This notifier will load the completed downloads to your Tivo.</p>
+                        <p>pyTivo est à la fois un HMO et le serveur Go Back. Ce notificateur charge les téléchargements terminés vers votre Tivo.</p>
                     </div>
                     <fieldset class="component-group-list">
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_pytivo" id="use_pytivo" #if $sickbeard.USE_PYTIVO then "checked=\"checked\"" else ""# /> 
                             <label class="clearfix" for="use_pytivo">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send notifications to pyTivo?<br /><br /></span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick beard envoi des notification à pyTivo?<br /><br /></span>
                             </label>
                             <label class="nocheck clearfix" for="use_pytivo">
                                 <span class="component-title">&nbsp;</span>
-                                <span class="component-desc">Requires the downloaded files to be accessible to pyTivo.</span>
+                                <span class="component-desc">Requiert que les fichiers téléchargés soient accessible à pyTivo.</span>
                             </label>
                         </div>
 
                         <div id="content_use_pytivo">
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">pyTivo IP:Port</span>
+                                    <span class="component-title">IP et Port de pyTivo</span>
                                     <input type="text" name="pytivo_host" id="pytivo_host" value="$sickbeard.PYTIVO_HOST" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Host running pyTivo (eg. 192.168.1.1:9032)</span>
+                                    <span class="component-desc">hôte en cours d'exécution pyTivo (eg. 192.168.1.1:9032)</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">pyTivo Share name</span>
+                                    <span class="component-title">Nom de partage pyTivo</span>
                                     <input type="text" name="pytivo_share_name" id="pytivo_share_name" value="$sickbeard.PYTIVO_SHARE_NAME" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Value used in pyTivo Web Configuration to name the share.</span>
+                                    <span class="component-desc">Valeur utilisée dans Configuration Web pyTivo pour nommer le partage.</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">Tivo Name</span>
+                                    <span class="component-title">Nom Tivo</span>
                                     <input type="text" name="pytivo_tivo_name" id="pytivo_tivo_name" value="$sickbeard.PYTIVO_TIVO_NAME" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Messages & Settings > Account & System Information > System Information > DVR name</span>
+                                    <span class="component-desc">Messages & Paramètres (Messages & Settings) > Comptes et informations sur le système (Account & System Information) >  Informations système (System Information) > Nom DVR (DVR name)</span>
                                 </label>
                             </div>
-                            <input type="submit" class="config_submitter btn" value="Save Changes" />
+                            <input type="submit" class="config_submitter btn" value=$SaveChanges />
                         </div><!-- /content_use_pytivo //-->
 
                     </fieldset>
@@ -516,8 +516,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_growl" id="use_growl" #if $sickbeard.USE_GROWL then "checked=\"checked\"" else ""# /> 
                             <label class="clearfix" for="use_growl">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send Growl notifications?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick beard envoi des notifications Growl?</span>
                             </label>
                         </div>
 
@@ -585,8 +585,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_prowl" id="use_prowl" #if $sickbeard.USE_PROWL then "checked=\"checked\"" else ""# /> 
                             <label class="clearfix" for="use_prowl">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send Prowl notifications?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick beard envoi des notifications Prowl?</span>
                             </label>
                         </div>
 
@@ -656,8 +656,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_libnotify" id="use_libnotify" #if $sickbeard.USE_LIBNOTIFY then "checked=\"checked\"" else ""# /> 
                             <label class="clearfix" for="use_libnotify">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send Libnotify notifications?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick beard envoi des notifications Libnotify?</span>
                             </label>
                         </div>
 
@@ -685,7 +685,7 @@
                             </div>
                             <div class="testNotification" id="testLibnotify-result">Click below to test.</div>
                             <input  class="btn" type="button" value="Test Libnotify" id="testLibnotify" />
-                            <input type="submit" class="config_submitter btn" value="Save Changes" />
+                            <input type="submit" class="config_submitter btn" value=$SaveChanges />
                         </div><!-- /content_use_libnotify //-->
 
                     </fieldset>
@@ -701,8 +701,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_pushover" id="use_pushover" #if $sickbeard.USE_PUSHOVER then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_pushover">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send notifications through Pushover?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick beard envoi des notification par Pushover?</span>
                             </label>
                         </div>
 
@@ -750,7 +750,7 @@
                             </div>
                             <div class="testNotification" id="testPushover-result">Click below to test.</div>
                             <input  class="btn" type="button" value="Test Pushover" id="testPushover" />
-                            <input type="submit" class="config_submitter btn" value="Save Changes" />
+                            <input type="submit" class="config_submitter btn" value=$SaveChanges />
                         </div><!-- /content_use_pushover //-->
 
                     </fieldset>
@@ -765,8 +765,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_boxcar" id="use_boxcar" #if $sickbeard.USE_BOXCAR then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_boxcar">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send notifications through Boxcar?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick beard envoi des notifications par Boxcar?</span>
                             </label>
                         </div>
 
@@ -820,8 +820,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_boxcar2" id="use_boxcar2" #if $sickbeard.USE_BOXCAR2 then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_boxcar2">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send Boxcar2 notifications?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick Beard envoi des notification Boxcar2?</span>
                             </label>
                         </div>
 
@@ -916,8 +916,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_nma" id="use_nma" #if $sickbeard.USE_NMA then "checked=\"checked\"" else ""# /> 
                             <label class="clearfix" for="use_nma">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send NMA notifications?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick Beard envoi des notifications NMA?</span>
                             </label>
                         </div>
 
@@ -971,7 +971,7 @@
                             </div>
                             <div class="testNotification" id="testNMA-result">Click below to test.</div>
                             <input  class="btn" type="button" value="Test NMA" id="testNMA" />
-                            <input type="submit" class="config_submitter btn" value="Save Changes" />
+                            <input type="submit" class="config_submitter btn" value=$SaveChanges />
                         </div><!-- /content_use_nma //-->
 
                     </fieldset>
@@ -986,8 +986,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_pushalot" id="use_pushalot" #if $sickbeard.USE_PUSHALOT then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_pushalot">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send notifications through Pushalot?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick Beard envoi des notifications par Pushalot?</span>
                             </label>
                         </div>
 
@@ -1040,8 +1040,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_pushbullet" id="use_pushbullet" #if $sickbeard.USE_PUSHBULLET then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_pushbullet">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send notifications through Pushbullet?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sick Beard envoi des nitifications par Pushbullet?</span>
                             </label>
                         </div>
 
@@ -1091,7 +1091,7 @@
                             </div>
                             <div class="testNotification" id="testPushbullet-result">Click below to test.</div>
                             <input type="button" class="btn" value="Test Pushbullet." id="testPushbullet" />
-                            <input type="submit" class="btn config_submitter" value="Save Changes" />
+                            <input type="submit" class="btn config_submitter" value=$SaveChanges />
                         </div><!-- /content_use_pushbullet //-->
 
                     </fieldset>
@@ -1109,8 +1109,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_twitter" id="use_twitter" #if $sickbeard.USE_TWITTER then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_twitter">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard post tweets on Twitter?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">POur que Sick Beard envoi des tweets sur Twitter?</span>
                             </label>
                             <label class="nocheck clearfix" for="use_twitter">
                                 <span class="component-title">&nbsp;</span>
@@ -1168,7 +1168,7 @@
                             </div>
                             <div class="testNotification" id="testTwitter-result">Click below to test.</div>
                             <input  class="btn" type="button" value="Test Twitter" id="testTwitter" />
-                            <input type="submit" class="config_submitter btn" value="Save Changes" />
+                            <input type="submit" class="config_submitter btn" value=$SaveChanges />
                         </div><!-- /content_use_twitter //-->
 
                     </fieldset>
@@ -1185,8 +1185,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_trakt" id="use_trakt" #if $sickbeard.USE_TRAKT then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_trakt">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send Trakt.tv notifications?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que sick Beard envoi des notifications par trakt.tv?</span>
                             </label>
                         </div>
 
@@ -1256,7 +1256,7 @@
 							</div>
                             <div class="testNotification" id="testTrakt-result">Click below to test.</div>
                             <input type="button" class="btn" value="Test Trakt" id="testTrakt" />
-                            <input type="submit" class="btn config_submitter" value="Save Changes" />
+                            <input type="submit" class="btn config_submitter" value=$SaveChanges />
                         </div><!-- /content_use_trakt //-->
 
                     </fieldset>
@@ -1272,8 +1272,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_betaseries" id="use_betaseries" #if $sickbeard.USE_BETASERIES then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_betaseries">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send BetaSeries notifications?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">POur que Sick Beard envoi des notifications BetaSeries?</span>
                             </label>
                         </div>
 
@@ -1300,7 +1300,7 @@
                             </div>
                             <div class="testNotification" id="testBetaSeries-result">Click below to test.</div>
                             <input type="button" class="btn" value="Test BetaSeries" id="testBetaSeries" />
-                            <input type="submit" class="btn config_submitter" value="Save Changes" />
+                            <input type="submit" class="btn config_submitter" value=$SaveChanges />
                         </div><!-- /content_use_betaseries //-->
 
                     </fieldset>
@@ -1316,8 +1316,8 @@
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_mail" id="use_mail" #if $sickbeard.USE_MAIL then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_mail">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send mail notifications?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">POur que Sick Beard envoi des notifications par mail?</span>
                             </label>
                         </div>
 
@@ -1388,7 +1388,7 @@
                             </div>
                             <div class="testNotification" id="testMail-result">Click below to test.</div>
                             <input type="button" class="btn" value="Test Mail" id="testMail" />
-                            <input type="submit" class="btn config_submitter" value="Save Changes" />
+                            <input type="submit" class="btn config_submitter" value=$SaveChanges />
                         </div><!-- /content_use_mail //-->
 
                     </fieldset>
@@ -1397,7 +1397,7 @@
             </div><!-- /config-components //-->
         </form>
 
-	    <br/><input type="submit" class="config_submitter btn" value="Save Changes" /><br/>
+
 
     </div>
 
