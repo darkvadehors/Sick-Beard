@@ -142,7 +142,7 @@
                             <input type="checkbox" class="enabler" name="use_plex" id="use_plex" #if $sickbeard.USE_PLEX then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_plex">
                                 <span class="component-title">Activer</span>
-                                <span class="component-desc">Si vous voulez que  Sickbeard envoi des commandes Plex?</span>
+                                <span class="component-desc">Pour que  Sickbeard envoi des commandes Plex?</span>
                             </label>
                         </div>
 
@@ -227,61 +227,61 @@
                 <div class="component-group clearfix">
                     <div class="component-group-desc">
                         <h3><a href="http://www.popcornhour.com/" onclick="window.open(this.href, '_blank'); return false;"><img src="$sbRoot/images/notifiers/nmj.png" alt="" title="Networked Media Jukebox"/> NMJ </a></h3>
-                        <p>The Networked Media Jukebox, or NMJ, is the official media jukebox interface made available for the Popcorn Hour 200-series.</p>
+                        <p>Le réseau médias Jukebox, ou NMJ, est l'interface officiels de médias jukebox mis à disposition pour la série-200 de Popcorn Hour.</p>
                     </div>
                     <fieldset class="component-group-list">
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_nmj" id="use_nmj" #if $sickbeard.USE_NMJ then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_nmj">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send update commands to NMJ?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">Pour que Sickbeard envoi des commandes de mise à jour à NMJ?</span>
                             </label>
                         </div>
 
                         <div id="content_use_nmj">
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">Popcorn IP address</span>
+                                    <span class="component-title">Adresse IP de Popcorn</span>
                                     <input type="text" name="nmj_host" id="nmj_host" value="$sickbeard.NMJ_HOST" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">IP of Popcorn 200-series (eg. 192.168.1.100)</span>
+                                    <span class="component-desc">IP de Popcorn series-200 (eg. 192.168.1.100)</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
                                     <span class="component-title">Get Settings</span>
-                                    <input  class="btn" type="button" value="Get Settings" id="settingsNMJ" />
+                                    <input  class="btn" type="button" value="Obtenir les paramètres" id="settingsNMJ" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">The Popcorn Hour device must be powered on and NMJ running.</span>
+                                    <span class="component-desc">Le dispositif Popcorn Hour doit être sous tension et NMJ en cours d'exécution.</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">NMJ Database</span>
+                                    <span class="component-title">Base de Donn&eacute;es NMJ</span>
                                     <input type="text" name="nmj_database" id="nmj_database" value="$sickbeard.NMJ_DATABASE" size="35" #if $sickbeard.NMJ_DATABASE then "readonly=\"readonly\"" else ""# />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Automatically filled via the 'Get Settings' button.</span>
+                                    <span class="component-desc">remplir automatiquement via le bouton 'Obtenir les paramètres'.</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">NMJ Mount URL</span>
+                                    <span class="component-title">URL de montage de NMJ</span>
                                     <input type="text" name="nmj_mount" id="nmj_mount" value="$sickbeard.NMJ_MOUNT" size="35" #if $sickbeard.NMJ_MOUNT then "readonly=\"readonly\"" else ""# />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Automatically filled via the 'Get Settings' button.</span>
+                                    <span class="component-desc">remplir automatiquement via le bouton 'Obtenir les paramètres'.</span>
                                 </label>
                             </div>
                             <div class="testNotification" id="testNMJ-result">Click below to test.</div>
-                            <input  class="btn" type="button" value="Test NMJ" id="testNMJ" />
-                            <input type="submit" class="config_submitter btn" value="Save Changes" />
+                            <input  class="btn" type="button" value="Test de NMJ" id="testNMJ" />
+                            <input type="submit" class="config_submitter btn" value=$SaveChanges />
                         </div><!-- /content_use_nmj //-->
 
                     </fieldset>
@@ -290,39 +290,39 @@
 				<div class="component-group clearfix">
                     <div class="component-group-desc">
                         <h3><a href="http://www.popcornhour.com/" onclick="window.open(this.href, '_blank'); return false;"><img src="$sbRoot/images/notifiers/nmj.png" alt="" title="Networked Media Jukebox v2"/> NMJv2 </a></h3>
-                        <p>The Networked Media Jukebox, or NMJv2, is the official media jukebox interface made available for the Popcorn Hour 300 & 400-series.</p>
+                        <p>Le r&eacute;seau Media Jukebox, ou NMJv2, est l'interface officiel de médias jukebox mis à disposition pour les séries-300 et 400 de Popcorn Hour.</p>
                     </div>
                     <fieldset class="component-group-list">
                         <div class="field-pair">
                             <input type="checkbox" class="enabler" name="use_nmjv2" id="use_nmjv2" #if $sickbeard.USE_NMJv2 then "checked=\"checked\"" else ""# />
                             <label class="clearfix" for="use_nmjv2">
-                                <span class="component-title">Enable</span>
-                                <span class="component-desc">Should Sick Beard send update commands to NMJv2?</span>
+                                <span class="component-title">Activer</span>
+                                <span class="component-desc">pour que Sick Beard envoi des commandes de mise à jour à NMJv2?</span>
                             </label>
                         </div>
 
                         <div id="content_use_nmjv2">
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">Popcorn IP address</span>
+                                    <span class="component-title">Adresse IP de Popcorn</span>
                                     <input type="text" name="nmjv2_host" id="nmjv2_host" value="$sickbeard.NMJv2_HOST" size="35" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">IP of Popcorn 300/400-series (eg. 192.168.1.100)</span>
+                                    <span class="component-desc">IP de Popcorn s&eacute;es-300/400 (eg. 192.168.1.100)</span>
                                 </label>
                             </div>
 							<div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">Database Location</span>
+                                    <span class="component-title">EMplacement de la base de données</span>
 									<span class="component-desc">
-										<INPUT TYPE="radio" NAME="nmjv2_dbloc" VALUE="local" class="radio" id="NMJV2_DBLOC_A" #if $sickbeard.NMJv2_DBLOC=="local" then "checked=\"checked\"" else ""# />PCH Local Media<br />
+										<INPUT TYPE="radio" NAME="nmjv2_dbloc" VALUE="local" class="radio" id="NMJV2_DBLOC_A" #if $sickbeard.NMJv2_DBLOC=="local" then "checked=\"checked\"" else ""# />PCH Locale Média<br />
 									</span>
                                 </label>
 								    <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
                                     <span class="component-desc">
-										<INPUT TYPE="radio" NAME="nmjv2_dbloc" VALUE="network" class="radio" id="NMJV2_DBLOC_B" #if $sickbeard.NMJv2_DBLOC=="network" then "checked=\"checked\"" else ""#/>PCH Network Media
+										<INPUT TYPE="radio" NAME="nmjv2_dbloc" VALUE="network" class="radio" id="NMJV2_DBLOC_B" #if $sickbeard.NMJv2_DBLOC=="network" then "checked=\"checked\"" else ""#/>PCH R&eacute;seau Média
 									</span>
                                 </label>
 								</label>
@@ -342,26 +342,26 @@
                                 </label>
 								<label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Adjust this value if the wrong database is selected.</span>
+                                    <span class="component-desc">Réglez cette valeur si la mauvaise base de données est sélectionnée.</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                    <span class="component-title">Find Database</span>
-									<input type="button" value="Find Database" id="settingsNMJv2" />
+                                    <span class="component-title">Trouver la base de données</span>
+									<input type="button" value="Trouver la base de données" id="settingsNMJv2" />
                                 </label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">The Popcorn Hour device must be powered on.</span>
+                                    <span class="component-desc">Le dispositif Popcorn Hour doit être sous tension.</span>
                                 </label>
                             </div>
                             <div class="field-pair">
                                 <label class="nocheck clearfix">
-                                <span class="component-title">NMJv2 Database</span>
+                                <span class="component-title">Base de données NMJv2e</span>
                                 <input type="text" name="nmjv2_database" id="nmjv2_database" value="$sickbeard.NMJv2_DATABASE" size="35" #if $sickbeard.NMJv2_DATABASE then "readonly=\"readonly\"" else ""# /></label>
                                 <label class="nocheck clearfix">
                                     <span class="component-title">&nbsp;</span>
-                                    <span class="component-desc">Automatically filled via the 'Find Database' buttons.</span>
+                                    <span class="component-desc">rempli automatiquement via les boutons 'Trouver la base de données'.</span>
                                 </label>
                             </div>
 						<div class="testNotification" id="testNMJv2-result">Click below to test.</div>
