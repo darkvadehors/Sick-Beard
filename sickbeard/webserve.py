@@ -2170,12 +2170,12 @@ def havePLEX():
 def HomeMenu():
     return [
         { 'title': 'Add Shows',              'path': 'home/addShows/',                                          },
-        { 'title': 'Manual Post-Processing', 'path': 'home/postprocess/'                                        },
-        { 'title': 'Update XBMC',            'path': 'home/updateXBMC/', 'requires': haveXBMC                   },
-        { 'title': 'Update Plex',            'path': 'home/updatePLEX/', 'requires': havePLEX                   },
-        { 'title': 'Update',                 'path': 'manage/manageSearches/forceVersionCheck', 'confirm': True},
-        { 'title': 'Restart',                'path': 'home/restart/?pid='+str(sickbeard.PID), 'confirm': True   },
-        { 'title': 'Shutdown',               'path': 'home/shutdown/?pid='+str(sickbeard.PID), 'confirm': True  },
+        { 'title': 'Post&ndash;traitement', 'path': 'home/postprocess/'                                        },
+        { 'title': 'Mise &agrave; jour de XBMC',            'path': 'home/updateXBMC/', 'requires': haveXBMC                   },
+        { 'title': 'Mise &agrave; jour de PLEX',            'path': 'home/updatePLEX/', 'requires': havePLEX                   },
+        { 'title': 'Mise &agrave; jour',                 'path': 'manage/manageSearches/forceVersionCheck', 'confirm': True},
+        { 'title': 'Red&eacute;marrer',                'path': 'home/restart/?pid='+str(sickbeard.PID), 'confirm': True   },
+        { 'title': 'Eteindre',               'path': 'home/shutdown/?pid='+str(sickbeard.PID), 'confirm': True  },
     ]
 
 class HomePostProcess:
