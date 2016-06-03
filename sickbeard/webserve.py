@@ -2174,7 +2174,7 @@ def HomeMenu():
         { 'title': 'Mise &agrave; jour de XBMC',            'path': 'home/updateXBMC/', 'requires': haveXBMC                   },
         { 'title': 'Mise &agrave; jour de PLEX',            'path': 'home/updatePLEX/', 'requires': havePLEX                   },
         { 'title': 'Mise &agrave; jour',                 'path': 'manage/manageSearches/forceVersionCheck', 'confirm': True},
-        { 'title': 'Red&eacute;marrer',                'path': 'home/restart/?pid='+str(sickbeard.PID), 'confirm': True   },
+        { 'title': 'Redémarrer',                'path': 'home/restart/?pid='+str(sickbeard.PID), 'confirm': True   },
         { 'title': 'Eteindre',               'path': 'home/shutdown/?pid='+str(sickbeard.PID), 'confirm': True  },
     ]
 
