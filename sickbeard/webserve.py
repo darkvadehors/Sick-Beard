@@ -2169,7 +2169,7 @@ def havePLEX():
 
 def HomeMenu():
     return [
-        { 'title': 'Add Shows',              'path': 'home/addShows/',                                          },
+        { 'title': 'Ajouter une nouvelle Série',              'path': 'home/addShows/',                                          },
         { 'title': 'Manual Post-Processing', 'path': 'home/postprocess/'                                        },
         { 'title': 'Update XBMC',            'path': 'home/updateXBMC/', 'requires': haveXBMC                   },
         { 'title': 'Update Plex',            'path': 'home/updatePLEX/', 'requires': havePLEX                   },
